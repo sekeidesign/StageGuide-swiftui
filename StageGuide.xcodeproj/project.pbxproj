@@ -25,10 +25,10 @@
 		281B51A62A7C837200F4EAFC /* SGPillButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281B51A52A7C837200F4EAFC /* SGPillButton.swift */; };
 		281B51A92A7C8D2200F4EAFC /* PlaceholderAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281B51A82A7C8D2200F4EAFC /* PlaceholderAction.swift */; };
 		2887768F2A82F78B00326204 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 2887768E2A82F78B00326204 /* .gitignore */; };
+		288776932A8314CB00326204 /* Lineup.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 288776912A8314CB00326204 /* Lineup.xcdatamodeld */; };
+		288776952A831B7C00326204 /* ActModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288776942A831B7C00326204 /* ActModel.swift */; };
 		28A2F0502A81BB03006A59DA /* SGAppIconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A2F04F2A81BB03006A59DA /* SGAppIconButton.swift */; };
 		28A2F0522A81C73D006A59DA /* SGActTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A2F0512A81C73D006A59DA /* SGActTimeline.swift */; };
-		28A2F0552A81CD72006A59DA /* ActModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A2F0542A81CD72006A59DA /* ActModel.swift */; };
-		28A2F0572A81CF93006A59DA /* ActViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A2F0562A81CF93006A59DA /* ActViewModel.swift */; };
 		28A2F0592A82DD8C006A59DA /* SGActSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A2F0582A82DD8C006A59DA /* SGActSchedule.swift */; };
 		28A2F05B2A82E250006A59DA /* SGActFeatured.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A2F05A2A82E250006A59DA /* SGActFeatured.swift */; };
 /* End PBXBuildFile section */
@@ -54,10 +54,10 @@
 		281B51A52A7C837200F4EAFC /* SGPillButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGPillButton.swift; sourceTree = "<group>"; };
 		281B51A82A7C8D2200F4EAFC /* PlaceholderAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderAction.swift; sourceTree = "<group>"; };
 		2887768E2A82F78B00326204 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		288776922A8314CB00326204 /* Riverside.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Riverside.xcdatamodel; sourceTree = "<group>"; };
+		288776942A831B7C00326204 /* ActModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActModel.swift; sourceTree = "<group>"; };
 		28A2F04F2A81BB03006A59DA /* SGAppIconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGAppIconButton.swift; sourceTree = "<group>"; };
 		28A2F0512A81C73D006A59DA /* SGActTimeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGActTimeline.swift; sourceTree = "<group>"; };
-		28A2F0542A81CD72006A59DA /* ActModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActModel.swift; sourceTree = "<group>"; };
-		28A2F0562A81CF93006A59DA /* ActViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActViewModel.swift; sourceTree = "<group>"; };
 		28A2F0582A82DD8C006A59DA /* SGActSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGActSchedule.swift; sourceTree = "<group>"; };
 		28A2F05A2A82E250006A59DA /* SGActFeatured.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGActFeatured.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,6 +93,7 @@
 		281B516D2A7B045100F4EAFC /* StageGuide */ = {
 			isa = PBXGroup;
 			children = (
+				288776902A8314B400326204 /* Data */,
 				281B51982A7B2A8C00F4EAFC /* Info.plist */,
 				281B517C2A7B160800F4EAFC /* Design System */,
 				281B516E2A7B045100F4EAFC /* StageGuideApp.swift */,
@@ -117,7 +118,6 @@
 			children = (
 				281B517D2A7B161300F4EAFC /* Components */,
 				281B518D2A7B273D00F4EAFC /* Foundations */,
-				28A2F0532A81CD51006A59DA /* Models */,
 				281B51A72A7C8D1300F4EAFC /* Utilities */,
 			);
 			path = "Design System";
@@ -264,13 +264,13 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		28A2F0532A81CD51006A59DA /* Models */ = {
+		288776902A8314B400326204 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				28A2F0542A81CD72006A59DA /* ActModel.swift */,
-				28A2F0562A81CF93006A59DA /* ActViewModel.swift */,
+				288776912A8314CB00326204 /* Lineup.xcdatamodeld */,
+				288776942A831B7C00326204 /* ActModel.swift */,
 			);
-			path = Models;
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -355,13 +355,13 @@
 				281B51A92A7C8D2200F4EAFC /* PlaceholderAction.swift in Sources */,
 				281B519C2A7B30A400F4EAFC /* CustomFonts.swift in Sources */,
 				281777212A7D86BB00D2EF40 /* SGCircleButton.swift in Sources */,
-				28A2F0572A81CF93006A59DA /* ActViewModel.swift in Sources */,
 				2817775B2A7F156C00D2EF40 /* SGSubscriptionPerk.swift in Sources */,
 				281B51712A7B045100F4EAFC /* ContentView.swift in Sources */,
 				281B516F2A7B045100F4EAFC /* StageGuideApp.swift in Sources */,
-				28A2F0552A81CD72006A59DA /* ActModel.swift in Sources */,
 				28A2F0522A81C73D006A59DA /* SGActTimeline.swift in Sources */,
+				288776932A8314CB00326204 /* Lineup.xcdatamodeld in Sources */,
 				28A2F0592A82DD8C006A59DA /* SGActSchedule.swift in Sources */,
+				288776952A831B7C00326204 /* ActModel.swift in Sources */,
 				28A2F05B2A82E250006A59DA /* SGActFeatured.swift in Sources */,
 				281B51A02A7C6FCA00F4EAFC /* SGButton.swift in Sources */,
 				281777232A7D916700D2EF40 /* SGAddButton.swift in Sources */,
@@ -565,6 +565,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		288776912A8314CB00326204 /* Lineup.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				288776922A8314CB00326204 /* Riverside.xcdatamodel */,
+			);
+			currentVersion = 288776922A8314CB00326204 /* Riverside.xcdatamodel */;
+			path = Lineup.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 281B51632A7B045100F4EAFC /* Project object */;
 }

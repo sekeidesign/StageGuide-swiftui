@@ -8,16 +8,20 @@
 import SwiftUI
 
 struct SGActFeatured: View {
-    @Binding var isActive: Bool
     var actName: String = "Gigantic NGHTMRE"
-    var actImage: Image = Image("Artist Placeholder")
-    var duration: CGFloat = 60
-    var hourScale: CGFloat = 240
+    var actImage: Image = Image("Artists/Artist Placeholder")
+    var startTime: Date = dateFrom(year: 2023, month: 9, day: 8, hour: 18, minute: 0)
+    var endTime: Date = dateFrom(year: 2023, month: 9, day: 8, hour: 19, minute: 0)
     var stageName: String = "Main"
     var stageColor: Color = Color(uiColor: .systemYellow)
     var showStageColor: Bool = false
+    @Binding var isFavorite: Bool
+    
+    @State var canTouchDown = true
+    @State var isPressed = false
     
     var body: some View {
+        
         VStack(spacing: 0) {
             actImage
                 .resizable()
@@ -47,29 +51,49 @@ struct SGActFeatured: View {
                         Image(systemName: "clock")
                             .font(.system(size: 10))
                             .foregroundColor(Color(uiColor: .secondaryLabel))
-                        Text("10:30pm-11:30pm")
+                        Text("\(formatTime(date: startTime))-\(formatTime(date: endTime))")
                             .font(.footnote)
                             .foregroundColor(Color(UIColor.secondaryLabel))
                     }
                     
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
-                SGAddButton(isActive: $isActive){
-                    isActive.toggle()
+                SGAddButton(isActive: $isFavorite){
+                    isFavorite.toggle()
                 }
             }
             .padding(12)
             .padding(.trailing, 4)
         }
         .frame(width: 232)
-        .background(isActive ? Color(UIColor.secondarySystemFill) : Color(UIColor.tertiarySystemFill))
+        .background(isFavorite ? Color(UIColor.secondarySystemFill) : Color(UIColor.tertiarySystemFill))
         .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+//        .scaleEffect(isPressed ? 0.9 : 1)
+//        .animation(.interpolatingSpring(mass: 0.5, stiffness: 100, damping: 7), value: isPressed)
+//        .gesture(DragGesture(minimumDistance: 0.0)
+//            .onChanged{ _ in
+//                if canTouchDown {
+//                    isPressed = true
+//                }
+//                canTouchDown = false
+//            } .onEnded { _ in
+//                isPressed = false
+//                canTouchDown = true
+//            }
+//        )
     }
 }
+
+func formatTime(date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "h:mma"
+        
+        return dateFormatter.string(from: date)
+    }
 
 struct SGActFeatured_Previews: PreviewProvider {
     static var previews: some View {
         @State var isActive = false
-        SGActFeatured(isActive: $isActive)
+        SGActFeatured(isFavorite: $isActive)
     }
 }

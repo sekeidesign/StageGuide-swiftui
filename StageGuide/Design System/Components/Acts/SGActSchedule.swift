@@ -8,13 +8,11 @@
 import SwiftUI
 
 struct SGActSchedule: View {
-    @Binding var isActive: Bool
     var actName: String = "Seven Lions"
-    var duration: CGFloat = 60
-    var hourScale: CGFloat = 240
     var stageName: String = "Main"
     var stageColor: Color = Color(uiColor: .systemYellow)
     var showStageColor: Bool = false
+    @Binding var isFavorite: Bool
     
     var body: some View {
         HStack(spacing: 12) {
@@ -46,14 +44,14 @@ struct SGActSchedule: View {
                 
             }
             .frame(maxWidth: .infinity, alignment: .leading)
-            SGAddButton(isActive: $isActive){
-                isActive.toggle()
+            SGAddButton(isActive: $isFavorite){
+                isFavorite.toggle()
             }
         }
         .frame(maxWidth: .infinity)
         .padding(12)
         .padding(.trailing, 4)
-        .background(isActive ? Color(UIColor.secondarySystemFill) : Color(UIColor.tertiarySystemFill))
+        .background(isFavorite ? Color(UIColor.secondarySystemFill) : Color(UIColor.tertiarySystemFill))
         .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
     }
 }
@@ -61,6 +59,6 @@ struct SGActSchedule: View {
 struct SGActSchedule_Previews: PreviewProvider {
     static var previews: some View {
         @State var isActive = false
-        SGActSchedule(isActive: $isActive)
+        SGActSchedule(isFavorite: $isActive)
     }
 }
