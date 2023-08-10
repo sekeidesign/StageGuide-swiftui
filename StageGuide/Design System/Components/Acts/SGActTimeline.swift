@@ -8,21 +8,19 @@
 import SwiftUI
 
 struct SGActTimeline: View {
-    var actName: String = "Seven Lions"
-    var startTime: Date = dateFrom(year: 2023, month: 9, day: 8, hour: 18, minute: 0)
-    var endTime: Date = dateFrom(year: 2023, month: 9, day: 8, hour: 18, minute: 45)
+    var act: Act = placeholderAct()
     @Binding var isFavorite: Bool
     let hourScale: CGFloat = 240
     
     var body: some View {
-        let duration = getDuration(date1: startTime, date2: endTime)
+        let duration = getDuration(date1: act.startTime, date2: act.endTime)
         
         HStack(spacing: 12) {
             VStack(alignment: .leading, spacing: 2) {
-                Text(actName)
+                Text(act.name)
                         .font(.callout)
                         .bold()
-                Text("10:30pm-11:30pm")
+                Text("\(formatTimeRange(startTime: act.startTime, endTime: act.endTime, timeZone: "America/New_York"))")
                     .font(.caption)
                     .foregroundColor(Color(UIColor.secondaryLabel))
             }

@@ -8,11 +8,7 @@
 import SwiftUI
 
 struct SGActFeatured: View {
-    var actName: String = "Gigantic NGHTMRE"
-    var actImage: Image = Image("Artists/Artist Placeholder")
-    var startTime: Date = dateFrom(year: 2023, month: 9, day: 8, hour: 18, minute: 0)
-    var endTime: Date = dateFrom(year: 2023, month: 9, day: 8, hour: 19, minute: 0)
-    var stageName: String = "Main"
+    var act: Act = placeholderAct()
     var stageColor: Color = Color(uiColor: .systemYellow)
     var showStageColor: Bool = false
     @Binding var isFavorite: Bool
@@ -23,7 +19,7 @@ struct SGActFeatured: View {
     var body: some View {
         
         VStack(spacing: 0) {
-            actImage
+            act.image
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(height: 88)
@@ -35,7 +31,7 @@ struct SGActFeatured: View {
                     .cornerRadius(99)
                     .isHidden(!showStageColor, remove: true)
                 VStack(alignment: .leading, spacing: 2) {
-                    Text(actName)
+                    Text(act.name)
                         .font(.callout)
                         .bold()
                         .frame(height: 20)
@@ -43,7 +39,7 @@ struct SGActFeatured: View {
                         Image(systemName: "mappin.and.ellipse")
                             .font(.system(size: 10))
                             .foregroundColor(Color(uiColor: .secondaryLabel))
-                        Text("\(stageName) Stage")
+                        Text("\(act.stage) Stage")
                             .font(.footnote)
                             .foregroundColor(Color(UIColor.secondaryLabel))
                     }
@@ -51,7 +47,7 @@ struct SGActFeatured: View {
                         Image(systemName: "clock")
                             .font(.system(size: 10))
                             .foregroundColor(Color(uiColor: .secondaryLabel))
-                        Text("\(formatTime(date: startTime))-\(formatTime(date: endTime))")
+                        Text("\(formatTimeRange(startTime: act.startTime, endTime: act.endTime, timeZone: "America/New_York"))")
                             .font(.footnote)
                             .foregroundColor(Color(UIColor.secondaryLabel))
                     }
@@ -83,13 +79,6 @@ struct SGActFeatured: View {
 //        )
     }
 }
-
-func formatTime(date: Date) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "h:mma"
-        
-        return dateFormatter.string(from: date)
-    }
 
 struct SGActFeatured_Previews: PreviewProvider {
     static var previews: some View {

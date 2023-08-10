@@ -12,15 +12,19 @@ struct ContentView: View {
     @State var isActive = true
     
     var body: some View {
-        ScrollView(.horizontal) {
-            HStack(spacing: 24) {
-                ForEach(friday) { act in
-                    SGActFeatured(actName: act.name, actImage: act.image, startTime: act.startTime, endTime: act.endTime, stageName: act.stage, isFavorite: $isActive)
+        VStack {
+            ScrollView(.horizontal) {
+                HStack(spacing: 24) {
+                    ForEach(friday) { act in
+                        SGActFeatured(act: act, isFavorite: $isActive)
+                    }
                 }
             }
+            .frame(maxWidth: .infinity)
+            .padding()
+            VStack {
+            }
         }
-        .frame(maxWidth: .infinity)
-        .padding()
     }
 }
 
