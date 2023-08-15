@@ -28,7 +28,8 @@
 		288776932A8314CB00326204 /* Lineup.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 288776912A8314CB00326204 /* Lineup.xcdatamodeld */; };
 		288776952A831B7C00326204 /* ActModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288776942A831B7C00326204 /* ActModel.swift */; };
 		288776992A85743300326204 /* SGLineupSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288776982A85743300326204 /* SGLineupSchedule.swift */; };
-		2887769B2A858A1F00326204 /* Dates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2887769A2A858A1F00326204 /* Dates.swift */; };
+		2887769B2A858A1F00326204 /* Schedules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2887769A2A858A1F00326204 /* Schedules.swift */; };
+		2887769D2A8AB8C200326204 /* SGLineupAlphabetical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2887769C2A8AB8C200326204 /* SGLineupAlphabetical.swift */; };
 		28A2F0502A81BB03006A59DA /* SGAppIconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A2F04F2A81BB03006A59DA /* SGAppIconButton.swift */; };
 		28A2F0522A81C73D006A59DA /* SGActTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A2F0512A81C73D006A59DA /* SGActTimeline.swift */; };
 		28A2F0592A82DD8C006A59DA /* SGActSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A2F0582A82DD8C006A59DA /* SGActSchedule.swift */; };
@@ -59,7 +60,8 @@
 		288776922A8314CB00326204 /* Riverside.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Riverside.xcdatamodel; sourceTree = "<group>"; };
 		288776942A831B7C00326204 /* ActModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActModel.swift; sourceTree = "<group>"; };
 		288776982A85743300326204 /* SGLineupSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGLineupSchedule.swift; sourceTree = "<group>"; };
-		2887769A2A858A1F00326204 /* Dates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dates.swift; sourceTree = "<group>"; };
+		2887769A2A858A1F00326204 /* Schedules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedules.swift; sourceTree = "<group>"; };
+		2887769C2A8AB8C200326204 /* SGLineupAlphabetical.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGLineupAlphabetical.swift; sourceTree = "<group>"; };
 		28A2F04F2A81BB03006A59DA /* SGAppIconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGAppIconButton.swift; sourceTree = "<group>"; };
 		28A2F0512A81C73D006A59DA /* SGActTimeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGActTimeline.swift; sourceTree = "<group>"; };
 		28A2F0582A82DD8C006A59DA /* SGActSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGActSchedule.swift; sourceTree = "<group>"; };
@@ -265,7 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				281B51A82A7C8D2200F4EAFC /* Placeholders.swift */,
-				2887769A2A858A1F00326204 /* Dates.swift */,
+				2887769A2A858A1F00326204 /* Schedules.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -291,6 +293,7 @@
 			isa = PBXGroup;
 			children = (
 				288776982A85743300326204 /* SGLineupSchedule.swift */,
+				2887769C2A8AB8C200326204 /* SGLineupAlphabetical.swift */,
 			);
 			path = Lineup;
 			sourceTree = "<group>";
@@ -387,7 +390,8 @@
 				288776952A831B7C00326204 /* ActModel.swift in Sources */,
 				28A2F05B2A82E250006A59DA /* SGActFeatured.swift in Sources */,
 				281B51A02A7C6FCA00F4EAFC /* SGButton.swift in Sources */,
-				2887769B2A858A1F00326204 /* Dates.swift in Sources */,
+				2887769B2A858A1F00326204 /* Schedules.swift in Sources */,
+				2887769D2A8AB8C200326204 /* SGLineupAlphabetical.swift in Sources */,
 				281777232A7D916700D2EF40 /* SGAddButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

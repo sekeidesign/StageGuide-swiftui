@@ -1,25 +1,26 @@
 //
-//  SGLineupSchedule.swift
+//  SGLineupAlphabetical.swift
 //  StageGuide
 //
-//  Created by Piergiorgio Gonni on 2023-08-10.
+//  Created by Piergiorgio Gonni on 2023-08-14.
 //
 
 import SwiftUI
 
-struct SGLineupSchedule: View {
+struct SGLineupAlphabetical: View {
     @State var isFavorite = false
-    let lineupDay = friday.sorted { $0.startTime < $1.startTime }
+    let lineupDay = friday.sorted { $0.name < $1.name }
     
     var body: some View {
-        let timeSlots = extractTimeSlots(lineup: lineupDay)
+        let initialSlots = extractInitials(lineup: lineupDay)
         VStack {
-            ForEach(timeSlots, id: \.self) { timeSlot in
+            ForEach(initialSlots, id: \.self) { initial in
                 let actsInSlot: [Act] = lineupDay.filter {
-                    formatToTimeSlot(inputTime: $0.startTime) == timeSlot
+                    let actName = $0.name
+                    return "\(actName[actName.startIndex])" == initial
                 }
                 HStack (alignment: .top){
-                    Text("\(timeSlot)")
+                    Text("\(initial)")
                         .font(.footnote)
                         .foregroundStyle(Color(uiColor: .secondaryLabel))
                         .padding(.top, 4)
@@ -42,8 +43,10 @@ struct SGLineupSchedule: View {
         }
         .padding(.leading, 16)
     }
+    init() {
+    }
 }
 
 #Preview {
-    SGLineupSchedule()
+    SGLineupAlphabetical()
 }
