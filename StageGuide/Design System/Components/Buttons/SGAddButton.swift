@@ -14,7 +14,7 @@ struct SGAddButton: View {
         case edge
     }
     
-    @Binding var isActive: Bool
+    var isActive: Bool
     var variant: AddButtonVariants = .floating
     var action: () -> Void = placeholderAction
     
@@ -92,7 +92,7 @@ struct SGAddButton_Previews: PreviewProvider {
                         .font(.callout)
                         .foregroundColor(Color(UIColor.secondaryLabel))
                 }
-                SGAddButton(isActive: $placeholderActive)
+                SGAddButton(isActive: false)
             }
             .padding(.horizontal, 12)
             .padding(.vertical, 8)
@@ -108,7 +108,7 @@ struct SGAddButton_Previews: PreviewProvider {
                         .font(.caption)
                         .foregroundColor(Color(UIColor.secondaryLabel))
                 }
-                SGAddButton(isActive: $placeholderActive, variant: .edge).frame(maxHeight: .infinity)
+                SGAddButton(isActive: false, variant: .edge).frame(maxHeight: .infinity)
             }
             .padding(.leading, 8)
             .padding(.trailing, 0)

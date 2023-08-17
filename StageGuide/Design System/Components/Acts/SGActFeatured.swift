@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct SGActFeatured: View {
-    var act: Act = placeholderAct()
+    var act: Act?
     var stageColor: Color = Color(uiColor: .systemYellow)
     var showStageColor: Bool = false
-    @Binding var isFavorite: Bool
+    var isFavorite: Bool = false
     
     @State var canTouchDown = true
     @State var isPressed = false
@@ -19,7 +19,7 @@ struct SGActFeatured: View {
     var body: some View {
         
         VStack(spacing: 0) {
-            act.image
+            Image(act?.imageName ?? "Artist Placeholder")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(height: 88)
@@ -31,7 +31,7 @@ struct SGActFeatured: View {
                     .cornerRadius(99)
                     .isHidden(!showStageColor, remove: true)
                 VStack(alignment: .leading, spacing: 2) {
-                    Text(act.name)
+                    Text(act?.name ?? "Unknown name")
                         .font(.callout)
                         .bold()
                         .frame(height: 20)
@@ -39,7 +39,7 @@ struct SGActFeatured: View {
                         Image(systemName: "mappin.and.ellipse")
                             .font(.system(size: 10))
                             .foregroundColor(Color(uiColor: .secondaryLabel))
-                        Text("\(act.stage) Stage")
+                        Text("\(act?.stage?.name ?? "Unknown") Stage")
                             .font(.footnote)
                             .foregroundColor(Color(UIColor.secondaryLabel))
                     }
@@ -47,15 +47,15 @@ struct SGActFeatured: View {
                         Image(systemName: "clock")
                             .font(.system(size: 10))
                             .foregroundColor(Color(uiColor: .secondaryLabel))
-                        Text("\(formatTimeRange(startTime: act.startTime, endTime: act.endTime, timeZone: "America/New_York"))")
+                        Text("\(formatTimeRange(startTime: act?.startTime ?? Date(), endTime: act?.endTime ?? Date(), timeZone: "America/New_York"))")
                             .font(.footnote)
                             .foregroundColor(Color(UIColor.secondaryLabel))
                     }
                     
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
-                SGAddButton(isActive: $isFavorite){
-                    isFavorite.toggle()
+                SGAddButton(isActive: false){
+                    //
                 }
             }
             .padding(12)
@@ -82,7 +82,6 @@ struct SGActFeatured: View {
 
 struct SGActFeatured_Previews: PreviewProvider {
     static var previews: some View {
-        @State var isActive = false
-        SGActFeatured(isFavorite: $isActive)
+        SGActFeatured(isFavorite: false)
     }
 }

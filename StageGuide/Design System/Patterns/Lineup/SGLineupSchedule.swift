@@ -9,15 +9,16 @@ import SwiftUI
 
 struct SGLineupSchedule: View {
     @State var isFavorite = false
-    let lineupDay = friday.sorted { $0.startTime < $1.startTime }
+    var day: Day?
     
     var body: some View {
-        let timeSlots = extractTimeSlots(lineup: lineupDay)
+        let lineupDay = day?.acts?.compactMap { $0 as? Act }
+        let timeSlots = extractTimeSlots(lineup: lineupDay ?? [])
         VStack {
             ForEach(timeSlots, id: \.self) { timeSlot in
-                let actsInSlot: [Act] = lineupDay.filter {
-                    formatToTimeSlot(inputTime: $0.startTime) == timeSlot
-                }
+                let actsInSlot: [Act] = lineupDay?.filter {
+                    formatToTimeSlot(inputTime: $0.startTime ?? Date()) == timeSlot
+                } ?? []
                 HStack (alignment: .top){
                     Text("\(timeSlot)")
                         .font(.footnote)

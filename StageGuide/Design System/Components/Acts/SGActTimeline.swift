@@ -8,26 +8,26 @@
 import SwiftUI
 
 struct SGActTimeline: View {
-    var act: Act = placeholderAct()
+    var act: Act?
     @Binding var isFavorite: Bool
     let hourScale: CGFloat = 240
     
     var body: some View {
-        let duration = getDuration(date1: act.startTime, date2: act.endTime)
+        let duration = getDuration(date1: act?.startTime ?? Date(), date2: act?.endTime ?? Date())
         
         HStack(spacing: 12) {
             VStack(alignment: .leading, spacing: 2) {
-                Text(act.name)
+                Text(act?.name ?? "Unknown name")
                         .font(.callout)
                         .bold()
-                Text("\(formatTimeRange(startTime: act.startTime, endTime: act.endTime, timeZone: "America/New_York"))")
+                Text("\(formatTimeRange(startTime: act?.startTime ?? Date(), endTime: act?.endTime ?? Date(), timeZone: "America/New_York"))")
                     .font(.caption)
                     .foregroundColor(Color(UIColor.secondaryLabel))
             }
             .padding(.leading, 8)
             .padding(.trailing, 4)
             .frame(maxWidth: .infinity, alignment: .leading)
-            SGAddButton(isActive: $isFavorite, variant: .edge){
+            SGAddButton(isActive: false, variant: .edge){
                 isFavorite.toggle()
             }
         }

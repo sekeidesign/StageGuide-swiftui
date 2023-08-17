@@ -9,16 +9,19 @@ import SwiftUI
 
 struct SGLineupAlphabetical: View {
     @State var isFavorite = false
-    let lineupDay = friday.sorted { $0.name < $1.name }
+    var day: Day?
     
     var body: some View {
-        let initialSlots = extractInitials(lineup: lineupDay)
+        let lineupDay = day?.acts?.compactMap { $0 as? Act }
+        let initialSlots = extractInitials(lineup: lineupDay ?? [])
+        let placeholderName = "Unknown"
         VStack {
             ForEach(initialSlots, id: \.self) { initial in
-                let actsInSlot: [Act] = lineupDay.filter {
+                let actsInSlot: [Act] = lineupDay?.filter {
                     let actName = $0.name
-                    return "\(actName[actName.startIndex])" == initial
-                }
+                    let currentInitial = actName?[actName?.startIndex ?? placeholderName.startIndex] ?? "U"
+                    return "\(currentInitial)" == initial
+                } ?? []
                 HStack (alignment: .top){
                     Text("\(initial)")
                         .font(.footnote)
@@ -42,8 +45,6 @@ struct SGLineupAlphabetical: View {
             }
         }
         .padding(.leading, 16)
-    }
-    init() {
     }
 }
 
