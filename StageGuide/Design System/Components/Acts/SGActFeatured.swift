@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SGActFeatured: View {
     @ObservedObject var viewModel: ActViewModel
+    @State private var isSheetPresented = false
     
     @State var canTouchDown = true
     @State var isPressed = false
@@ -59,6 +60,12 @@ struct SGActFeatured: View {
         .frame(width: 232)
         .background(act.isFavorite ? Color(UIColor.secondarySystemFill) : Color(UIColor.tertiarySystemFill))
         .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+        .onTapGesture {
+            isSheetPresented = true
+        }
+        .sheet(isPresented: $isSheetPresented){
+            SGArtistProfileSheet(act: act)
+        }
 //        .scaleEffect(isPressed ? 0.9 : 1)
 //        .animation(.interpolatingSpring(mass: 0.5, stiffness: 100, damping: 7), value: isPressed)
 //        .gesture(DragGesture(minimumDistance: 0.0)

@@ -25,6 +25,8 @@
 		281B51A62A7C837200F4EAFC /* SGPillButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281B51A52A7C837200F4EAFC /* SGPillButton.swift */; };
 		281B51A92A7C8D2200F4EAFC /* Placeholders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281B51A82A7C8D2200F4EAFC /* Placeholders.swift */; };
 		282EEF9A2A91184B00BE6BE7 /* SGActViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282EEF992A91184B00BE6BE7 /* SGActViewModel.swift */; };
+		2867ED8C2A9156D3007065A6 /* SGArtistProfileSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2867ED8B2A9156D3007065A6 /* SGArtistProfileSheet.swift */; };
+		2867ED8F2A917911007065A6 /* SGReadMore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2867ED8E2A917911007065A6 /* SGReadMore.swift */; };
 		2887768F2A82F78B00326204 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 2887768E2A82F78B00326204 /* .gitignore */; };
 		288776932A8314CB00326204 /* Riverside.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 288776912A8314CB00326204 /* Riverside.xcdatamodeld */; };
 		288776952A831B7C00326204 /* Riverside.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288776942A831B7C00326204 /* Riverside.swift */; };
@@ -61,6 +63,8 @@
 		281B51A52A7C837200F4EAFC /* SGPillButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGPillButton.swift; sourceTree = "<group>"; };
 		281B51A82A7C8D2200F4EAFC /* Placeholders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placeholders.swift; sourceTree = "<group>"; };
 		282EEF992A91184B00BE6BE7 /* SGActViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGActViewModel.swift; sourceTree = "<group>"; };
+		2867ED8B2A9156D3007065A6 /* SGArtistProfileSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGArtistProfileSheet.swift; sourceTree = "<group>"; };
+		2867ED8E2A917911007065A6 /* SGReadMore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGReadMore.swift; sourceTree = "<group>"; };
 		2887768E2A82F78B00326204 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		288776922A8314CB00326204 /* Riverside.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Riverside.xcdatamodel; sourceTree = "<group>"; };
 		288776942A831B7C00326204 /* Riverside.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Riverside.swift; sourceTree = "<group>"; };
@@ -151,8 +155,10 @@
 				281B51862A7B167A00F4EAFC /* Navigation */,
 				281B51872A7B168100F4EAFC /* Playlist */,
 				281B51882A7B168600F4EAFC /* Settings */,
+				2867ED8A2A9156B1007065A6 /* Sheets */,
 				281B51892A7B168A00F4EAFC /* Stages */,
 				281B518A2A7B168F00F4EAFC /* Sticker */,
+				2867ED8D2A917901007065A6 /* Text */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -281,6 +287,22 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		2867ED8A2A9156B1007065A6 /* Sheets */ = {
+			isa = PBXGroup;
+			children = (
+				2867ED8B2A9156D3007065A6 /* SGArtistProfileSheet.swift */,
+			);
+			path = Sheets;
+			sourceTree = "<group>";
+		};
+		2867ED8D2A917901007065A6 /* Text */ = {
+			isa = PBXGroup;
+			children = (
+				2867ED8E2A917911007065A6 /* SGReadMore.swift */,
+			);
+			path = Text;
+			sourceTree = "<group>";
+		};
 		288776902A8314B400326204 /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -393,9 +415,11 @@
 				281B518C2A7B1C7A00F4EAFC /* SGLiveBadge.swift in Sources */,
 				281B51A92A7C8D2200F4EAFC /* Placeholders.swift in Sources */,
 				28F035542A8C3D9B009719C2 /* SGLineupTimeline.swift in Sources */,
+				2867ED8C2A9156D3007065A6 /* SGArtistProfileSheet.swift in Sources */,
 				288776992A85743300326204 /* SGLineupSchedule.swift in Sources */,
 				281B519C2A7B30A400F4EAFC /* CustomFonts.swift in Sources */,
 				281777212A7D86BB00D2EF40 /* SGCircleButton.swift in Sources */,
+				2867ED8F2A917911007065A6 /* SGReadMore.swift in Sources */,
 				2817775B2A7F156C00D2EF40 /* SGSubscriptionPerk.swift in Sources */,
 				281B51712A7B045100F4EAFC /* ContentView.swift in Sources */,
 				281B516F2A7B045100F4EAFC /* StageGuideApp.swift in Sources */,

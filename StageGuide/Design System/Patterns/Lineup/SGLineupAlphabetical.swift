@@ -30,7 +30,10 @@ struct SGLineupAlphabetical: View {
                         .frame(width: 40, alignment: .leading)
                     VStack {
                         ForEach(actsInSlot, id: \.self.id) { act in
-                            SGActSchedule(act: act, isFavorite: $isFavorite)
+                            let actViewModel = ActViewModel(act: act){
+                                // toggle
+                            }
+                            SGActSchedule(viewModel: actViewModel)
                         }
                     }
                     .padding(.trailing, 4)

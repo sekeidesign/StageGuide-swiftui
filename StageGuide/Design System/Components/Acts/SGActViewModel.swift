@@ -10,6 +10,7 @@ import SwiftUI
 class ActViewModel: ObservableObject {
     @Published var act: Act
     var toggleFavorite: () -> Void
+    let persistenceController = PersistenceController.shared
     
     init(act: Act, toggleAction: @escaping () -> Void) {
         self.act = act
@@ -26,6 +27,8 @@ class ActViewModel: ObservableObject {
         } catch {
             print("Error saving context: \(error)")
         }
+        
+        persistenceController.save()
         
         // Manually trigger objectWillChange to update the UI
         objectWillChange.send()

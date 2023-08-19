@@ -46,34 +46,29 @@ func formatTimeRange(startTime: Date, endTime: Date, timeZone: String) -> String
 }
 
 func formatToTimeSlot(inputTime: Date) -> String {
-        let formattedTime = inputTime.formatted(date: .omitted, time: .shortened)
-        let inputFormatter = DateFormatter()
-        inputFormatter.dateFormat = "h:mm a"
-        
-        let outputFormatter = DateFormatter()
-        outputFormatter.dateFormat = "ha"
-        
-        if let date = inputFormatter.date(from: formattedTime) {
-            return outputFormatter.string(from: date)
-        }
-        
-        return inputTime.formatted(date: .omitted, time: .shortened)
-    }
+    let outputFormatter = DateFormatter()
+    outputFormatter.dateFormat = "ha"
+    
+    // Set the locale to enforce 12-hour format
+    outputFormatter.locale = Locale(identifier: "en_US_POSIX")
+    
+    return outputFormatter.string(from: inputTime)
+}
 
 func extractInitials(lineup: [Act]) -> [String] {
-//        let initial = "\(actName[actName.startIndex])"
-        let placeholderName = "Unknown"
+    //        let initial = "\(actName[actName.startIndex])"
+    let placeholderName = "Unknown"
     
-        var initials: [String] = []
-        let sortedAct = lineup.sorted { $0.name ?? "Unknown" < $1.name ?? "Unknown" }
-        print("sortedTimeSlots")
-        sortedAct.forEach { act in
-            let actName = act.name
-            guard !initials.contains("\(actName?[actName?.startIndex ?? placeholderName.startIndex] ?? "U")") else {
-                return
-            }
-            initials.append("\(actName?[actName?.startIndex ?? placeholderName.startIndex] ?? "U")")
+    var initials: [String] = []
+    let sortedAct = lineup.sorted { $0.name ?? "Unknown" < $1.name ?? "Unknown" }
+    print("sortedTimeSlots")
+    sortedAct.forEach { act in
+        let actName = act.name
+        guard !initials.contains("\(actName?[actName?.startIndex ?? placeholderName.startIndex] ?? "U")") else {
+            return
         }
-        
-        return initials
+        initials.append("\(actName?[actName?.startIndex ?? placeholderName.startIndex] ?? "U")")
     }
+    
+    return initials
+}
