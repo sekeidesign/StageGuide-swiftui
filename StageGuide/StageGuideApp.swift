@@ -8,10 +8,19 @@
 import SwiftUI
 
 class AppDelegate: NSObject, UIApplicationDelegate {
+    
+    let persistenceController = PersistenceController.shared
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-        UILabel.appearance().substituteFontName = "Satoshi";
-        UITextView.appearance().substituteFontName =  "Satoshi";
-        UITextField.appearance().substituteFontName = "Satoshi";
+        
+        print("Has launched before: \(UserDefaults.standard.bool(forKey: "HasLaunchedBefore"))")
+        
+        if !UserDefaults.standard.bool(forKey: "HasLaunchedBefore") {
+            // Populate Core Data with initial data
+            populateInitialData()
+            UserDefaults.standard.set(true, forKey: "HasLaunchedBefore")
+        }
+        
         return true
     }
 }

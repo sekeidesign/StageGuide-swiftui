@@ -37,4 +37,35 @@ struct PersistenceController {
         context.delete(object)
         save(completion: completion)
     }
+    
+    func deleteAllData() -> Void {
+        
+        // Get a reference to a NSPersistentStoreCoordinator
+        let storeContainer =
+        container.persistentStoreCoordinator
+        
+        // Delete each existing persistent store
+        for store in storeContainer.persistentStores {
+            do {
+                try storeContainer.destroyPersistentStore(
+                    at: store.url!,
+                    ofType: store.type,
+                    options: nil
+                )} catch {}
+        }
+        
+        // Re-create the persistent container
+        let persistentContainer = NSPersistentContainer(
+            name: "Riverside"
+        )
+        
+        // Calling loadPersistentStores will re-create the
+        // persistent stores
+        persistentContainer.loadPersistentStores {
+            (store, error) in
+            print("Error in \(store): \(String(describing: error?.localizedDescription))")
+        }
+        
+        UserDefaults.standard.set(false, forKey: "HasLaunchedBefore")
+    }
 }

@@ -6,6 +6,7 @@
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="imageName" attributeType="String" defaultValueString="&quot;Artist Placeholder&quot;"/>
         <attribute name="isFavorite" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="isFeatured" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String" defaultValueString="Unknown name"/>
         <attribute name="shortName" optional="YES" attributeType="String" defaultValueString="Use name"/>
         <attribute name="startTime" optional="YES" attributeType="Date" defaultDateTimeInterval="714279600" usesScalarValueType="NO"/>

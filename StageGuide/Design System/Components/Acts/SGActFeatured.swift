@@ -8,30 +8,27 @@
 import SwiftUI
 
 struct SGActFeatured: View {
-    var act: Act?
-    var stageColor: Color = Color(uiColor: .systemYellow)
-    var showStageColor: Bool = false
-    var isFavorite: Bool = false
+    @ObservedObject var viewModel: ActViewModel
     
     @State var canTouchDown = true
     @State var isPressed = false
     
     var body: some View {
-        
+        let act = viewModel.act
         VStack(spacing: 0) {
-            Image(act?.imageName ?? "Artist Placeholder")
+            Image(act.imageName ?? "Artist Placeholder")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(height: 88)
                 .clipped()
             HStack(spacing: 12) {
-                HStack {}
-                    .frame(width: 2, height: 52)
-                    .background(stageColor)
-                    .cornerRadius(99)
-                    .isHidden(!showStageColor, remove: true)
+//                HStack {}
+//                    .frame(width: 2, height: 52)
+//                    .background(stageColor)
+//                    .cornerRadius(99)
+//                    .isHidden(!showStageColor, remove: true)
                 VStack(alignment: .leading, spacing: 2) {
-                    Text(act?.name ?? "Unknown name")
+                    Text(act.name ?? "Unknown name")
                         .font(.callout)
                         .bold()
                         .frame(height: 20)
@@ -39,7 +36,7 @@ struct SGActFeatured: View {
                         Image(systemName: "mappin.and.ellipse")
                             .font(.system(size: 10))
                             .foregroundColor(Color(uiColor: .secondaryLabel))
-                        Text("\(act?.stage?.name ?? "Unknown") Stage")
+                        Text("\(act.stage?.name ?? "Unknown") Stage")
                             .font(.footnote)
                             .foregroundColor(Color(UIColor.secondaryLabel))
                     }
@@ -47,22 +44,20 @@ struct SGActFeatured: View {
                         Image(systemName: "clock")
                             .font(.system(size: 10))
                             .foregroundColor(Color(uiColor: .secondaryLabel))
-                        Text("\(formatTimeRange(startTime: act?.startTime ?? Date(), endTime: act?.endTime ?? Date(), timeZone: "America/New_York"))")
+                        Text("\(formatTimeRange(startTime: act.startTime ?? Date(), endTime: act.endTime ?? Date(), timeZone: "America/New_York"))")
                             .font(.footnote)
                             .foregroundColor(Color(UIColor.secondaryLabel))
                     }
                     
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
-                SGAddButton(isActive: false){
-                    //
-                }
+                SGAddButton(isActive: act.isFavorite, action: viewModel.toggleFavoriteStatus)
             }
             .padding(12)
             .padding(.trailing, 4)
         }
         .frame(width: 232)
-        .background(isFavorite ? Color(UIColor.secondarySystemFill) : Color(UIColor.tertiarySystemFill))
+        .background(act.isFavorite ? Color(UIColor.secondarySystemFill) : Color(UIColor.tertiarySystemFill))
         .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
 //        .scaleEffect(isPressed ? 0.9 : 1)
 //        .animation(.interpolatingSpring(mass: 0.5, stiffness: 100, damping: 7), value: isPressed)
@@ -80,8 +75,8 @@ struct SGActFeatured: View {
     }
 }
 
-struct SGActFeatured_Previews: PreviewProvider {
-    static var previews: some View {
-        SGActFeatured(isFavorite: false)
-    }
-}
+//struct SGActFeatured_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SGActFeatured(isFavorite: false)
+//    }
+//}
