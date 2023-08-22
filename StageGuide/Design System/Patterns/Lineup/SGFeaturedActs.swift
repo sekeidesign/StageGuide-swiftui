@@ -26,7 +26,7 @@ struct SGFeaturedActs: View {
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding()
         ScrollView(.horizontal) {
-            HStack(spacing: 24) {
+            HStack(spacing: 16) {
                 ForEach(featuredActs.sorted(by: { $0.startTime ?? Date() > $1.startTime ?? Date()}) , id: \.self.id) { act in
                     let actViewModel = ActViewModel(act: act){
                         // toggle

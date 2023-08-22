@@ -19,6 +19,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
             // Populate Core Data with initial data
             populateInitialData()
             UserDefaults.standard.set(true, forKey: "HasLaunchedBefore")
+            UserDefaults.standard.set(true, forKey: "ActiveDay")
         }
         
         return true

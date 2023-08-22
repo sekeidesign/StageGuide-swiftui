@@ -8,21 +8,34 @@
 import SwiftUI
 
 struct EventScheduleView: View {
-    @Environment(\.managedObjectContext) var managedObjectContext
-    @FetchRequest(sortDescriptors: []) var days: FetchedResults<Day>
     let persistenceController = PersistenceController.shared
+    let days: FetchedResults<Day>
+    @State var activeDay: Day
     
     var body: some View {
-        var friday: Day? {
-            days.first(where: { $0.name == "Friday" })
+        var activeDayObject: Day? {
+            days.first(where: { $0.name == activeDay.name })
         }
-        let fridayActs = friday?.acts?.compactMap { $0 as? Act }
-        let fridayFeatured = fridayActs?.filter() { act in
+        let activeDayActs = activeDayObject?.acts?.compactMap { $0 as? Act }
+        let activeDayFeatured = activeDayActs?.filter() { act in
             return act.isFeatured
         }
         NavigationStack {
             VStack {
-                SGFeaturedActs(featuredActs: fridayFeatured ?? [])
+                Picker("Day", selection: $activeDay) {
+                    ForEach(days.sorted(by: { $0.startTime ?? Date() < $1.startTime ?? Date() }), id: \.self) { day in
+                        Text(day.name ?? "Unknown").tag(days.filter({ filteredDay in
+                            day.name == filteredDay.name
+                        }))
+                    }
+                }
+                .onChange(of: activeDay) { day in
+                    UserDefaults.standard.set(day.name ?? "", forKey: "ActiveDay")
+                    print("Set: \(day.name ?? "")")
+                }
+                .pickerStyle(.segmented)
+                .padding()
+                SGFeaturedActs(featuredActs: activeDayFeatured ?? [])
                 HStack {
                     Text("Full schedule")
                         .font(.title3)
@@ -30,7 +43,7 @@ struct EventScheduleView: View {
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding()
-                SGLineupAlphabetical(day: friday)
+                SGLineupAlphabetical(day: activeDayObject)
             }
             .navigationTitle(Text("Riverside Festival"))
             .navigationBarHidden(true)
@@ -38,6 +51,6 @@ struct EventScheduleView: View {
     }
 }
 
-#Preview {
-    EventScheduleView()
-}
+//#Preview {
+//    EventScheduleView()
+//}
