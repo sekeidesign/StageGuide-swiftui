@@ -27,6 +27,8 @@
 		282EEF9A2A91184B00BE6BE7 /* SGActViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282EEF992A91184B00BE6BE7 /* SGActViewModel.swift */; };
 		2867ED8C2A9156D3007065A6 /* SGArtistProfileSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2867ED8B2A9156D3007065A6 /* SGArtistProfileSheet.swift */; };
 		2867ED8F2A917911007065A6 /* SGReadMore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2867ED8E2A917911007065A6 /* SGReadMore.swift */; };
+		2867ED922A9529A7007065A6 /* EventScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2867ED912A9529A7007065A6 /* EventScheduleView.swift */; };
+		2867ED942A952A38007065A6 /* SGFeaturedActs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2867ED932A952A38007065A6 /* SGFeaturedActs.swift */; };
 		2887768F2A82F78B00326204 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 2887768E2A82F78B00326204 /* .gitignore */; };
 		288776932A8314CB00326204 /* Riverside.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 288776912A8314CB00326204 /* Riverside.xcdatamodeld */; };
 		288776952A831B7C00326204 /* Riverside.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288776942A831B7C00326204 /* Riverside.swift */; };
@@ -65,6 +67,8 @@
 		282EEF992A91184B00BE6BE7 /* SGActViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGActViewModel.swift; sourceTree = "<group>"; };
 		2867ED8B2A9156D3007065A6 /* SGArtistProfileSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGArtistProfileSheet.swift; sourceTree = "<group>"; };
 		2867ED8E2A917911007065A6 /* SGReadMore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGReadMore.swift; sourceTree = "<group>"; };
+		2867ED912A9529A7007065A6 /* EventScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventScheduleView.swift; sourceTree = "<group>"; };
+		2867ED932A952A38007065A6 /* SGFeaturedActs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGFeaturedActs.swift; sourceTree = "<group>"; };
 		2887768E2A82F78B00326204 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		288776922A8314CB00326204 /* Riverside.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Riverside.xcdatamodel; sourceTree = "<group>"; };
 		288776942A831B7C00326204 /* Riverside.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Riverside.swift; sourceTree = "<group>"; };
@@ -114,6 +118,7 @@
 				288776902A8314B400326204 /* Data */,
 				281B51982A7B2A8C00F4EAFC /* Info.plist */,
 				281B517C2A7B160800F4EAFC /* Design System */,
+				2867ED902A952993007065A6 /* Views */,
 				281B516E2A7B045100F4EAFC /* StageGuideApp.swift */,
 				281B51702A7B045100F4EAFC /* ContentView.swift */,
 				281B51722A7B045200F4EAFC /* Assets.xcassets */,
@@ -303,6 +308,14 @@
 			path = Text;
 			sourceTree = "<group>";
 		};
+		2867ED902A952993007065A6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2867ED912A9529A7007065A6 /* EventScheduleView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		288776902A8314B400326204 /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -328,6 +341,7 @@
 				288776982A85743300326204 /* SGLineupSchedule.swift */,
 				2887769C2A8AB8C200326204 /* SGLineupAlphabetical.swift */,
 				28F035532A8C3D9B009719C2 /* SGLineupTimeline.swift */,
+				2867ED932A952A38007065A6 /* SGFeaturedActs.swift */,
 			);
 			path = Lineup;
 			sourceTree = "<group>";
@@ -427,8 +441,10 @@
 				288776932A8314CB00326204 /* Riverside.xcdatamodeld in Sources */,
 				28A2F0592A82DD8C006A59DA /* SGActSchedule.swift in Sources */,
 				288776952A831B7C00326204 /* Riverside.swift in Sources */,
+				2867ED942A952A38007065A6 /* SGFeaturedActs.swift in Sources */,
 				28A2F05B2A82E250006A59DA /* SGActFeatured.swift in Sources */,
 				281B51A02A7C6FCA00F4EAFC /* SGButton.swift in Sources */,
+				2867ED922A9529A7007065A6 /* EventScheduleView.swift in Sources */,
 				2887769B2A858A1F00326204 /* Schedules.swift in Sources */,
 				282EEF9A2A91184B00BE6BE7 /* SGActViewModel.swift in Sources */,
 				2887769D2A8AB8C200326204 /* SGLineupAlphabetical.swift in Sources */,
