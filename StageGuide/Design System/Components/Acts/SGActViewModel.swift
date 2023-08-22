@@ -22,11 +22,11 @@ class ActViewModel: ObservableObject {
         toggleFavorite() // Call the provided toggle action
         
         // Save changes to Core Data context
-        do {
-            try act.managedObjectContext?.save()
-        } catch {
-            print("Error saving context: \(error)")
-        }
+//        do {
+//            try persistenceController.save()
+//        } catch {
+//            print("Error saving context: \(error)")
+//        }
         
         persistenceController.save()
         

@@ -55,7 +55,7 @@ struct ContentView: View {
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding()
-                SGLineupSchedule(day: friday)
+                SGLineupAlphabetical(day: friday)
             }
             .navigationTitle(Text("Riverside Festival"))
             .navigationBarHidden(true)
