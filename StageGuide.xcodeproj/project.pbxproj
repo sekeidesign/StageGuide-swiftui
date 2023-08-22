@@ -316,11 +316,19 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		2867ED952A95499A007065A6 /* Riverside Lineup */ = {
+			isa = PBXGroup;
+			children = (
+				288776942A831B7C00326204 /* Riverside.swift */,
+			);
+			path = "Riverside Lineup";
+			sourceTree = "<group>";
+		};
 		288776902A8314B400326204 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				2867ED952A95499A007065A6 /* Riverside Lineup */,
 				288776912A8314CB00326204 /* Riverside.xcdatamodeld */,
-				288776942A831B7C00326204 /* Riverside.swift */,
 				28F035552A8C404B009719C2 /* FestivalModels.swift */,
 				28F789B92A8E8E1D00051F5E /* PersistenceController.swift */,
 			);

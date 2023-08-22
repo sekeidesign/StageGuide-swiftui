@@ -15,11 +15,13 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         
         print("Has launched before: \(UserDefaults.standard.bool(forKey: "HasLaunchedBefore"))")
         
+        UserDefaults.standard.set(false, forKey: "HasLaunchedBefore")
+        
         if !UserDefaults.standard.bool(forKey: "HasLaunchedBefore") {
             // Populate Core Data with initial data
             populateInitialData()
+            UserDefaults.standard.set("Friday", forKey: "ActiveDay")
             UserDefaults.standard.set(true, forKey: "HasLaunchedBefore")
-            UserDefaults.standard.set(true, forKey: "ActiveDay")
         }
         
         return true

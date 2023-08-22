@@ -40,6 +40,8 @@ struct PersistenceController {
     
     func deleteAllData() -> Void {
         
+        UserDefaults.standard.set(false, forKey: "HasLaunchedBefore")
+        
         // Get a reference to a NSPersistentStoreCoordinator
         let storeContainer =
         container.persistentStoreCoordinator
@@ -65,7 +67,5 @@ struct PersistenceController {
             (store, error) in
             print("Error in \(store): \(String(describing: error?.localizedDescription))")
         }
-        
-        UserDefaults.standard.set(false, forKey: "HasLaunchedBefore")
     }
 }
