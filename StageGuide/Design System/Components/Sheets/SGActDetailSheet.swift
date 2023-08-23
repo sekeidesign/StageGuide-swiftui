@@ -7,13 +7,14 @@
 
 import SwiftUI
 
-struct SGArtistProfileSheet: View {
+struct SGActDetailSheet: View {
     @Environment(\.dismiss) var dismiss
+    @ObservedObject var viewModel: ActViewModel
     var act: Act
-    let imageHeight: CGFloat = 264
+    let imageHeight: CGFloat = 320
     
     var body: some View {
-        
+        let act = viewModel.act
         // Header stack
         VStack(spacing: 16) {
             // Header image + name
@@ -26,7 +27,7 @@ struct SGArtistProfileSheet: View {
                     .fill(LinearGradient(
                         stops: [
                             Gradient.Stop(color: Color(uiColor: .systemBackground), location: 0.2),
-                            Gradient.Stop(color: Color(uiColor: .systemBackground).opacity(0), location: 1.00),
+                            Gradient.Stop(color: Color(uiColor: .systemBackground).opacity(0), location: 0.5),
                         ],
                         startPoint: UnitPoint(x: 0.45, y: 1.1),
                         endPoint: UnitPoint(x: 0.55, y: 0)))
@@ -41,16 +42,20 @@ struct SGArtistProfileSheet: View {
                             .font(.largeTitle)
                             .bold()
                             .foregroundColor(Color(uiColor: .label))
-                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .multilineTextAlignment(.leading)
+                        Spacer()
+                        SGAddButton(isActive: act.isFavorite, action: viewModel.toggleFavoriteStatus)
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                 }
                 .frame(maxWidth: .infinity)
-                .padding(16)
+                .padding(.horizontal, 20)
+                .padding(.top, 20)
             }
             .frame(height: imageHeight)
             .clipped()
-            VStack (spacing: 16) {
+            .frame(maxWidth: .infinity)
+            VStack (spacing: 24) {
                 // Metadata
                 HStack{
                     VStack(spacing: 4) {
@@ -79,10 +84,20 @@ struct SGArtistProfileSheet: View {
                     }
                     .frame(maxWidth: .infinity)
                 }
+                .padding(.vertical, 8)
                 SGReadMore(originalText: act.bio ?? "", maxLines: 3)
+                    .frame(maxWidth: .infinity, alignment: .leading)
             }
             .frame(maxWidth: .infinity)
-            .padding(16)
+            .padding(.horizontal, 20)
+            VStack(alignment: .leading, spacing: 8) {
+                Text("Links")
+                    .font(.title3)
+                    .fontWeight(.semibold)
+                SGLinkList(links: act.links ?? [])
+            }
+            .padding(.horizontal, 20)
+            .isHidden(act.links?.count ?? 0 < 1, remove: true)
             Spacer()
         }
     }
