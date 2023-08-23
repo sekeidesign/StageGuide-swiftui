@@ -53,6 +53,6 @@ struct SGLineupAlphabetical: View {
     }
 }
 
-#Preview {
-    SGLineupAlphabetical()
-}
+//#Preview {
+//    SGLineupAlphabetical()
+//}
