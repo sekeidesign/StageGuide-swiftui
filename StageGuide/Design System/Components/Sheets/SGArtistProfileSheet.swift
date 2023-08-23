@@ -57,6 +57,7 @@ struct SGArtistProfileSheet: View {
                         Image(systemName: "mappin.and.ellipse")
                             .foregroundColor(Color(uiColor: .secondaryLabel))
                         Text(act.stage?.name ?? "Unknown stage")
+                            .multilineTextAlignment(.center)
                     }
                     .frame(maxWidth: .infinity)
                     Rectangle()

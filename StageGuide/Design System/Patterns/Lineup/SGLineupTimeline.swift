@@ -13,6 +13,6 @@ struct SGLineupTimeline: View {
     }
 }
 
-#Preview {
-    SGLineupTimeline()
-}
+//#Preview {
+//    SGLineupTimeline()
+//}

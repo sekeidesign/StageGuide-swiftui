@@ -48,6 +48,6 @@ struct SGLineupSchedule: View {
     }
 }
 
-#Preview {
-    SGLineupSchedule()
-}
+//#Preview {
+//    SGLineupSchedule()
+//}
