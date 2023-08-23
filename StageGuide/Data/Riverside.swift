@@ -11,7 +11,6 @@ import SwiftUI
 func populateInitialData() {
     let container = PersistenceController.shared.container
     let context = container.viewContext
-    let entity = NSEntityDescription.entity(forEntityName: "Act", in: context)!
     let timeZone = "America/New_York"
     
     // ——————————— ** FRIDAY ACTS ** ———————————
@@ -99,7 +98,7 @@ func populateInitialData() {
     sevenLionsBreak.bio = "Short intermission"
     sevenLionsBreak.isFavorite = false
     //    ———
-    let sevenLions = Act(entity: entity, insertInto: context)
+    let sevenLions = Act(context: context)
     sevenLions.id = UUID()
     sevenLions.name = "Seven Lions"
     sevenLions.startTime = dateFrom(year: 2023, month: 9, day: 8, hour: 21, minute: 45, timeZone: timeZone)

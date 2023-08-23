@@ -55,50 +55,52 @@ struct SGActDetailSheet: View {
             .frame(height: imageHeight)
             .clipped()
             .frame(maxWidth: .infinity)
-            VStack (spacing: 24) {
-                // Metadata
-                HStack{
-                    VStack(spacing: 4) {
-                        Image(systemName: "mappin.and.ellipse")
-                            .foregroundColor(Color(uiColor: .secondaryLabel))
-                        Text(act.stage?.name ?? "Unknown stage")
-                            .multilineTextAlignment(.center)
+            ScrollView {
+                VStack (spacing: 24) {
+                    // Metadata
+                    HStack{
+                        VStack(spacing: 4) {
+                            Image(systemName: "mappin.and.ellipse")
+                                .foregroundColor(Color(uiColor: .secondaryLabel))
+                            Text(act.stage?.name ?? "Unknown stage")
+                                .multilineTextAlignment(.center)
+                        }
+                        .frame(maxWidth: .infinity)
+                        Rectangle()
+                            .fill(Color(uiColor: .separator))
+                            .frame(width: 1, height: 32)
+                        VStack(spacing: 4) {
+                            Image(systemName: "clock")
+                                .foregroundColor(Color(uiColor: .secondaryLabel))
+                            Text(formatTime(date: act.startTime ?? Date(), timeZone: "America/Montreal"))
+                        }
+                        .frame(maxWidth: .infinity)
+                        Rectangle()
+                            .fill(Color(uiColor: .separator))
+                            .frame(width: 1, height: 32)
+                        VStack(spacing: 4) {
+                            Image(systemName: "calendar")
+                                .foregroundColor(Color(uiColor: .secondaryLabel))
+                            Text(act.day?.name ?? "Unknown day")
+                        }
+                        .frame(maxWidth: .infinity)
                     }
-                    .frame(maxWidth: .infinity)
-                    Rectangle()
-                        .fill(Color(uiColor: .separator))
-                        .frame(width: 1, height: 32)
-                    VStack(spacing: 4) {
-                        Image(systemName: "clock")
-                            .foregroundColor(Color(uiColor: .secondaryLabel))
-                        Text(formatTime(date: act.startTime ?? Date(), timeZone: "America/Montreal"))
-                    }
-                    .frame(maxWidth: .infinity)
-                    Rectangle()
-                        .fill(Color(uiColor: .separator))
-                        .frame(width: 1, height: 32)
-                    VStack(spacing: 4) {
-                        Image(systemName: "calendar")
-                            .foregroundColor(Color(uiColor: .secondaryLabel))
-                        Text(act.day?.name ?? "Unknown day")
-                    }
-                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 8)
+                    SGReadMore(originalText: act.bio ?? "", maxLines: 5)
+                        .frame(maxWidth: .infinity, alignment: .leading)
                 }
-                .padding(.vertical, 8)
-                SGReadMore(originalText: act.bio ?? "", maxLines: 3)
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                .frame(maxWidth: .infinity)
+                .padding(.horizontal, 20)
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("Links")
+                        .font(.title3)
+                        .fontWeight(.semibold)
+                    SGLinkList(links: act.links ?? [])
+                }
+                .padding(.horizontal, 20)
+                .isHidden(act.links?.count ?? 0 < 1, remove: true)
+                Spacer()
             }
-            .frame(maxWidth: .infinity)
-            .padding(.horizontal, 20)
-            VStack(alignment: .leading, spacing: 8) {
-                Text("Links")
-                    .font(.title3)
-                    .fontWeight(.semibold)
-                SGLinkList(links: act.links ?? [])
-            }
-            .padding(.horizontal, 20)
-            .isHidden(act.links?.count ?? 0 < 1, remove: true)
-            Spacer()
         }
     }
 }

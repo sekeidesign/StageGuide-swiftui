@@ -29,7 +29,6 @@
 		2867ED8F2A917911007065A6 /* SGReadMore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2867ED8E2A917911007065A6 /* SGReadMore.swift */; };
 		2867ED922A9529A7007065A6 /* EventScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2867ED912A9529A7007065A6 /* EventScheduleView.swift */; };
 		2867ED942A952A38007065A6 /* SGFeaturedActs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2867ED932A952A38007065A6 /* SGFeaturedActs.swift */; };
-		2867ED972A96945F007065A6 /* Transformers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2867ED962A96945F007065A6 /* Transformers.swift */; };
 		2867ED992A9697EB007065A6 /* Links.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2867ED982A9697EB007065A6 /* Links.swift */; };
 		2867ED9C2A969E41007065A6 /* SGLinkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2867ED9B2A969E41007065A6 /* SGLinkList.swift */; };
 		2867ED9F2A96A57B007065A6 /* WrappingHStack in Frameworks */ = {isa = PBXBuildFile; productRef = 2867ED9E2A96A57B007065A6 /* WrappingHStack */; };
@@ -73,7 +72,6 @@
 		2867ED8E2A917911007065A6 /* SGReadMore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGReadMore.swift; sourceTree = "<group>"; };
 		2867ED912A9529A7007065A6 /* EventScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventScheduleView.swift; sourceTree = "<group>"; };
 		2867ED932A952A38007065A6 /* SGFeaturedActs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGFeaturedActs.swift; sourceTree = "<group>"; };
-		2867ED962A96945F007065A6 /* Transformers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transformers.swift; sourceTree = "<group>"; };
 		2867ED982A9697EB007065A6 /* Links.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Links.swift; sourceTree = "<group>"; };
 		2867ED9B2A969E41007065A6 /* SGLinkList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGLinkList.swift; sourceTree = "<group>"; };
 		2887768E2A82F78B00326204 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -340,7 +338,6 @@
 				288776942A831B7C00326204 /* Riverside.swift */,
 				28F035552A8C404B009719C2 /* FestivalModels.swift */,
 				28F789B92A8E8E1D00051F5E /* PersistenceController.swift */,
-				2867ED962A96945F007065A6 /* Transformers.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -469,7 +466,6 @@
 				288776952A831B7C00326204 /* Riverside.swift in Sources */,
 				2867ED942A952A38007065A6 /* SGFeaturedActs.swift in Sources */,
 				28A2F05B2A82E250006A59DA /* SGActFeatured.swift in Sources */,
-				2867ED972A96945F007065A6 /* Transformers.swift in Sources */,
 				281B51A02A7C6FCA00F4EAFC /* SGButton.swift in Sources */,
 				2867ED922A9529A7007065A6 /* EventScheduleView.swift in Sources */,
 				2867ED992A9697EB007065A6 /* Links.swift in Sources */,
