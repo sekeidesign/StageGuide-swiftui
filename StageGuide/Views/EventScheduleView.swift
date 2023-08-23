@@ -11,6 +11,7 @@ struct EventScheduleView: View {
     let persistenceController = PersistenceController.shared
     let days: FetchedResults<Day>
     @State var activeDay: Day
+    @State var activeScheduleView: String = "Schedule"
     
     var body: some View {
         var activeDayObject: Day? {
@@ -45,6 +46,7 @@ struct EventScheduleView: View {
                         persistenceController.deleteAllData()
                     } label: {
                         Text("Reset data")
+                            .foregroundColor(.red)
                     }
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -56,11 +58,21 @@ struct EventScheduleView: View {
                     Text("Full schedule")
                         .font(.title3)
                         .fontWeight(.semibold)
+                    Spacer()
+                    Picker("Schedule view", selection: $activeScheduleView) {
+                        ForEach(["Schedule", "Alphabetical"], id: \.self) {
+                            Text($0)
+                        }
+                    }
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.horizontal)
                 .padding(.vertical, 8)
-                SGLineupAlphabetical(day: activeDayObject)
+                switch(activeScheduleView) {
+                    case "Schedule": SGLineupSchedule(day: activeDayObject)
+                    case "Alphabetical": SGLineupAlphabetical(day: activeDayObject)
+                    default: Text("Something went wrong")
+                }
             }
             .navigationTitle(Text("Riverside Festival"))
             .navigationBarHidden(true)
