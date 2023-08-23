@@ -12,19 +12,6 @@ struct SGFeaturedActs: View {
     var featuredActs: [Act]
     
     var body: some View {
-        HStack {
-            Text("Featured artists")
-                .font(.title3)
-                .fontWeight(.semibold)
-            Spacer()
-            Button {
-                persistenceController.deleteAllData()
-            } label: {
-                Text("Reset data")
-            }
-        }
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .padding()
         ScrollView(.horizontal) {
             HStack(spacing: 16) {
                 ForEach(featuredActs.sorted(by: { $0.startTime ?? Date() > $1.startTime ?? Date()}) , id: \.self.id) { act in

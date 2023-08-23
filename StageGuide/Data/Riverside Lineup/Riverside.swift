@@ -20,7 +20,7 @@ func populateInitialData() {
     vanpage.startTime = dateFrom(year: 2023, month: 9, day: 8, hour: 15, minute: 0, timeZone: timeZone)
     vanpage.endTime = dateFrom(year: 2023, month: 9, day: 8, hour: 15, minute: 40, timeZone: timeZone)
     vanpage.imageName = "Acts/Vanpage"
-    vanpage.bio = "DJ and Producer from Ottawa, Canada. Bundarr makes Tech House and Bass House as well as many different genres. You will get hooked by his infectious basslines and hard grooves!"
+    vanpage.bio = "Whether in intimate club settings or expansive festival stages, let Vanpage guide you through a dynamic musical journey that echoes the essence of Ottawa's vibrant energy."
     vanpage.isFavorite = false
     //     ———
     let niceotope = Act(context: context)
@@ -38,12 +38,12 @@ func populateInitialData() {
     paqs.startTime = dateFrom(year: 2023, month: 9, day: 8, hour: 16, minute: 20, timeZone: timeZone)
     paqs.endTime = dateFrom(year: 2023, month: 9, day: 8, hour: 17, minute: 0, timeZone: timeZone)
     paqs.imageName = "Acts/Paqs"
-    paqs.bio = "DJ and Producer from Ottawa, Canada. Bundarr makes Tech House and Bass House as well as many different genres. You will get hooked by his infectious basslines and hard grooves!"
+    paqs.bio = "Dive into the electrifying sounds of PAQS, the house DJ hailing from the vibrant city of Ottawa. With a passion for crafting sonic landscapes that transcend boundaries, PAQS has emerged as a driving force in the local music scene."
     paqs.isFavorite = false
     //     ———
     let hamro = Act(context: context)
     hamro.id = UUID()
-    hamro.name = "Hamro"
+    hamro.name = "HAMRO"
     hamro.startTime = dateFrom(year: 2023, month: 9, day: 8, hour: 17, minute: 0, timeZone: timeZone)
     hamro.endTime = dateFrom(year: 2023, month: 9, day: 8, hour: 17, minute: 50, timeZone: timeZone)
     hamro.imageName = "Acts/Hamro"
@@ -115,7 +115,7 @@ func populateInitialData() {
     matfroninja.startTime = dateFrom(year: 2023, month: 9, day: 9, hour: 15, minute: 0, timeZone: timeZone)
     matfroninja.endTime = dateFrom(year: 2023, month: 9, day: 9, hour: 15, minute: 40, timeZone: timeZone)
     matfroninja.imageName = "Acts/Matfroninja"
-    matfroninja.bio = "***UPDATE DESCRIPTION***"
+    matfroninja.bio = "Unlike most artists Matfroninja doesn't focus on one style/genre, or have different names for different projects. Matfroninja is not just some brand he's built, it's everything that encompasses him...good and bad. He's always looking to create genre bending songs, although future bass is definitely his bread and butter."
     matfroninja.isFavorite = false
     //    ———
     let oliWest = Act(context: context)
@@ -124,7 +124,7 @@ func populateInitialData() {
     oliWest.startTime = dateFrom(year: 2023, month: 9, day: 9, hour: 15, minute: 40, timeZone: timeZone)
     oliWest.endTime = dateFrom(year: 2023, month: 9, day: 9, hour: 16, minute: 20, timeZone: timeZone)
     oliWest.imageName = "Acts/Oli West"
-    oliWest.bio = "***UPDATE DESCRIPTION***"
+    oliWest.bio = "Canadian producer & DJ Oli West grew up in a deeply musical household and was exposed to countless genres throughout his childhood, ranging from classical music, to 60s soft rock to Malian folk music. He fell in love with electronic music after stumbling upon Strobe by Deadmau5 in 2011, and started producing music just a couple of years later at the tender age of 14. He burst onto Ottawa’s dance music scene in 2022 with his dark, groovy and uniquely hypnotic sound, earning regular headlining shows at the Canadian Capital’s hottest clubs. His growth and development has continued to be exponential in 2023 with his latest releases."
     oliWest.isFavorite = false
     //    ———
     let etienneOzborne = Act(context: context)
@@ -133,7 +133,7 @@ func populateInitialData() {
     etienneOzborne.startTime = dateFrom(year: 2023, month: 9, day: 9, hour: 16, minute: 20, timeZone: timeZone)
     etienneOzborne.endTime = dateFrom(year: 2023, month: 9, day: 9, hour: 17, minute: 20, timeZone: timeZone)
     etienneOzborne.imageName = "Acts/Etienne Ozborne"
-    etienneOzborne.bio = "***UPDATE DESCRIPTION***"
+    etienneOzborne.bio = "Etienne is a monthly resident at Montreal’s New City Gas and Circus Afterhours, both clubs having at one time or another been featured in DJ Mag’s Top 100 clubs. He also recently signed on as monthly resident at Club Aléa located inside the Casino Lac Leamy in Gatineau, Québec. On the international circuit, Etienne has been an in-demand DJ having played notably in the United States, Russia, Mexico, Brazil, South Korea, Maldives Island and Germany. Etienne is entering the pinnacle of his career and is destined for great success. His dancefloor experience and distinctive style make him one of the most promising and exciting DJ’s to watch in 2017."
     etienneOzborne.isFavorite = false
     //    ———
     let vavo = Act(context: context)
@@ -142,7 +142,7 @@ func populateInitialData() {
     vavo.startTime = dateFrom(year: 2023, month: 9, day: 9, hour: 17, minute: 20, timeZone: timeZone)
     vavo.endTime = dateFrom(year: 2023, month: 9, day: 9, hour: 18, minute: 20, timeZone: timeZone)
     vavo.imageName = "Acts/Vavo"
-    vavo.bio = "***UPDATE DESCRIPTION***"
+    vavo.bio = "VAVO, the genre-bending DJ/Producer duo comprised of Jesse Fischer and Alden Martin, have been making serious moves in the music industry. The Vancouver native and London-born pair have garnered impressive milestones, including multiple #1 spots on Dance Radio USA and hitting the top 3 on the Billboard Dance Charts. However, it's their explosive YEEDM movement that's been turning heads and making waves across the music world in 2023. Blending EDM and Country, this unique movement has gone viral and been embraced by fans with open arms. \n VAVO's A-grade approach to production has earned them the support of industry heavyweights such as Tiësto, The Chainsmokers, and David Guetta. Their hard work, signature sound, and memorable singles have led them to be recognized as a Billboard charting Dance/Pop/Country crossover act that's always happy to be pushing boundaries."
     vavo.isFavorite = false
     //    ———
     let wuki = Act(context: context)
@@ -151,17 +151,17 @@ func populateInitialData() {
     wuki.startTime = dateFrom(year: 2023, month: 9, day: 9, hour: 18, minute: 20, timeZone: timeZone)
     wuki.endTime = dateFrom(year: 2023, month: 9, day: 9, hour: 19, minute: 20, timeZone: timeZone)
     wuki.imageName = "Acts/Wuki"
-    wuki.bio = "***UPDATE DESCRIPTION***"
+    wuki.bio = "Wuki is the genre-blending solo project of Los Angeles-based producer Kris Barman. Influenced by the sounds of Detroit ghettotech and Chicago footwork scenes, Barman’s ability to seamlessly mix booty, breaks, electro, and house into hard-hitting club-shakers has become a trademark of the Wuki sound. The ever evolving Wuki, has done official remixes for some of Electronic Music’s top artists including for The Chainsmokers, RL Grime, Kill The Noise, Galantis and has releases on notable imprints such as Mad Decent, OWSLA and more."
     wuki.isFavorite = false
     wuki.isFeatured = true
     //    ———
     let hugel = Act(context: context)
     hugel.id = UUID()
-    hugel.name = "Hugel"
+    hugel.name = "HUGEL"
     hugel.startTime = dateFrom(year: 2023, month: 9, day: 9, hour: 19, minute: 20, timeZone: timeZone)
     hugel.endTime = dateFrom(year: 2023, month: 9, day: 9, hour: 20, minute: 20, timeZone: timeZone)
     hugel.imageName = "Acts/Hugel"
-    hugel.bio = "***UPDATE DESCRIPTION***"
+    hugel.bio = "Instigator of the Latin House movement with his hit \"Morenita\". HUGEL is a multi gold and platinum selling artist with over 1 Billion streams to his name, and with many of his tracks reaching the number 1 spot on Beatport, his music is played in parties all over the world. \n He grew up in Marseille by the Mediteranean sea (South of France) His Mom raised him with funk, disco and soul. He discovered the art of Dj’ing with vinyls at the age of 16 years old, influenced by the likes of Carl Cox, Laurent Garnier, Daft Punk, Amine Edge and David Guetta. After few years learning production he became a Hit-Maker. His house music is inspired by ibiza (Spain) and the Latin culture that he soaked up during his time living on the Island. Selling out shows in America, Space (Miami), Superior ingredients (Nyc), Academy (Los Angeles) He’s had residencies at Pacha & Ushuaia in Ibiza, and has played the biggest festivals in the world such as: EDC Vegas, EDC Mexico, Tomorrowland, Lollapalooza, Parookaville, World Club Dome, Mysteryland."
     hugel.isFavorite = false
     hugel.isFeatured = true
     //    ———
@@ -179,7 +179,7 @@ func populateInitialData() {
     adventureClub.startTime = dateFrom(year: 2023, month: 9, day: 9, hour: 20, minute: 25, timeZone: timeZone)
     adventureClub.endTime = dateFrom(year: 2023, month: 9, day: 9, hour: 21, minute: 40, timeZone: timeZone)
     adventureClub.imageName = "Acts/Adventure Club"
-    adventureClub.bio = "***UPDATE DESCRIPTION***"
+    adventureClub.bio = "Grammy nominated electronic duo from Montreal, Canada. Our real names are Leighton and Christian. \n Some people say we invented melodic bass."
     adventureClub.isFavorite = false
     adventureClub.isFeatured = true
     //    ———
@@ -197,7 +197,7 @@ func populateInitialData() {
     twoFriends.startTime = dateFrom(year: 2023, month: 9, day: 9, hour: 21, minute: 45, timeZone: timeZone)
     twoFriends.endTime = dateFrom(year: 2023, month: 9, day: 9, hour: 23, minute: 0, timeZone: timeZone)
     twoFriends.imageName = "Acts/Two Friends"
-    twoFriends.bio = "***UPDATE DESCRIPTION***"
+    twoFriends.bio = "Two Friends is the musical creation of best friends Matt Halper and Eli Sones. The dance-pop duo’s fitting name is a reflection of their lifelong bond as both musical collaborators and best friends.  They exploded into the global dance music landscape with their originals, their viral remixes of The Killers’ “Mr. Brightside,” Blink 182’s “I Miss You,” and their award-winning Big Bootie Mix series. Amassing millions of streams across YouTube and SoundCloud per installment, the Big Bootie Mix series has become the soundtrack to many a good-night-out across 10 years of regular releases.  With their intricately-produced live sets, Two Friends have performed at iconic venues from the likes of Red Rocks, Northerly Island, and Forest Hills Stadium, just to name a few. At the heels of their sold-out 2023 Planet Two Friends tour, the pair continue their ascent to the upper echelons of dance-pop excellence via new original productions, a relentless touring schedule, and the burgeoning of the Big Bootie Universe. As they continue building a legacy crossover brand, Matt and Eli will always just be Two Friends."
     twoFriends.isFavorite = false
     twoFriends.isFeatured = true
     //    ———
@@ -207,7 +207,7 @@ func populateInitialData() {
     igluu.startTime = dateFrom(year: 2023, month: 9, day: 10, hour: 15, minute: 0, timeZone: timeZone)
     igluu.endTime = dateFrom(year: 2023, month: 9, day: 10, hour: 15, minute: 50, timeZone: timeZone)
     igluu.imageName = "Acts/Igluu"
-    igluu.bio = "***UPDATE DESCRIPTION***"
+    igluu.bio = "Delving into the darker and more hypnotic corners of electronic music, Igluu captures the essence of the city's industrial vibe and transforms it into pulsating beats that challenge norms. Drawing inspiration from Ottawa's gritty underground scene, their sets are a fusion of expert sonic craftsmanship, blending intricate textures with unwavering rhythms that venture beyond the expected."
     igluu.isFavorite = false
     //    ———
     let bundarr = Act(context: context)
@@ -216,7 +216,7 @@ func populateInitialData() {
     bundarr.startTime = dateFrom(year: 2023, month: 9, day: 10, hour: 15, minute: 50, timeZone: timeZone)
     bundarr.endTime = dateFrom(year: 2023, month: 9, day: 10, hour: 16, minute: 40, timeZone: timeZone)
     bundarr.imageName = "Acts/Bundarr"
-    bundarr.bio = "***UPDATE DESCRIPTION***"
+    bundarr.bio = "DJ/Producer Bundarr thrives on the art of genre-blending, with an insatiable appetite for all things bass. From the depths of bass house to the heights of 400bpm hardcore, his music embodies the essence of controlled chaos, uniting all genres with a shared love for volume. Rooted in Ottawa's vibrant scene, Bundarr's sets are a dynamic showcase of his passion for delivering powerful, ear-rattling experiences."
     bundarr.isFavorite = false
     bundarr.isFeatured = true
     //    ———
@@ -226,7 +226,7 @@ func populateInitialData() {
     luckyRose.startTime = dateFrom(year: 2023, month: 9, day: 10, hour: 16, minute: 40, timeZone: timeZone)
     luckyRose.endTime = dateFrom(year: 2023, month: 9, day: 10, hour: 17, minute: 40, timeZone: timeZone)
     luckyRose.imageName = "Acts/Lucky Rose"
-    luckyRose.bio = "***UPDATE DESCRIPTION***"
+    luckyRose.bio = "Lucky Rose is producers/DJs Vincent Carrier and Marc-Antoine Thibeault, a French-Canadian duo with their signature mix of bright beats, catchy hooks and organic instruments. \n It started as Carrier’s solo project in 2015, albeit unintentionally. While remixing other artists from his Quebec City hometown, Carrier wrote original tropical house jam “The Way You Want Me.” When nobody else wanted it, he brought in vocalist Yan Etchevary and released it as Lucky Rose.  Supported by buzzy YouTube channels with millions of subs, the song soon made it to Stingray Music and then Montreal radio. From there, Lucky Rose won Virgin Radio’s Future Star contest, climbed Canada’s Billboard Top 40 and Hot AC charts and got signed by Ultra Music.  Carrier’s next release, “Wild One,” featuring Toronto singer-producer Tep No, was even bigger. Riding soaring synths, acoustic guitar strums and an earworm whistle, it clocked tens of millions of streams, cracked pop radio’s top 20 and went Gold in Canada. \n Still, something was missing — and that something turned out to be Thibeault, a Facebook friend, DJ and fellow ex-drummer who’d ditched rock for electronic dance music. Complementing each other's skill sets, the pair joined forces in 2017 and put out “Lost” featuring Jordan Hart which again went Gold and cracked pop radio while getting them live gigs.   Now with some hot new pandemic-era productions in hand, Lucky Rose is ready to prove they’re no fluke."
     luckyRose.isFavorite = false
     //    ———
     let suraySertin = Act(context: context)
@@ -235,24 +235,24 @@ func populateInitialData() {
     suraySertin.startTime = dateFrom(year: 2023, month: 9, day: 10, hour: 17, minute: 40, timeZone: timeZone)
     suraySertin.endTime = dateFrom(year: 2023, month: 9, day: 10, hour: 18, minute: 40, timeZone: timeZone)
     suraySertin.imageName = "Acts/Suray Sertin"
-    suraySertin.bio = "***UPDATE DESCRIPTION***"
+    suraySertin.bio = "Suray Sertin is a record producer hailing from Montreal, Canada. \n With his unique blend of house, chillwave, r&b, and pop, he creates a sound that is both fresh and timeless. His music is an artful combination of musical elements and textures, resulting in an immersive listening experience that captivates the senses. As a producer, Suray's approach to music-making is constantly evolving, and his quest for innovation is establishing him as a leading figure in the Montreal electronic music scene. \n Suray Sertin's innovative sound has captured the attention of heavyweights in the electronic music scene, including Zeds Dead, and playlist curators at Higher Ground and Foreign Family Collective. With support from these industry leaders, he is cementing his place as a standout in the electronic music world."
     suraySertin.isFavorite = false
     //    ———
     let dubdogz = Act(context: context)
     dubdogz.id = UUID()
-    dubdogz.name = "Dubdogz"
+    dubdogz.name = "DUBDOGZ"
     dubdogz.startTime = dateFrom(year: 2023, month: 9, day: 10, hour: 18, minute: 40, timeZone: timeZone)
     dubdogz.endTime = dateFrom(year: 2023, month: 9, day: 10, hour: 19, minute: 40, timeZone: timeZone)
     dubdogz.imageName = "Acts/Dubdogz"
-    dubdogz.bio = "***UPDATE DESCRIPTION***"
+    dubdogz.bio = "Brazil’s fastest rising stars, Dubdogz have taken the Electronic music world by storm. Though still in their early twenties the twin brothers -Marcos & Lucas Schmidt- are already one of the leading electronic acts in Brazil with numerous hit dance tracks in South America, Europe and North America. The duo has to their credit performances at major festivals such as Rock In Rio, Lollapalooza, Tomorrowland Brazil, XXXperience, Electric Zoo and Ultra Music Brazil. Known for their high energy performances, pulsating dance rhythms of Brazilian Bass and instantly contagious melodies, Dubdogz is now focused on the world with new original tracks, new collaborations and remixes underway."
     dubdogz.isFavorite = false
     //    ———
     let audienBreak = Act(context: context)
     audienBreak.id = UUID()
-    audienBreak.name = "Break"
+    audienBreak.name = "Intermission"
     audienBreak.startTime = dateFrom(year: 2023, month: 9, day: 10, hour: 19, minute: 40, timeZone: timeZone)
     audienBreak.endTime = dateFrom(year: 2023, month: 9, day: 10, hour: 19, minute: 45, timeZone: timeZone)
-    audienBreak.bio = "***UPDATE DESCRIPTION***"
+    audienBreak.bio = "Short intermission."
     audienBreak.isFavorite = false
     //    ———
     let audien = Act(context: context)
@@ -261,7 +261,7 @@ func populateInitialData() {
     audien.startTime = dateFrom(year: 2023, month: 9, day: 10, hour: 19, minute: 45, timeZone: timeZone)
     audien.endTime = dateFrom(year: 2023, month: 9, day: 10, hour: 20, minute: 45, timeZone: timeZone)
     audien.imageName = "Acts/Audien"
-    audien.bio = "***UPDATE DESCRIPTION***"
+    audien.bio = "Grammy nominated producer and songwriter Audien has established himself as a fixture in the dance community, known for his production prowess and unique propensity for uplifting melodies. Considered a staple in the progressive house genre, Audien launched his career in 2008 with a string of releases on Anjunabeats, Armada Music, Spinnin’ Records, and Astralwerks. Over the years Audien solidified his signature sound and garnered the support of industry veterans like Tiësto, Above & Beyond, and Armin van Buuren. In 2014, Audien released his Grammy nominated remix of Bastille’s “Pompeii”, which went on to become the most played track at Electric Daisy Carnival and Coachella, and one of the five most played tracks at Tomorrowland. It is no surprise then that Audien has become a mainstay at marquee festival brands across the world including Tomorrowland, EDC, Ultra, Lollapalooza, and many more. Audien’s career growth and influence is evidenced by his impressive list of collaborators, which include Lady Antebellum, MAX, and Echosmith, on top of official remixes for Michael Jackson, Coldplay, and Halsey. Audien released his debut LP ‘Escapism’ in November 2019. The album is a definitive effort encapsulating both Audien’s signature style and his dominance in the dance landscape. Audien states, “I’m not reinventing the wheel, but I’m accentuating the art I’ve created for almost a decade. It’s the best form of what I’m known for.”"
     audien.isFavorite = false
     audien.isFeatured = true
     //    ———
@@ -270,7 +270,7 @@ func populateInitialData() {
     tchamiBreak.name = "Intermission"
     tchamiBreak.startTime = dateFrom(year: 2023, month: 9, day: 10, hour: 20, minute: 45, timeZone: timeZone)
     tchamiBreak.endTime = dateFrom(year: 2023, month: 9, day: 10, hour: 20, minute: 50, timeZone: timeZone)
-    tchamiBreak.bio = "***UPDATE DESCRIPTION***"
+    tchamiBreak.bio = "Short intermission."
     tchamiBreak.isFavorite = false
     //    ———
     let tchami = Act(context: context)
@@ -279,7 +279,7 @@ func populateInitialData() {
     tchami.startTime = dateFrom(year: 2023, month: 9, day: 10, hour: 20, minute: 50, timeZone: timeZone)
     tchami.endTime = dateFrom(year: 2023, month: 9, day: 10, hour: 21, minute: 50, timeZone: timeZone)
     tchami.imageName = "Acts/Tchami"
-    tchami.bio = "***UPDATE DESCRIPTION***"
+    tchami.bio = "Tchami is one of the world's most popular DJs, and alongside his friends and partners DJ Snake, Malaa and Mercer, he's helping to push dance music forward via the future house movement, a collection of artists seeking to honor the history of dance music by continually finding innovative ways to add new sounds and textures while staying true to the core tenets of the house aesthetic. Born Martin Bresso in Paris, France, Tchami was a regular fixture at the record store Samad, studying classic house, r&amp;b and hip-hop imported from England and America. He began producing around town finding his voice, and eventually hit upon a sound that's equally energetic and soulful - one capable of moving audiences and leaving them with a feeling of deep bliss. \n Tchami tours the globe most days out of the year, and has played major international festivals including the Ultra Music Festivals, Electric Daisy Carnival, HARD Summer Music Festival, Coachella, multiple iterations of Lollapalooza (US, Paris, Brazil) and VELD Music Festival, to name just a few, always with the goal to take the audience higher and higher."
     tchami.isFavorite = false
     tchami.isFeatured = true
     //    ———
@@ -297,7 +297,7 @@ func populateInitialData() {
     zedsDead.startTime = dateFrom(year: 2023, month: 9, day: 10, hour: 22, minute: 0, timeZone: timeZone)
     zedsDead.endTime = dateFrom(year: 2023, month: 9, day: 10, hour: 23, minute: 0, timeZone: timeZone)
     zedsDead.imageName = "Acts/Zeds Dead"
-    zedsDead.bio = "***UPDATE DESCRIPTION***"
+    zedsDead.bio = "Formed in 2009 in Toronto by producers/DJs Dylan “DC” Mamid and Zachary “Hooks” Rapp-Rovan, Zeds Dead is one of the most successful independent electronic acts of the past decade, counting hundreds of millions of streams, dozens of Top 20 Billboard hits and multiple JUNO Award nominations. \n Zeds Dead have crafted a limitless sound across their expansive discography, which includes multiple breakout singles, remixes and EPs. In 2016, Zeds Dead released their debut album, 'Northern Lights,' which features Diplo, Twin Shadow, Pusha T, Weezer’s Rivers Cuomo and more. A Top 10 hit on Billboard’s Top Dance/Electronic Albums and Heatseekers Albums charts, the album received a nomination for Dance Recording of the Year at the 2017 JUNO Awards. \n In 2016, Zeds Dead launched their tastemaker Deadbeats Records, one of today’s leading independent labels in dance music, with +150 releases from emerging artists like DNMO, PEEKABOO, Subtronics, 1788-L and others. Deadbeats has released a handful of compilations: We Are Deadbeats (Vol. 1 - Vol. 4), which feature original tracks from its wide artist roster, including REZZ, Megalodon and Zeds Dead themselves. \n Zeds Dead and Deadbeats have recently expanded into the live events space via the branded Deadbeats Tour and the annual DeadRocks, a headlining show at Red Rocks Amphitheatre in Denver, which has sold out every year since launching in 2014."
     zedsDead.isFavorite = false
     zedsDead.isFeatured = true
     

@@ -15,7 +15,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         
         print("Has launched before: \(UserDefaults.standard.bool(forKey: "HasLaunchedBefore"))")
         
-        UserDefaults.standard.set(false, forKey: "HasLaunchedBefore")
+//        UserDefaults.standard.set(false, forKey: "HasLaunchedBefore")
         
         if !UserDefaults.standard.bool(forKey: "HasLaunchedBefore") {
             // Populate Core Data with initial data

@@ -34,15 +34,32 @@ struct EventScheduleView: View {
                     print("Set: \(day.name ?? "")")
                 }
                 .pickerStyle(.segmented)
-                .padding()
+                .padding(.horizontal)
+                .padding(.vertical, 8)
+                HStack {
+                    Text("Featured artists")
+                        .font(.title3)
+                        .fontWeight(.semibold)
+                    Spacer()
+                    Button {
+                        persistenceController.deleteAllData()
+                    } label: {
+                        Text("Reset data")
+                    }
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.horizontal)
+                .padding(.vertical, 8)
                 SGFeaturedActs(featuredActs: activeDayFeatured ?? [])
+                    .padding(.bottom, 12)
                 HStack {
                     Text("Full schedule")
                         .font(.title3)
                         .fontWeight(.semibold)
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .padding()
+                .padding(.horizontal)
+                .padding(.vertical, 8)
                 SGLineupAlphabetical(day: activeDayObject)
             }
             .navigationTitle(Text("Riverside Festival"))
