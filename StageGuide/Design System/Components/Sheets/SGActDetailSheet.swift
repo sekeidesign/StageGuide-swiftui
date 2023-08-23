@@ -86,20 +86,19 @@ struct SGActDetailSheet: View {
                         .frame(maxWidth: .infinity)
                     }
                     .padding(.vertical, 8)
-                    SGReadMore(originalText: act.bio ?? "", maxLines: 5)
+                    SGReadMore(originalText: act.bio ?? "", maxLines: 4)
                         .frame(maxWidth: .infinity, alignment: .leading)
-                }
-                .frame(maxWidth: .infinity)
-                .padding(.horizontal, 20)
                 VStack(alignment: .leading, spacing: 8) {
                     Text("Links")
                         .font(.title3)
                         .fontWeight(.semibold)
                     SGLinkList(links: act.links ?? [])
                 }
-                .padding(.horizontal, 20)
                 .isHidden(act.links?.count ?? 0 < 1, remove: true)
                 Spacer()
+                }
+                .frame(maxWidth: .infinity)
+                .padding(.horizontal, 20)
             }
         }
     }
