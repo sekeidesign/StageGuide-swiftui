@@ -32,6 +32,7 @@
 		2867ED992A9697EB007065A6 /* Links.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2867ED982A9697EB007065A6 /* Links.swift */; };
 		2867ED9C2A969E41007065A6 /* SGLinkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2867ED9B2A969E41007065A6 /* SGLinkList.swift */; };
 		2867ED9F2A96A57B007065A6 /* WrappingHStack in Frameworks */ = {isa = PBXBuildFile; productRef = 2867ED9E2A96A57B007065A6 /* WrappingHStack */; };
+		2867EDA12A97FA7E007065A6 /* SGTopNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2867EDA02A97FA7E007065A6 /* SGTopNav.swift */; };
 		2887768F2A82F78B00326204 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 2887768E2A82F78B00326204 /* .gitignore */; };
 		288776932A8314CB00326204 /* Riverside.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 288776912A8314CB00326204 /* Riverside.xcdatamodeld */; };
 		288776952A831B7C00326204 /* Riverside.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288776942A831B7C00326204 /* Riverside.swift */; };
@@ -74,6 +75,7 @@
 		2867ED932A952A38007065A6 /* SGFeaturedActs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGFeaturedActs.swift; sourceTree = "<group>"; };
 		2867ED982A9697EB007065A6 /* Links.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Links.swift; sourceTree = "<group>"; };
 		2867ED9B2A969E41007065A6 /* SGLinkList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGLinkList.swift; sourceTree = "<group>"; };
+		2867EDA02A97FA7E007065A6 /* SGTopNav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGTopNav.swift; sourceTree = "<group>"; };
 		2887768E2A82F78B00326204 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		288776922A8314CB00326204 /* Riverside.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Riverside.xcdatamodel; sourceTree = "<group>"; };
 		288776942A831B7C00326204 /* Riverside.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Riverside.swift; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 		281B51862A7B167A00F4EAFC /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
+				2867EDA02A97FA7E007065A6 /* SGTopNav.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -462,6 +465,7 @@
 				281B516F2A7B045100F4EAFC /* StageGuideApp.swift in Sources */,
 				28A2F0522A81C73D006A59DA /* SGActTimeline.swift in Sources */,
 				288776932A8314CB00326204 /* Riverside.xcdatamodeld in Sources */,
+				2867EDA12A97FA7E007065A6 /* SGTopNav.swift in Sources */,
 				28A2F0592A82DD8C006A59DA /* SGActSchedule.swift in Sources */,
 				288776952A831B7C00326204 /* Riverside.swift in Sources */,
 				2867ED942A952A38007065A6 /* SGFeaturedActs.swift in Sources */,

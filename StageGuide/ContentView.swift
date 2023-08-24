@@ -14,7 +14,9 @@ struct ContentView: View {
     var body: some View {
         let sortedDays = days.sorted(by: { $0.startTime ?? Date() < $1.startTime ?? Date() })
         let defaultDay = sortedDays.first(where: { $0.name == UserDefaults.standard.string(forKey: "ActiveDay")})
-        EventScheduleView(days: days, activeDay: defaultDay ?? sortedDays[0])
+        NavigationStack{
+            EventScheduleView(days: days, activeDay: defaultDay ?? sortedDays[0])
+        }
     }
 }
 

@@ -11,7 +11,7 @@ struct SGPillButton: View {
     @Environment(\.openURL) var openURL
     
     var symbol: Image?
-    var label: Text? = Text("Label")
+    var label: Text?
     var isActive: Bool = false
     var onMaterial: Bool = false
     var action: (() -> Void)?
