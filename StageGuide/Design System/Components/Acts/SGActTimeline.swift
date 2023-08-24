@@ -40,7 +40,7 @@ struct SGActTimeline: View {
             isSheetPresented = true
         }
         .sheet(isPresented: $isSheetPresented){
-            SGArtistProfileSheet(act: act)
+//            SGArtistProfileSheet(act: act, viewModel: ac)
         }
     }
 }

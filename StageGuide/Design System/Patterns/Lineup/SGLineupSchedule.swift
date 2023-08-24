@@ -11,7 +11,8 @@ struct SGLineupSchedule: View {
     var day: Day?
     
     var body: some View {
-        let lineupDay = day?.acts?.compactMap { $0 as? Act }
+        let rawLineupDay = day?.acts?.compactMap { $0 as? Act }
+        let lineupDay = rawLineupDay?.filter({$0.name != "Intermission"})
         let timeSlots = extractTimeSlots(lineup: lineupDay ?? [])
         ScrollView {
             VStack (spacing: 8) {

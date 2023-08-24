@@ -54,7 +54,7 @@ struct SGActSchedule: View {
             isSheetPresented = true
         }
         .sheet(isPresented: $isSheetPresented){
-            SGArtistProfileSheet(act: act)
+            SGActDetailSheet(viewModel: viewModel, act: act)
         }
     }
 }

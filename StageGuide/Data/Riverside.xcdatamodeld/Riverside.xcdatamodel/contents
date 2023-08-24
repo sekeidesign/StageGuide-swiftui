@@ -7,11 +7,11 @@
         <attribute name="imageName" attributeType="String" defaultValueString="&quot;Artist Placeholder&quot;"/>
         <attribute name="isFavorite" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="isFeatured" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="links" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromDataTransformer" customClassName="[String]"/>
         <attribute name="name" optional="YES" attributeType="String" defaultValueString="Unknown name"/>
         <attribute name="shortName" optional="YES" attributeType="String" defaultValueString="Use name"/>
         <attribute name="startTime" optional="YES" attributeType="Date" defaultDateTimeInterval="714279600" usesScalarValueType="NO"/>
         <relationship name="day" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Day" inverseName="acts" inverseEntity="Day"/>
-        <relationship name="externalLinks" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ExternalLink" inverseName="act" inverseEntity="ExternalLink"/>
         <relationship name="stage" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Stage" inverseName="acts" inverseEntity="Stage"/>
     </entity>
     <entity name="Day" representedClassName="Day" syncable="YES" codeGenerationType="class">
@@ -23,13 +23,6 @@
         <relationship name="festival" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Festival" inverseName="days" inverseEntity="Festival"/>
         <relationship name="stages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Stage" inverseName="days" inverseEntity="Stage"/>
     </entity>
-    <entity name="ExternalLink" representedClassName="ExternalLink" syncable="YES" codeGenerationType="class">
-        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
-        <attribute name="title" optional="YES" attributeType="String"/>
-        <attribute name="url" optional="YES" attributeType="String"/>
-        <relationship name="act" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Act" inverseName="externalLinks" inverseEntity="Act"/>
-        <relationship name="festival" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Festival" inverseName="externalLinks" inverseEntity="Festival"/>
-    </entity>
     <entity name="Festival" representedClassName="Festival" syncable="YES" codeGenerationType="class">
         <attribute name="address" optional="YES" attributeType="String"/>
         <attribute name="bio" optional="YES" attributeType="String"/>
@@ -37,11 +30,11 @@
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="imageName" optional="YES" attributeType="String"/>
         <attribute name="isSaved" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="links" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromDataTransformer" customClassName="[String]"/>
         <attribute name="logoName" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="startTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <relationship name="days" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Day" inverseName="festival" inverseEntity="Day"/>
-        <relationship name="externalLinks" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ExternalLink" inverseName="festival" inverseEntity="ExternalLink"/>
         <relationship name="stages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Stage" inverseName="festival" inverseEntity="Stage"/>
     </entity>
     <entity name="Stage" representedClassName="Stage" syncable="YES" codeGenerationType="class">

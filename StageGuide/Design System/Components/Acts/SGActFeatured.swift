@@ -64,7 +64,7 @@ struct SGActFeatured: View {
             isSheetPresented = true
         }
         .sheet(isPresented: $isSheetPresented){
-            SGArtistProfileSheet(act: act)
+            SGActDetailSheet(viewModel: viewModel, act: act)
         }
 //        .scaleEffect(isPressed ? 0.9 : 1)
 //        .animation(.interpolatingSpring(mass: 0.5, stiffness: 100, damping: 7), value: isPressed)

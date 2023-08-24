@@ -12,7 +12,8 @@ struct SGLineupAlphabetical: View {
     var day: Day?
     
     var body: some View {
-        let lineupDay = day?.acts?.compactMap { $0 as? Act }
+        let rawLineupDay = day?.acts?.compactMap { $0 as? Act }
+        let lineupDay = rawLineupDay?.filter({$0.name != "Intermission"})
         let initialSlots = extractInitials(lineup: lineupDay ?? [])
         let placeholderName = "Unknown"
         ScrollView {

@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct SGPillButton: View {
+    @Environment(\.openURL) var openURL
     
     var symbol: Image?
     var label: Text? = Text("Label")
     var isActive: Bool = false
     var onMaterial: Bool = false
-    var action: () -> Void = placeholderAction
+    var action: (() -> Void)?
+    var link: String?
     
     var foregroundColor: Color {
             switch isActive {
@@ -29,22 +31,27 @@ struct SGPillButton: View {
         }
     
     var body: some View {
+        let linkLabel = extractDomain(from: link ?? "")
+        let computedLabel = link != nil ? Text(linkLabel) : label
+        let supportedDomains: Set<String> = ["Facebook", "Instagram", "Twitter", "Soundcloud", "Spotify", "Google"]
+        let linkSymbol = supportedDomains.contains(linkLabel) ? Image(systemName: "globe") : Image(systemName: "globe")
+        let computedSymbol = link != nil ? linkSymbol : symbol
         Button {
-            action()
+            link != nil ? openURL(URL(string: link!)!) : action!()
         } label: {
             HStack(spacing: 4){
-                symbol
+                computedSymbol
                     .font(.system(size: 14))
                     .fontWeight(.semibold)
                     .foregroundColor(foregroundColor)
-                label
+                computedLabel
                     .foregroundColor(foregroundColor)
                     .font(.footnote)
                     .bold()
             }
             .frame(height: 34)
             .frame(minWidth: 28)
-            .padding(.leading, symbol != nil ? 0 : 4)
+            .padding(.leading, symbol != nil || link != nil ? 0 : 4)
             .padding(.trailing, label != nil ? 4 : 0)
         }
         .frame(height: 34)
