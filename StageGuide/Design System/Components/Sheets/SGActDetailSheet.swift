@@ -18,43 +18,45 @@ struct SGActDetailSheet: View {
         // Header stack
         VStack(spacing: 16) {
             // Header image + name
-            ZStack(alignment: .bottomLeading) {
-                Image(act.imageName ?? "Act")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(maxWidth: .infinity, maxHeight: imageHeight)
-                Rectangle()
-                    .fill(LinearGradient(
-                        stops: [
-                            Gradient.Stop(color: Color(uiColor: .systemBackground), location: 0.2),
-                            Gradient.Stop(color: Color(uiColor: .systemBackground).opacity(0), location: 0.5),
-                        ],
-                        startPoint: UnitPoint(x: 0.45, y: 1.1),
-                        endPoint: UnitPoint(x: 0.55, y: 0)))
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                VStack (alignment: .trailing) {
-                    SGCircleButton(symbol: Image(systemName: "xmark"), variant: .secondary, onMaterial: true){
-                        dismiss()
-                    }
-                    Spacer()
-                    HStack(spacing: 8) {
-                        Text(act.name ?? "Unknown")
-                            .font(.largeTitle)
-                            .bold()
-                            .foregroundColor(Color(uiColor: .label))
-                            .multilineTextAlignment(.leading)
+            GeometryReader { geometry in
+                ZStack(alignment: .bottomLeading) {
+                    Image(act.imageName ?? "Act")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: geometry.size.width)
+                        .frame(maxHeight: imageHeight + 32)
+                    Rectangle()
+                        .fill(LinearGradient(
+                            stops: [
+                                Gradient.Stop(color: Color(uiColor: .systemBackground), location: 0.2),
+                                Gradient.Stop(color: Color(uiColor: .systemBackground).opacity(0), location: 0.5),
+                            ],
+                            startPoint: UnitPoint(x: 0.45, y: 1.1),
+                            endPoint: UnitPoint(x: 0.55, y: 0)))
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    VStack (alignment: .trailing) {
+                        SGCircleButton(symbol: Image(systemName: "xmark"), variant: .secondary, onMaterial: true){
+                            dismiss()
+                        }
                         Spacer()
-                        SGAddButton(isActive: act.isFavorite, action: viewModel.toggleFavoriteStatus)
+                        HStack(spacing: 8) {
+                            Text(act.name ?? "Unknown")
+                                .font(.largeTitle)
+                                .bold()
+                                .foregroundColor(Color(uiColor: .label))
+                                .multilineTextAlignment(.leading)
+                            Spacer()
+                            SGAddButton(isActive: act.isFavorite, action: viewModel.toggleFavoriteStatus)
+                        }
+                        .frame(alignment: .leading)
                     }
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal, 20)
+                    .padding(.top, 20)
                 }
-                .frame(maxWidth: .infinity)
-                .padding(.horizontal, 20)
-                .padding(.top, 20)
+                .frame(height: imageHeight + 32)
+                .clipped()
+//                .frame(width: geometry.size.width)
             }
-            .frame(height: imageHeight)
-            .clipped()
-            .frame(maxWidth: .infinity)
             ScrollView {
                 VStack (spacing: 24) {
                     // Metadata
@@ -85,7 +87,7 @@ struct SGActDetailSheet: View {
                         }
                         .frame(maxWidth: .infinity)
                     }
-                    .padding(.vertical, 8)
+                    .padding(.bottom, 8)
                     SGReadMore(originalText: act.bio ?? "", maxLines: 4)
                         .frame(maxWidth: .infinity, alignment: .leading)
                 VStack(alignment: .leading, spacing: 8) {
@@ -105,5 +107,5 @@ struct SGActDetailSheet: View {
 }
 
 //#Preview {
-//    SGArtistProfileSheet()
+//    SGActDetailSheet()
 //}
