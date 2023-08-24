@@ -21,61 +21,58 @@ struct EventScheduleView: View {
         let activeDayFeatured = activeDayActs?.filter() { act in
             return act.isFeatured
         }
-        NavigationStack {
-            VStack {
-                Picker("Day", selection: $activeDay) {
-                    ForEach(days.sorted(by: { $0.startTime ?? Date() < $1.startTime ?? Date() }), id: \.self) { day in
-                        Text(day.name ?? "Unknown").tag(days.filter({ filteredDay in
-                            day.name == filteredDay.name
-                        }))
-                    }
-                }
-                .onChange(of: activeDay) { day in
-                    UserDefaults.standard.set(day.name ?? "", forKey: "ActiveDay")
-                    print("Set: \(day.name ?? "")")
-                }
-                .pickerStyle(.segmented)
-                .padding(.horizontal)
-                .padding(.vertical, 8)
-                HStack {
-                    Text("Featured artists")
-                        .font(.title3)
-                        .fontWeight(.semibold)
-                    Spacer()
-                    Button {
-                        persistenceController.deleteAllData()
-                    } label: {
-                        Text("Reset data")
-                            .foregroundColor(.red)
-                    }
-                }
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.horizontal)
-                .padding(.vertical, 8)
-                SGFeaturedActs(featuredActs: activeDayFeatured ?? [])
-                    .padding(.bottom, 12)
-                HStack {
-                    Text("Full schedule")
-                        .font(.title3)
-                        .fontWeight(.semibold)
-                    Spacer()
-                    Picker("Schedule view", selection: $activeScheduleView) {
-                        ForEach(["Schedule", "Alphabetical"], id: \.self) {
-                            Text($0)
-                        }
-                    }
-                }
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.horizontal)
-                .padding(.vertical, 8)
-                switch(activeScheduleView) {
-                    case "Schedule": SGLineupSchedule(day: activeDayObject)
-                    case "Alphabetical": SGLineupAlphabetical(day: activeDayObject)
-                    default: Text("Something went wrong")
+        VStack {
+            SGTopNav()
+            Picker("Day", selection: $activeDay) {
+                ForEach(days.sorted(by: { $0.startTime ?? Date() < $1.startTime ?? Date() }), id: \.self) { day in
+                    Text(day.name ?? "Unknown").tag(days.filter({ filteredDay in
+                        day.name == filteredDay.name
+                    }))
                 }
             }
-            .navigationTitle(Text("Riverside Festival"))
-            .navigationBarHidden(true)
+            .onChange(of: activeDay) { day in
+                UserDefaults.standard.set(day.name ?? "", forKey: "ActiveDay")
+                print("Set: \(day.name ?? "")")
+            }
+            .pickerStyle(.segmented)
+            .padding(.horizontal)
+            .padding(.bottom, 8)
+            HStack {
+                Text("Featured artists")
+                    .font(.title3)
+                    .fontWeight(.semibold)
+                Spacer()
+                Button {
+                    persistenceController.deleteAllData()
+                } label: {
+                    Text("Reset data")
+                        .foregroundColor(.red)
+                }
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.horizontal)
+            .padding(.vertical, 8)
+            SGFeaturedActs(featuredActs: activeDayFeatured ?? [])
+                .padding(.bottom, 12)
+            HStack {
+                Text("Full schedule")
+                    .font(.title3)
+                    .fontWeight(.semibold)
+                Spacer()
+                Picker("Schedule view", selection: $activeScheduleView) {
+                    ForEach(["Schedule", "Alphabetical"], id: \.self) {
+                        Text($0)
+                    }
+                }
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.horizontal)
+            .padding(.vertical, 8)
+            switch(activeScheduleView) {
+            case "Schedule": SGLineupSchedule(day: activeDayObject)
+            case "Alphabetical": SGLineupAlphabetical(day: activeDayObject)
+            default: Text("Something went wrong")
+            }
         }
     }
 }
