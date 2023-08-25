@@ -20,7 +20,7 @@ struct SGActFeatured: View {
             Image(act.imageName ?? "Artist Placeholder")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-                .frame(height: 88)
+                .frame(height: 72)
                 .clipped()
             HStack(spacing: 12) {
 //                HStack {}
@@ -33,14 +33,14 @@ struct SGActFeatured: View {
                         .font(.callout)
                         .bold()
                         .frame(height: 20)
-                    HStack (spacing: 4) {
-                        Image(systemName: "mappin.and.ellipse")
-                            .font(.system(size: 10))
-                            .foregroundColor(Color(uiColor: .secondaryLabel))
-                        Text("\(act.stage?.name ?? "Unknown") Stage")
-                            .font(.footnote)
-                            .foregroundColor(Color(UIColor.secondaryLabel))
-                    }
+//                    HStack (spacing: 4) {
+//                        Image(systemName: "mappin.and.ellipse")
+//                            .font(.system(size: 10))
+//                            .foregroundColor(Color(uiColor: .secondaryLabel))
+//                        Text("\(act.stage?.name ?? "Unknown") Stage")
+//                            .font(.footnote)
+//                            .foregroundColor(Color(UIColor.secondaryLabel))
+//                    }
                     HStack (spacing: 4) {
                         Image(systemName: "clock")
                             .font(.system(size: 10))

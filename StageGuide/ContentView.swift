@@ -12,22 +12,24 @@ struct ContentView: View {
     @FetchRequest(sortDescriptors: []) var days: FetchedResults<Day>
     
     var body: some View {
-        let sortedDays = days.sorted(by: { $0.startTime ?? Date() < $1.startTime ?? Date() })
-        let defaultDay = sortedDays.first(where: { $0.name == UserDefaults.standard.string(forKey: "ActiveDay")})
         NavigationStack{
-            TabView {
-                EventScheduleView(days: days, activeDay: defaultDay ?? sortedDays[0])
+            TabView{
+                FullScheduleView(days: days)
                     .tabItem {
                         Label("Full schedule", systemImage: "sparkles.rectangle.stack")
+                    }
+                YourScheduleView(days: days)
+                    .tabItem {
+                        Label("Your schedule", systemImage: "calendar")
                     }
             }
         }
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-            .preferredColorScheme(.dark)
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView()
+//            .preferredColorScheme(.dark)
+//    }
+//}

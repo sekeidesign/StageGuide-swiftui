@@ -1,5 +1,5 @@
 //
-//  EventScheduleView.swift
+//  FullScheduleView.swift
 //  StageGuide
 //
 //  Created by Piergiorgio Gonni on 2023-08-22.
@@ -7,31 +7,29 @@
 
 import SwiftUI
 
-struct EventScheduleView: View {
-    let days: FetchedResults<Day>
-    @State var activeDay: Day
-    @State var activeScheduleView: String = "Schedule"
+struct FullScheduleView: View {
+    @State var days: FetchedResults<Day>
+    @AppStorage("ActiveDay") private var activeDay: String = (UserDefaults.standard.string(forKey: "ActiveDay") ?? "Friday")
+    @State private var activeScheduleView: String = "Schedule"
     
     var body: some View {
-        var activeDayObject: Day? {
-            days.first(where: { $0.name == activeDay.name })
-        }
-        let activeDayActs = activeDayObject?.acts?.compactMap { $0 as? Act }
+        let availableDays: [String] = days.sorted(by: {$0.startTime ?? Date() < $1.startTime ?? Date()}).compactMap({$0.name})
+        let activeDayObject: Day = days.first(where: {$0.name == activeDay})!
+        let activeDayActs = activeDayObject.acts?.compactMap { $0 as? Act }
         let activeDayFeatured = activeDayActs?.filter() { act in
             return act.isFeatured
         }
         VStack {
             SGTopNav()
             Picker("Day", selection: $activeDay) {
-                ForEach(days.sorted(by: { $0.startTime ?? Date() < $1.startTime ?? Date() }), id: \.self) { day in
-                    Text(day.name ?? "Unknown").tag(days.filter({ filteredDay in
-                        day.name == filteredDay.name
+                ForEach(availableDays, id: \.self) { day in
+                    Text(day).tag(days.filter({ filteredDay in
+                        day == filteredDay.name
                     }))
                 }
             }
             .onChange(of: activeDay) { day in
-                UserDefaults.standard.set(day.name ?? "", forKey: "ActiveDay")
-                print("Set: \(day.name ?? "")")
+                UserDefaults.standard.set(day , forKey: "ActiveDay")
             }
             .pickerStyle(.segmented)
             .padding(.horizontal)
@@ -46,7 +44,7 @@ struct EventScheduleView: View {
             .padding(.horizontal)
             .padding(.vertical, 8)
             SGFeaturedActs(featuredActs: activeDayFeatured ?? [])
-                .padding(.bottom, 12)
+                .padding(.bottom, 8)
             HStack {
                 Text("Full schedule")
                     .font(.title3)
@@ -71,5 +69,5 @@ struct EventScheduleView: View {
 }
 
 //#Preview {
-//    EventScheduleView()
+//    FullScheduleView()
 //}

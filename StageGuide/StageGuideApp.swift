@@ -8,7 +8,6 @@
 import SwiftUI
 
 class AppDelegate: NSObject, UIApplicationDelegate {
-    
     let persistenceController = PersistenceController.shared
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
@@ -36,10 +35,9 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 @main
 struct StageGuideApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-    
-    let persistenceController = PersistenceController.shared
-    
     @Environment(\.scenePhase) var scenePhase
+        
+    let persistenceController = PersistenceController.shared
     
     var body: some Scene {
         WindowGroup {

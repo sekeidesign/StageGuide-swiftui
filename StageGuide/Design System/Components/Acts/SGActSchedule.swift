@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SGActSchedule: View {
     @ObservedObject var viewModel: ActViewModel
+    var hasAdd = true
     
     @State private var isSheetPresented = false
     
@@ -44,6 +45,7 @@ struct SGActSchedule: View {
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             SGAddButton(isActive: act.isFavorite, action: viewModel.toggleFavoriteStatus)
+                .isHidden(!hasAdd, remove: true)
         }
         .frame(maxWidth: .infinity)
         .padding(12)
