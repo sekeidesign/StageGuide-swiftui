@@ -27,13 +27,14 @@
 		282EEF9A2A91184B00BE6BE7 /* SGActViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282EEF992A91184B00BE6BE7 /* SGActViewModel.swift */; };
 		2867ED8C2A9156D3007065A6 /* SGActDetailSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2867ED8B2A9156D3007065A6 /* SGActDetailSheet.swift */; };
 		2867ED8F2A917911007065A6 /* SGReadMore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2867ED8E2A917911007065A6 /* SGReadMore.swift */; };
-		2867ED922A9529A7007065A6 /* EventScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2867ED912A9529A7007065A6 /* EventScheduleView.swift */; };
+		2867ED922A9529A7007065A6 /* FullScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2867ED912A9529A7007065A6 /* FullScheduleView.swift */; };
 		2867ED942A952A38007065A6 /* SGFeaturedActs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2867ED932A952A38007065A6 /* SGFeaturedActs.swift */; };
 		2867ED992A9697EB007065A6 /* Links.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2867ED982A9697EB007065A6 /* Links.swift */; };
 		2867ED9C2A969E41007065A6 /* SGLinkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2867ED9B2A969E41007065A6 /* SGLinkList.swift */; };
 		2867ED9F2A96A57B007065A6 /* WrappingHStack in Frameworks */ = {isa = PBXBuildFile; productRef = 2867ED9E2A96A57B007065A6 /* WrappingHStack */; };
 		2867EDA12A97FA7E007065A6 /* SGTopNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2867EDA02A97FA7E007065A6 /* SGTopNav.swift */; };
 		2867EDA32A980D3D007065A6 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2867EDA22A980D3D007065A6 /* SettingsView.swift */; };
+		2878C8C32A99082A00AA14B2 /* YourScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2878C8C22A99082A00AA14B2 /* YourScheduleView.swift */; };
 		2887768F2A82F78B00326204 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 2887768E2A82F78B00326204 /* .gitignore */; };
 		288776932A8314CB00326204 /* Riverside.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 288776912A8314CB00326204 /* Riverside.xcdatamodeld */; };
 		288776952A831B7C00326204 /* Riverside.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288776942A831B7C00326204 /* Riverside.swift */; };
@@ -72,12 +73,13 @@
 		282EEF992A91184B00BE6BE7 /* SGActViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGActViewModel.swift; sourceTree = "<group>"; };
 		2867ED8B2A9156D3007065A6 /* SGActDetailSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGActDetailSheet.swift; sourceTree = "<group>"; };
 		2867ED8E2A917911007065A6 /* SGReadMore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGReadMore.swift; sourceTree = "<group>"; };
-		2867ED912A9529A7007065A6 /* EventScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventScheduleView.swift; sourceTree = "<group>"; };
+		2867ED912A9529A7007065A6 /* FullScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScheduleView.swift; sourceTree = "<group>"; };
 		2867ED932A952A38007065A6 /* SGFeaturedActs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGFeaturedActs.swift; sourceTree = "<group>"; };
 		2867ED982A9697EB007065A6 /* Links.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Links.swift; sourceTree = "<group>"; };
 		2867ED9B2A969E41007065A6 /* SGLinkList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGLinkList.swift; sourceTree = "<group>"; };
 		2867EDA02A97FA7E007065A6 /* SGTopNav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGTopNav.swift; sourceTree = "<group>"; };
 		2867EDA22A980D3D007065A6 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		2878C8C22A99082A00AA14B2 /* YourScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourScheduleView.swift; sourceTree = "<group>"; };
 		2887768E2A82F78B00326204 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		288776922A8314CB00326204 /* Riverside.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Riverside.xcdatamodel; sourceTree = "<group>"; };
 		288776942A831B7C00326204 /* Riverside.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Riverside.swift; sourceTree = "<group>"; };
@@ -323,7 +325,8 @@
 		2867ED902A952993007065A6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				2867ED912A9529A7007065A6 /* EventScheduleView.swift */,
+				2867ED912A9529A7007065A6 /* FullScheduleView.swift */,
+				2878C8C22A99082A00AA14B2 /* YourScheduleView.swift */,
 				2867EDA22A980D3D007065A6 /* SettingsView.swift */,
 			);
 			path = Views;
@@ -460,6 +463,7 @@
 				2867ED8C2A9156D3007065A6 /* SGActDetailSheet.swift in Sources */,
 				288776992A85743300326204 /* SGLineupSchedule.swift in Sources */,
 				2867ED9C2A969E41007065A6 /* SGLinkList.swift in Sources */,
+				2878C8C32A99082A00AA14B2 /* YourScheduleView.swift in Sources */,
 				281B519C2A7B30A400F4EAFC /* CustomFonts.swift in Sources */,
 				281777212A7D86BB00D2EF40 /* SGCircleButton.swift in Sources */,
 				2867ED8F2A917911007065A6 /* SGReadMore.swift in Sources */,
@@ -475,7 +479,7 @@
 				28A2F05B2A82E250006A59DA /* SGActFeatured.swift in Sources */,
 				281B51A02A7C6FCA00F4EAFC /* SGButton.swift in Sources */,
 				2867EDA32A980D3D007065A6 /* SettingsView.swift in Sources */,
-				2867ED922A9529A7007065A6 /* EventScheduleView.swift in Sources */,
+				2867ED922A9529A7007065A6 /* FullScheduleView.swift in Sources */,
 				2867ED992A9697EB007065A6 /* Links.swift in Sources */,
 				2887769B2A858A1F00326204 /* Schedules.swift in Sources */,
 				282EEF9A2A91184B00BE6BE7 /* SGActViewModel.swift in Sources */,

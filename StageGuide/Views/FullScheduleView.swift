@@ -1,5 +1,5 @@
 //
-//  EventScheduleView.swift
+//  FullScheduleView.swift
 //  StageGuide
 //
 //  Created by Piergiorgio Gonni on 2023-08-22.
@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct EventScheduleView: View {
-    let days: FetchedResults<Day>
+struct FullScheduleView: View {
+    @State var days: FetchedResults<Day>
     @State var activeDay: Day
-    @State var activeScheduleView: String = "Schedule"
+    @State private var activeScheduleView: String = "Schedule"
     
     var body: some View {
         var activeDayObject: Day? {
@@ -71,5 +71,5 @@ struct EventScheduleView: View {
 }
 
 //#Preview {
-//    EventScheduleView()
+//    FullScheduleView()
 //}
