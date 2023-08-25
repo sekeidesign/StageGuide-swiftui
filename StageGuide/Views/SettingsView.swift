@@ -71,17 +71,19 @@ struct SettingsView: View {
                     }
                     Section(header: Text("App icon")) {
                         WrappingHStack(availableAppIcons, id: \.self, spacing: .constant(16), lineSpacing: 16) {
-                                SGAppIconButton(image: Image("App Icons/\($0)"), iconName: $0, isActive: $0 == activeAppIcon)
+                            SGAppIconButton(image: Image("App Icons/\($0)"), iconName: $0, isActive: $0 == activeAppIcon)
                         }
                         .padding(.vertical, 8)
                     }
                     
+#if DEBUG
                     Button {
                         persistenceController.deleteAllData()
                     } label: {
                         Text("Reset data")
                             .foregroundColor(.red)
                     }
+#endif
                 }
                 .frame( maxWidth: .infinity)
             }
