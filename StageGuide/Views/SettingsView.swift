@@ -144,19 +144,21 @@ struct NotificationTimingView: View {
         NavigationStack {
             List {
                 ForEach([0, 5, 10, 15], id: \.self) { timing in
-                    HStack {
-                        Text(timing == 0 ? "Start of the set" : "\(timing) minutes before")
-                        Spacer()
-                        Image(systemName: "checkmark")
-                            .foregroundColor(.accentColor)
-                            .isHidden(notificationTiming != timing)
+                    Button {
+                        UserDefaults.standard.set(timing, forKey: "NotificationTiming")
+                    } label: {
+                        HStack {
+                            Text(timing == 0 ? "Start of the set" : "\(timing) minutes before")
+                                .foregroundColor(Color(uiColor: .label))
+                            Spacer()
+                            Image(systemName: "checkmark")
+                                .foregroundColor(.accentColor)
+                                .isHidden(notificationTiming != timing)
+                        }
                         
                     }
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 4)
-                    .onTapGesture {
-                        UserDefaults.standard.set(timing, forKey: "NotificationTiming")
-                    }
                 }
             }
             Spacer()
