@@ -38,7 +38,7 @@ struct SettingsView: View {
                                 .labelsHidden()
                         }
                         NavigationLink {
-                            Text("Yo")
+                            NotificationTimingView(notificationTiming: notificationTiming)
                         } label: {
                             HStack{
                                 VStack(alignment: .leading) {
@@ -128,6 +128,33 @@ struct SurveyCard: View {
             startPoint: UnitPoint(x: 0.25, y: 0),
             endPoint: UnitPoint(x: 0.5, y: 1)
         )))
+    }
+}
+
+struct NotificationTimingView: View {
+    let notificationTiming: Int
+    var body: some View {
+        NavigationStack {
+            List {
+                ForEach([0, 5, 10, 15], id: \.self) { timing in
+                    HStack {
+                        Text(timing == 0 ? "Start of the set" : "\(timing) minutes before")
+                        Spacer()
+                        Image(systemName: "checkmark")
+                            .foregroundColor(.accentColor)
+                            .isHidden(notificationTiming != timing)
+                        
+                    }
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 4)
+                    .onTapGesture {
+                        UserDefaults.standard.set(timing, forKey: "NotificationTiming")
+                    }
+                }
+            }
+            Spacer()
+        }
+        .navigationBarTitle("Notification Timing", displayMode: .inline)
     }
 }
 
