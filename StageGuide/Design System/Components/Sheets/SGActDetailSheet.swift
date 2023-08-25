@@ -24,7 +24,7 @@ struct SGActDetailSheet: View {
                         .resizable()
                         .scaledToFill()
                         .frame(width: geometry.size.width)
-                        .frame(maxHeight: imageHeight + 32)
+                        .frame(maxHeight: imageHeight + 72)
                     Rectangle()
                         .fill(LinearGradient(
                             stops: [
@@ -53,9 +53,9 @@ struct SGActDetailSheet: View {
                     .padding(.horizontal, 20)
                     .padding(.top, 20)
                 }
-                .frame(height: imageHeight + 32)
+                .frame(height: imageHeight + 72)
                 .clipped()
-//                .frame(width: geometry.size.width)
+                //                .frame(width: geometry.size.width)
             }
             ScrollView {
                 VStack (spacing: 24) {
@@ -90,14 +90,14 @@ struct SGActDetailSheet: View {
                     .padding(.bottom, 8)
                     SGReadMore(originalText: act.bio ?? "", maxLines: 4)
                         .frame(maxWidth: .infinity, alignment: .leading)
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("Links")
-                        .font(.title3)
-                        .fontWeight(.semibold)
-                    SGLinkList(links: act.links ?? [])
-                }
-                .isHidden(act.links?.count ?? 0 < 1, remove: true)
-                Spacer()
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("Links")
+                            .font(.title3)
+                            .fontWeight(.semibold)
+                        SGLinkList(links: act.links ?? [])
+                    }
+                    .isHidden(act.links?.count ?? 0 < 1, remove: true)
+                    Spacer()
                 }
                 .frame(maxWidth: .infinity)
                 .padding(.horizontal, 20)

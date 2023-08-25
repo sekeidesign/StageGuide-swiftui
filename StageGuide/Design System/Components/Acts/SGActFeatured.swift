@@ -20,7 +20,7 @@ struct SGActFeatured: View {
             Image(act.imageName ?? "Artist Placeholder")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-                .frame(height: 56)
+                .frame(height: 72)
                 .clipped()
             HStack(spacing: 12) {
 //                HStack {}
