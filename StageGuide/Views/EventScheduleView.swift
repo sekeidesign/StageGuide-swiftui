@@ -46,7 +46,7 @@ struct EventScheduleView: View {
             .padding(.horizontal)
             .padding(.vertical, 8)
             SGFeaturedActs(featuredActs: activeDayFeatured ?? [])
-                .padding(.bottom, 12)
+                .padding(.bottom, 8)
             HStack {
                 Text("Full schedule")
                     .font(.title3)
