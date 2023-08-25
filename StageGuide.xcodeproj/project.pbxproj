@@ -35,7 +35,6 @@
 		2867EDA12A97FA7E007065A6 /* SGTopNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2867EDA02A97FA7E007065A6 /* SGTopNav.swift */; };
 		2867EDA32A980D3D007065A6 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2867EDA22A980D3D007065A6 /* SettingsView.swift */; };
 		2878C8C32A99082A00AA14B2 /* YourScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2878C8C22A99082A00AA14B2 /* YourScheduleView.swift */; };
-		2878C8C52A991E3600AA14B2 /* CurrentDateChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2878C8C42A991E3600AA14B2 /* CurrentDateChecker.swift */; };
 		2887768F2A82F78B00326204 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 2887768E2A82F78B00326204 /* .gitignore */; };
 		288776932A8314CB00326204 /* Riverside.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 288776912A8314CB00326204 /* Riverside.xcdatamodeld */; };
 		288776952A831B7C00326204 /* Riverside.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288776942A831B7C00326204 /* Riverside.swift */; };
@@ -81,7 +80,6 @@
 		2867EDA02A97FA7E007065A6 /* SGTopNav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGTopNav.swift; sourceTree = "<group>"; };
 		2867EDA22A980D3D007065A6 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		2878C8C22A99082A00AA14B2 /* YourScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourScheduleView.swift; sourceTree = "<group>"; };
-		2878C8C42A991E3600AA14B2 /* CurrentDateChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentDateChecker.swift; sourceTree = "<group>"; };
 		2887768E2A82F78B00326204 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		288776922A8314CB00326204 /* Riverside.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Riverside.xcdatamodel; sourceTree = "<group>"; };
 		288776942A831B7C00326204 /* Riverside.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Riverside.swift; sourceTree = "<group>"; };
@@ -301,7 +299,6 @@
 		281B51A72A7C8D1300F4EAFC /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				2878C8C42A991E3600AA14B2 /* CurrentDateChecker.swift */,
 				281B51A82A7C8D2200F4EAFC /* Placeholders.swift */,
 				2887769A2A858A1F00326204 /* Schedules.swift */,
 				2867ED982A9697EB007065A6 /* Links.swift */,
@@ -484,7 +481,6 @@
 				2867EDA32A980D3D007065A6 /* SettingsView.swift in Sources */,
 				2867ED922A9529A7007065A6 /* FullScheduleView.swift in Sources */,
 				2867ED992A9697EB007065A6 /* Links.swift in Sources */,
-				2878C8C52A991E3600AA14B2 /* CurrentDateChecker.swift in Sources */,
 				2887769B2A858A1F00326204 /* Schedules.swift in Sources */,
 				282EEF9A2A91184B00BE6BE7 /* SGActViewModel.swift in Sources */,
 				2887769D2A8AB8C200326204 /* SGLineupAlphabetical.swift in Sources */,
