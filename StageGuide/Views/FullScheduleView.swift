@@ -30,7 +30,6 @@ struct FullScheduleView: View {
             }
             .onChange(of: activeDay) { day in
                 UserDefaults.standard.set(day , forKey: "ActiveDay")
-                print("Set: \(day )")
             }
             .pickerStyle(.segmented)
             .padding(.horizontal)

@@ -39,7 +39,7 @@ struct SGLineupSchedule: View {
                             ForEach(actsInSlot.sorted(by: { $0.startTime ?? Date() < $1.startTime ?? Date() }), id: \.self.id) { act in
                                 let actViewModel = ActViewModel(act: act){
                                 }
-                                SGActSchedule(viewModel: actViewModel)
+                                SGActSchedule(viewModel: actViewModel, hasAdd: inContext == .fullSchedule)
                             }
                         }
                     }

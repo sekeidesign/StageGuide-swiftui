@@ -17,6 +17,9 @@ struct YourScheduleView: View {
         let activeDayObject: Day = days.first(where: {$0.name == activeDay})!
         VStack {
             SGTopNav()
+            UpNextForYou(days: days)
+                .padding(.horizontal)
+                .padding(.bottom, 16)
             Picker("Day", selection: $activeDay) {
                 ForEach(availableDays, id: \.self) { day in
                     Text(day).tag(availableDays.filter({ filteredDay in
@@ -26,13 +29,12 @@ struct YourScheduleView: View {
             }
             .onChange(of: activeDay) { day in
                 UserDefaults.standard.set(day, forKey: "ActiveDay")
-                print("Set: \(day)")
             }
             .pickerStyle(.segmented)
             .padding(.horizontal)
             .padding(.bottom, 8)
             HStack {
-                Text("Full schedule")
+                Text("Your schedule")
                     .font(.title3)
                     .fontWeight(.semibold)
                 Spacer()
@@ -51,6 +53,30 @@ struct YourScheduleView: View {
             default: Text("Something went wrong")
             }
         }
+    }
+}
+
+struct UpNextForYou: View {
+    @FetchRequest(sortDescriptors: []) private var festival: FetchedResults<Festival>
+    let days: FetchedResults<Day>
+    var body: some View {
+        let today = days.first(where: {Date() < $0.endTime ?? Date()})
+        let rawLineupDay = today?.acts?.compactMap { $0 as? Act }
+        let sortedLineup = rawLineupDay?.sorted(by: {$0.startTime ?? Date() < $1.startTime ?? Date()})
+        let nextAct = (sortedLineup?.first(where: {$0.startTime ?? Date() > Date() && $0.isFavorite == true}))!
+        let actViewModel = ActViewModel(act: nextAct){}
+        VStack(alignment: .leading, spacing: 8) {
+            Text("Up next for you")
+                .font(.title3)
+                .bold()
+                .frame(maxWidth: .infinity, alignment: .leading)
+            SGActSchedule(viewModel: actViewModel, hasAdd: false)
+        }
+        .frame(maxWidth: .infinity)
+        .padding(12)
+        .background(Color(uiColor: .tertiarySystemFill))
+        .clipShape(RoundedRectangle(cornerRadius: 20, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/))
+        .isHidden(Date() < festival[0].startTime ?? Date(), remove: true)
     }
 }
 
