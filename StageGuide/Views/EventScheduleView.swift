@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct EventScheduleView: View {
-    let persistenceController = PersistenceController.shared
     let days: FetchedResults<Day>
     @State var activeDay: Day
     @State var activeScheduleView: String = "Schedule"
@@ -42,12 +41,6 @@ struct EventScheduleView: View {
                     .font(.title3)
                     .fontWeight(.semibold)
                 Spacer()
-                Button {
-                    persistenceController.deleteAllData()
-                } label: {
-                    Text("Reset data")
-                        .foregroundColor(.red)
-                }
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.horizontal)

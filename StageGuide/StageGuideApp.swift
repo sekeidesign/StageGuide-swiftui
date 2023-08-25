@@ -18,11 +18,14 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 //        UserDefaults.standard.set(false, forKey: "HasLaunchedBefore")
         
         if !UserDefaults.standard.bool(forKey: "HasLaunchedBefore") {
+            
             // Populate Core Data with initial data
             populateInitialData()
+            
             UserDefaults.standard.set("Friday", forKey: "ActiveDay")
             UserDefaults.standard.set(true, forKey: "HasLaunchedBefore")
             UserDefaults.standard.set(true, forKey: "AreNotificationsEnabled")
+            UserDefaults.standard.set(true, forKey: "AreLiveActivitiesEnabled")
             UserDefaults.standard.set(10, forKey: "NotificationTiming")
         }
         
