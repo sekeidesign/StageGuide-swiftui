@@ -14,7 +14,7 @@ struct SGLinkList: View {
     var body: some View {
         WrappingHStack(links, id: \.self, spacing: .constant(8)) { link in
                 SGPillButton(link: link)
-                .padding(.bottom, 8)
+                .padding(.bottom, 12)
         }
         .frame(maxWidth: .infinity)
     }
