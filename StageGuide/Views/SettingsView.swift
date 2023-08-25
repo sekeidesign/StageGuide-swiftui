@@ -13,6 +13,7 @@ struct SettingsView: View {
     @AppStorage("NotificationTiming") private var notificationTiming: Int = UserDefaults.standard.integer(forKey: "NotificationTiming")
     @AppStorage("ActiveAppIcon") private var activeAppIcon: String = (UserDefaults.standard.string(forKey: "ActiveAppIcon") ?? "OG")
     
+    private let persistenceController = PersistenceController.shared
     let availableAppIcons = [
         "Riverside",
         "OG"
@@ -73,10 +74,15 @@ struct SettingsView: View {
                         }
                         .padding(.vertical, 8)
                     }
+                    
+                    Button {
+                        persistenceController.deleteAllData()
+                    } label: {
+                        Text("Reset data")
+                            .foregroundColor(.red)
+                    }
                 }
                 .frame( maxWidth: .infinity)
-                //            .edgesIgnoringSafeArea(.all)
-                //            .listStyle(GroupedListStyle())
             }
             .navigationBarTitle("Settings", displayMode: .inline)
             .onAppear {
