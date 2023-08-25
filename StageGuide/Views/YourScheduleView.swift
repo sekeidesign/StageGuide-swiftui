@@ -9,26 +9,24 @@ import SwiftUI
 
 struct YourScheduleView: View {
     @State var days: FetchedResults<Day>
-    @State var activeDay: Day
+    @AppStorage("ActiveDay") private var activeDay: String = (UserDefaults.standard.string(forKey: "ActiveDay") ?? "Friday")
     @State private var activeScheduleView: String = "Schedule"
     
     var body: some View {
-        var activeDayObject: Day? {
-            days.first(where: { $0.name == activeDay.name })
-        }
-        let activeDayActs = activeDayObject?.acts?.compactMap { $0 as? Act }
+        let availableDays: [String] = days.sorted(by: {$0.startTime ?? Date() < $1.startTime ?? Date()}).compactMap({$0.name})
+        let activeDayObject: Day = days.first(where: {$0.name == activeDay})!
         VStack {
             SGTopNav()
             Picker("Day", selection: $activeDay) {
-                ForEach(days.sorted(by: { $0.startTime ?? Date() < $1.startTime ?? Date() }), id: \.self) { day in
-                    Text(day.name ?? "Unknown").tag(days.filter({ filteredDay in
-                        day.name == filteredDay.name
+                ForEach(availableDays, id: \.self) { day in
+                    Text(day).tag(availableDays.filter({ filteredDay in
+                        filteredDay == day
                     }))
                 }
             }
             .onChange(of: activeDay) { day in
-                UserDefaults.standard.set(day.name ?? "", forKey: "ActiveDay")
-                print("Set: \(day.name ?? "")")
+                UserDefaults.standard.set(day, forKey: "ActiveDay")
+                print("Set: \(day)")
             }
             .pickerStyle(.segmented)
             .padding(.horizontal)
@@ -48,8 +46,8 @@ struct YourScheduleView: View {
             .padding(.horizontal)
             .padding(.vertical, 8)
             switch(activeScheduleView) {
-            case "Schedule": SGLineupSchedule(day: activeDayObject)
-            case "Alphabetical": SGLineupAlphabetical(day: activeDayObject)
+            case "Schedule": SGLineupSchedule(day: activeDayObject, inContext: .yourSchedule)
+            case "Alphabetical": SGLineupAlphabetical(day: activeDayObject, inContext: .yourSchedule)
             default: Text("Something went wrong")
             }
         }

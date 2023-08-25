@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct SGLineupAlphabetical: View {
-    @State var isFavorite = false
     var day: Day?
+    var inContext: scheduleViewContext = .fullSchedule
     
     var body: some View {
         let rawLineupDay = day?.acts?.compactMap { $0 as? Act }
-        let lineupDay = rawLineupDay?.filter({$0.name != "Intermission"})
+        let lineupDay = switch(inContext) {
+        case .fullSchedule : rawLineupDay?.filter({$0.name != "Intermission"})
+        case .yourSchedule : rawLineupDay?.filter({$0.name != "Intermission"}).filter({$0.isFavorite == true})
+        }
         let initialSlots = extractInitials(lineup: lineupDay ?? [])
         let placeholderName = "Unknown"
         ScrollView {
