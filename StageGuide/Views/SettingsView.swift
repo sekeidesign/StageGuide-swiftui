@@ -10,6 +10,7 @@ import WrappingHStack
 
 struct SettingsView: View {
     @AppStorage("AreNotificationsEnabled") private var areNotificationsEnabled: Bool = UserDefaults.standard.bool(forKey: "AreNotificationsEnabled")
+    @AppStorage("AreLiveActivitiesEnabled") private var areLiveActivitiesEnabled: Bool = UserDefaults.standard.bool(forKey: "AreLiveActivitiesEnabled")
     @AppStorage("NotificationTiming") private var notificationTiming: Int = UserDefaults.standard.integer(forKey: "NotificationTiming")
     @AppStorage("ActiveAppIcon") private var activeAppIcon: String = (UserDefaults.standard.string(forKey: "ActiveAppIcon") ?? "OG")
     
@@ -64,7 +65,7 @@ struct SettingsView: View {
                                     .foregroundStyle(Color(uiColor: .secondaryLabel))
                             }
                             Spacer()
-                            Toggle("Toggle Notifications", isOn: $areNotificationsEnabled)
+                            Toggle("Toggle Live Activities", isOn: $areLiveActivitiesEnabled)
                                 .labelsHidden()
                         }
                     }
