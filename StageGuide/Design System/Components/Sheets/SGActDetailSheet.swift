@@ -11,7 +11,7 @@ struct SGActDetailSheet: View {
     @Environment(\.dismiss) var dismiss
     @ObservedObject var viewModel: ActViewModel
     var act: Act
-    let imageHeight: CGFloat = 320
+    let imageHeight: CGFloat = 280
     
     var body: some View {
         let act = viewModel.act
@@ -28,11 +28,11 @@ struct SGActDetailSheet: View {
                     Rectangle()
                         .fill(LinearGradient(
                             stops: [
-                                Gradient.Stop(color: Color(uiColor: .systemBackground), location: 0.2),
-                                Gradient.Stop(color: Color(uiColor: .systemBackground).opacity(0), location: 0.5),
+                                Gradient.Stop(color: Color(uiColor: .systemBackground), location: 0.05),
+                                Gradient.Stop(color: Color(uiColor: .systemBackground).opacity(0), location: 0.6),
                             ],
-                            startPoint: UnitPoint(x: 0.45, y: 1.1),
-                            endPoint: UnitPoint(x: 0.55, y: 0)))
+                            startPoint: UnitPoint(x: 0.5, y: 1),
+                            endPoint: UnitPoint(x: 0.5, y: 0)))
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                     VStack (alignment: .trailing) {
                         SGCircleButton(symbol: Image(systemName: "xmark"), variant: .secondary, onMaterial: true){

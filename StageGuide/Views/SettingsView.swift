@@ -1,0 +1,136 @@
+//
+//  SettingsView.swift
+//  StageGuide
+//
+//  Created by Piergiorgio Gonni on 2023-08-24.
+//
+
+import SwiftUI
+import WrappingHStack
+
+struct SettingsView: View {
+    @AppStorage("AreNotificationsEnabled") private var areNotificationsEnabled: Bool = UserDefaults.standard.bool(forKey: "AreNotificationsEnabled")
+    @AppStorage("NotificationTiming") private var notificationTiming: Int = UserDefaults.standard.integer(forKey: "NotificationTiming")
+    @AppStorage("ActiveAppIcon") private var activeAppIcon: String = (UserDefaults.standard.string(forKey: "ActiveAppIcon") ?? "OG")
+    
+    let availableAppIcons = [
+        "Riverside",
+        "OG"
+    ]
+    
+    var body: some View {
+        NavigationStack{
+            VStack {
+                SurveyCard()
+                    .padding(.horizontal, 20)
+                    .padding(.top, 8)
+                List {
+                    Section(header: Text("Notifications")) {
+                        HStack{
+                            VStack(alignment: .leading) {
+                                Text("Toggle Notifications")
+                                Text("Get alerts before scheduled sets")
+                                    .font(.subheadline)
+                                    .foregroundStyle(Color(uiColor: .secondaryLabel))
+                            }
+                            Spacer()
+                            Toggle("Toggle Notifications", isOn: $areNotificationsEnabled)
+                                .labelsHidden()
+                        }
+                        NavigationLink {
+                            Text("Yo")
+                        } label: {
+                            HStack{
+                                VStack(alignment: .leading) {
+                                    Text("Notification timing")
+                                    Text("When to receive notifications")
+                                        .font(.subheadline)
+                                        .foregroundColor(Color(uiColor: .secondaryLabel))
+                                }
+                                Spacer()
+                                Text("\(notificationTiming)min")
+                                    .foregroundColor(Color(uiColor: .tertiaryLabel))
+                            }
+                        }
+                    }
+                    
+                    Section(header: Text("Live Activities")) {
+                        HStack{
+                            VStack(alignment: .leading) {
+                                Text("Show Live Activity")
+                                Text("Live timeline on your lock screen")
+                                    .font(.subheadline)
+                                    .foregroundStyle(Color(uiColor: .secondaryLabel))
+                            }
+                            Spacer()
+                            Toggle("Toggle Notifications", isOn: $areNotificationsEnabled)
+                                .labelsHidden()
+                        }
+                    }
+                    Section(header: Text("App icon")) {
+                        WrappingHStack(availableAppIcons, id: \.self, spacing: .constant(16), lineSpacing: 16) {
+                                SGAppIconButton(image: Image("App Icons/\($0)"), iconName: $0, isActive: $0 == activeAppIcon)
+                        }
+                        .padding(.vertical, 8)
+                    }
+                }
+                .frame( maxWidth: .infinity)
+                //            .edgesIgnoringSafeArea(.all)
+                //            .listStyle(GroupedListStyle())
+            }
+            .navigationBarTitle("Settings", displayMode: .inline)
+            .onAppear {
+                UserDefaults.standard.set(true, forKey: "HasOpenedSettings")
+            }
+        }
+    }
+}
+
+struct SurveyCard: View {
+    var body: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            HStack(spacing: 4) {
+                Text("StageGuide")
+                    .foregroundColor(Color(uiColor: .secondaryLabel))
+                Text("(Riverside Beta 0.0.1)")
+                    .foregroundColor(Color(uiColor: .tertiaryLabel))
+            }
+            .font(.caption)
+            .fontWeight(.bold)
+            HStack(spacing: 4) {
+                Text("Get")
+                Text("one free year")
+                    .textCase(.uppercase)
+                    .foregroundColor(.accentColor)
+                    .bold()
+                Text("of StageGuide")
+            }
+            .font(.subheadline)
+            .foregroundColor(Color(uiColor: .label))
+            HStack {
+                Text("Add your email in the survey for a free year")
+                    .font(.caption2)
+                    .foregroundColor(Color(uiColor: .tertiaryLabel))
+                Spacer()
+                SGPillButton(symbol: Image(systemName: "arrow.right.doc.on.clipboard"), label: Text("Survey"), link: "https://google.com", linkFromDomain: false)
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+        }
+        .padding(12)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Color(uiColor: .tertiarySystemFill))
+        .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
+        .overlay(RoundedRectangle(cornerRadius: 8, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/).stroke(LinearGradient(
+            stops: [
+                Gradient.Stop(color: .white.opacity(0.5), location: 0.00),
+                Gradient.Stop(color: .white.opacity(0), location: 1.00),
+            ],
+            startPoint: UnitPoint(x: 0.25, y: 0),
+            endPoint: UnitPoint(x: 0.5, y: 1)
+        )))
+    }
+}
+
+//#Preview {
+//    SettingsView()
+//}

@@ -33,13 +33,13 @@ struct SGTopNav: View {
                 .isHidden(hasOpenedSettings, remove: true)
             }
             .navigationDestination(isPresented: $isSettingsPresented) {
-                Text("Settings")
+                SettingsView()
             }
         }
         .padding(.horizontal, 16)
     }
 }
 
-#Preview {
-    SGTopNav()
-}
+//#Preview {
+//    SGTopNav()
+//}

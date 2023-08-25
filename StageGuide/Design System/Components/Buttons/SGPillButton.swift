@@ -16,6 +16,7 @@ struct SGPillButton: View {
     var onMaterial: Bool = false
     var action: (() -> Void)?
     var link: String?
+    var linkFromDomain = true
     
     var foregroundColor: Color {
             switch isActive {
@@ -32,10 +33,10 @@ struct SGPillButton: View {
     
     var body: some View {
         let linkLabel = extractDomain(from: link ?? "")
-        let computedLabel = link != nil ? Text(linkLabel) : label
+        let computedLabel = link != nil && linkFromDomain ? Text(linkLabel) : label
         let supportedDomains: Set<String> = ["Facebook", "Instagram", "Twitter", "Soundcloud", "Spotify", "Google"]
         let linkSymbol = supportedDomains.contains(linkLabel) ? Image(systemName: "globe") : Image(systemName: "globe")
-        let computedSymbol = link != nil ? linkSymbol : symbol
+        let computedSymbol = link != nil && linkFromDomain ? linkSymbol : symbol
         Button {
             link != nil ? openURL(URL(string: link!)!) : action!()
         } label: {
