@@ -13,11 +13,9 @@ struct SGLineupAlphabetical: View {
     
     var body: some View {
         let rawLineupDay = day?.acts?.compactMap { $0 as? Act }
-        let lineupDay = switch inContext {
-        case .fullSchedule : rawLineupDay?.filter({$0.name != "Intermission"})
-        case .yourSchedule : rawLineupDay?.filter({$0.name != "Intermission"}).filter({$0.isFavorite == true})
-        }
-        let initialSlots = extractInitials(lineup: lineupDay ?? [])
+        let lineupDay = rawLineupDay?.filter({$0.name != "Intermission"})
+        let lineupDayFavorites = rawLineupDay?.filter({$0.name != "Intermission"}).filter({$0.isFavorite == true})
+        let initialSlots = extractInitials(lineup: inContext == .yourSchedule ? lineupDayFavorites! : lineupDay ?? [])
         let placeholderName = "Unknown"
         ScrollView {
             VStack {

@@ -18,11 +18,9 @@ struct SGLineupSchedule: View {
     
     var body: some View {
         let rawLineupDay = day?.acts?.compactMap { $0 as? Act }
-        let lineupDay = switch inContext {
-        case .fullSchedule : rawLineupDay?.filter({$0.name != "Intermission"})
-        case .yourSchedule : rawLineupDay?.filter({$0.name != "Intermission"}).filter({$0.isFavorite == true})
-        }
-        let timeSlots = extractTimeSlots(lineup: lineupDay ?? [])
+        let lineupDay = rawLineupDay?.filter({$0.name != "Intermission"})
+        let lineupDayFavorites = rawLineupDay?.filter({$0.name != "Intermission"}).filter({$0.isFavorite == true})
+        let timeSlots = extractTimeSlots(lineup: inContext == .yourSchedule ? lineupDayFavorites! : lineupDay ?? [])
         ScrollView {
             VStack (spacing: 8) {
                 ForEach(timeSlots, id: \.self) { timeSlot in
