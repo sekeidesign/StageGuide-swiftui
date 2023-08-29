@@ -16,7 +16,7 @@ struct SGFeaturedActs: View {
             HStack(spacing: 16) {
                 ForEach(featuredActs.sorted(by: { $0.startTime ?? Date() > $1.startTime ?? Date()}) , id: \.self.id) { act in
                     let actViewModel = ActViewModel(act: act){
-                        // toggle
+                        //
                     }
                     SGActFeatured(viewModel: actViewModel)
                 }
