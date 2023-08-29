@@ -131,6 +131,7 @@
 				281B51982A7B2A8C00F4EAFC /* Info.plist */,
 				281B517C2A7B160800F4EAFC /* Design System */,
 				2867ED902A952993007065A6 /* Views */,
+				28F7777B2A9E8B470073DD93 /* ViewModels */,
 				281B516E2A7B045100F4EAFC /* StageGuideApp.swift */,
 				281B51702A7B045100F4EAFC /* ContentView.swift */,
 				281B51722A7B045200F4EAFC /* Assets.xcassets */,
@@ -186,7 +187,6 @@
 				28A2F0512A81C73D006A59DA /* SGActTimeline.swift */,
 				28A2F0582A82DD8C006A59DA /* SGActSchedule.swift */,
 				28A2F05A2A82E250006A59DA /* SGActFeatured.swift */,
-				282EEF992A91184B00BE6BE7 /* SGActViewModel.swift */,
 			);
 			path = Acts;
 			sourceTree = "<group>";
@@ -369,6 +369,14 @@
 				2867ED932A952A38007065A6 /* SGFeaturedActs.swift */,
 			);
 			path = Lineup;
+			sourceTree = "<group>";
+		};
+		28F7777B2A9E8B470073DD93 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				282EEF992A91184B00BE6BE7 /* SGActViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

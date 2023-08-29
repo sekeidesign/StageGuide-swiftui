@@ -63,9 +63,9 @@ struct UpNextForYou: View {
         let today = days.first(where: {Date() < $0.endTime ?? Date()})
         let rawLineupDay = today?.acts?.compactMap { $0 as? Act }
         let sortedLineup = rawLineupDay?.sorted(by: {$0.startTime ?? Date() < $1.startTime ?? Date()})
-        let nextAct = (sortedLineup?.first(where: {$0.startTime ?? Date() > Date() && $0.isFavorite == true}))!
+        guard let nextAct = (sortedLineup?.first(where: {$0.startTime ?? Date() > Date() && $0.isFavorite == true})) else { return AnyView(Rectangle().isHidden(true, remove: true)) }
         let actViewModel = ActViewModel(act: nextAct){}
-        VStack(alignment: .leading, spacing: 8) {
+        return AnyView(VStack(alignment: .leading, spacing: 8) {
             Text("Up next for you")
                 .font(.title3)
                 .bold()
@@ -77,6 +77,7 @@ struct UpNextForYou: View {
         .background(Color(uiColor: .tertiarySystemFill))
         .clipShape(RoundedRectangle(cornerRadius: 20, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/))
         .isHidden(Date() < festival[0].startTime ?? Date(), remove: true)
+        )
     }
 }
 

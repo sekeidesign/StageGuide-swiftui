@@ -18,19 +18,13 @@ class ActViewModel: ObservableObject {
     }
     
     func toggleFavoriteStatus() {
-        act.isFavorite.toggle()
-        toggleFavorite() // Call the provided toggle action
         
-        // Save changes to Core Data context
-//        do {
-//            try persistenceController.save()
-//        } catch {
-//            print("Error saving context: \(error)")
-//        }
+        act.isFavorite.toggle()
+        
+        toggleFavorite()
         
         persistenceController.save()
-        
-        // Manually trigger objectWillChange to update the UI
         objectWillChange.send()
+        
     }
 }
