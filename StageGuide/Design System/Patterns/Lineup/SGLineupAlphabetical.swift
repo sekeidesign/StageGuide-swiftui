@@ -39,7 +39,7 @@ struct SGLineupAlphabetical: View {
                                 SGActSchedule(viewModel: actViewModel)
                             }
                         }
-                        .padding(.trailing, 4)
+                        .padding(.trailing, 8)
                     }
                     .padding(.top, 8)
                     .overlay(
@@ -51,6 +51,8 @@ struct SGLineupAlphabetical: View {
                 }
             }
             .padding(.leading, 16)
+            VStack {}
+                .frame(height: 8)
         }
     }
 }

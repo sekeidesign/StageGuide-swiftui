@@ -23,7 +23,7 @@ func dateFrom(year: Int, month: Int, day: Int, hour: Int, minute: Int, timeZone:
 // Extract all the available time slots
 func extractTimeSlots(lineup: [Act]) -> [String] {
     var timeSlots: [String] = []
-    let sortedAct = lineup.sorted { $0.startTime ?? Date() < $1.startTime ?? Date() }
+    let sortedAct = lineup.sorted { $0.startTime ?? Date() > $1.startTime ?? Date() }
     sortedAct.forEach { act in
         guard !timeSlots.contains(formatToTimeSlot(inputTime: act.startTime ?? Date())) else {
             return

@@ -25,14 +25,14 @@ struct SGActSchedule: View {
                 Text(act.name ?? "Uknown name")
                         .font(.callout)
                         .bold()
-                HStack (spacing: 4) {
-                    Image(systemName: "mappin.and.ellipse")
-                        .font(.system(size: 10))
-                        .foregroundColor(Color(uiColor: .secondaryLabel))
-                    Text("\(act.stage?.name ?? "Unknown stage") Stage")
-                        .font(.footnote)
-                        .foregroundColor(Color(UIColor.secondaryLabel))
-                }
+//                HStack (spacing: 4) {
+//                    Image(systemName: "mappin.and.ellipse")
+//                        .font(.system(size: 10))
+//                        .foregroundColor(Color(uiColor: .secondaryLabel))
+//                    Text("\(act.stage?.name ?? "Unknown stage") Stage")
+//                        .font(.footnote)
+//                        .foregroundColor(Color(UIColor.secondaryLabel))
+//                }
                 HStack (spacing: 4) {
                     Image(systemName: "clock")
                         .font(.system(size: 10))

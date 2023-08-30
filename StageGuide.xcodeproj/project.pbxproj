@@ -47,6 +47,7 @@
 		28A2F05B2A82E250006A59DA /* SGActFeatured.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A2F05A2A82E250006A59DA /* SGActFeatured.swift */; };
 		28F035542A8C3D9B009719C2 /* SGLineupTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F035532A8C3D9B009719C2 /* SGLineupTimeline.swift */; };
 		28F035562A8C404B009719C2 /* FestivalModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F035552A8C404B009719C2 /* FestivalModels.swift */; };
+		28F777812A9EB8E70073DD93 /* EventInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F777802A9EB8E70073DD93 /* EventInfoView.swift */; };
 		28F789BA2A8E8E1D00051F5E /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F789B92A8E8E1D00051F5E /* PersistenceController.swift */; };
 /* End PBXBuildFile section */
 
@@ -92,6 +93,7 @@
 		28A2F05A2A82E250006A59DA /* SGActFeatured.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGActFeatured.swift; sourceTree = "<group>"; };
 		28F035532A8C3D9B009719C2 /* SGLineupTimeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGLineupTimeline.swift; sourceTree = "<group>"; };
 		28F035552A8C404B009719C2 /* FestivalModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestivalModels.swift; sourceTree = "<group>"; };
+		28F777802A9EB8E70073DD93 /* EventInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventInfoView.swift; sourceTree = "<group>"; };
 		28F789B92A8E8E1D00051F5E /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -328,6 +330,7 @@
 				2867ED912A9529A7007065A6 /* FullScheduleView.swift */,
 				2878C8C22A99082A00AA14B2 /* YourScheduleView.swift */,
 				2867EDA22A980D3D007065A6 /* SettingsView.swift */,
+				28F777802A9EB8E70073DD93 /* EventInfoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -475,6 +478,7 @@
 				281B519C2A7B30A400F4EAFC /* CustomFonts.swift in Sources */,
 				281777212A7D86BB00D2EF40 /* SGCircleButton.swift in Sources */,
 				2867ED8F2A917911007065A6 /* SGReadMore.swift in Sources */,
+				28F777812A9EB8E70073DD93 /* EventInfoView.swift in Sources */,
 				2817775B2A7F156C00D2EF40 /* SGSubscriptionPerk.swift in Sources */,
 				281B51712A7B045100F4EAFC /* ContentView.swift in Sources */,
 				281B516F2A7B045100F4EAFC /* StageGuideApp.swift in Sources */,
