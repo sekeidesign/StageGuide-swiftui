@@ -32,7 +32,7 @@ struct SGPillButton: View {
         }
     
     var body: some View {
-        let linkLabel = extractDomain(from: link ?? "")
+        let linkLabel = extractDomain(from: link ?? "") == "Festivalriverside" ? "Tickets" : extractDomain(from: link ?? "")
         let computedLabel = link != nil && linkFromDomain ? Text(linkLabel) : label
         let supportedDomains: Set<String> = ["Facebook", "Instagram", "Twitter", "Soundcloud", "Spotify", "Google"]
         let linkSymbol = supportedDomains.contains(linkLabel) ? Image(systemName: "globe") : Image(systemName: "globe")
@@ -63,13 +63,13 @@ struct SGPillButton: View {
     }
 }
 
-struct SGPillButton_Previews: PreviewProvider {
-    private var isPreviewDisabled = true
-    static var previews: some View {
-        VStack(spacing: 16) {
-            SGPillButton(symbol: Image(systemName: "star.fill"), label: Text("Saved"), isActive: true)
-            SGPillButton(symbol: Image(systemName: "person.fill.badge.plus"), label: nil, isActive: false, onMaterial: true)
-            SGPillButton(symbol: Image(systemName: "square.and.arrow.up"), label: Text("Share"), isActive: false, onMaterial: false)
-        }
-    }
-}
+//struct SGPillButton_Previews: PreviewProvider {
+//    private var isPreviewDisabled = true
+//    static var previews: some View {
+//        VStack(spacing: 16) {
+//            SGPillButton(symbol: Image(systemName: "star.fill"), label: Text("Saved"), isActive: true)
+//            SGPillButton(symbol: Image(systemName: "person.fill.badge.plus"), label: nil, isActive: false, onMaterial: true)
+//            SGPillButton(symbol: Image(systemName: "square.and.arrow.up"), label: Text("Share"), isActive: false, onMaterial: false)
+//        }
+//    }
+//}
