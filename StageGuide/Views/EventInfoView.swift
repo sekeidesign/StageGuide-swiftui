@@ -119,14 +119,14 @@ struct EventInfoMap: View {
                 isPickerPresented = true
             }
             .alert("View in Maps", isPresented: $isPickerPresented) {
-                if(UIApplication.shared.canOpenURL(URL(string: "comgooglemaps://")!)){
+//                if(UIApplication.shared.canOpenURL(URL(string: "comgooglemaps://")!)){
                     Button("Google Maps"){
                         let url = URL(string: "comgooglemaps://?saddr=&daddr=\(latitude),\(longitude)")
                         if UIApplication.shared.canOpenURL(url!) {
                             UIApplication.shared.open(url!, options: [:], completionHandler: nil)
                         }
                     }
-                }
+//                }
                 Button("Apple Maps"){
                     let url = URL(string: "maps://?saddr=&daddr=\(latitude),\(longitude)")
                     if UIApplication.shared.canOpenURL(url!) {
