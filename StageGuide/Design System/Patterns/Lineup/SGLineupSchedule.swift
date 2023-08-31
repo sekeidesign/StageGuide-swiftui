@@ -34,14 +34,14 @@ struct SGLineupSchedule: View {
                             .padding(.top, 4)
                             .frame(width: 40, alignment: .leading)
                         VStack {
-                            ForEach(actsInSlot.sorted(by: { $0.startTime ?? Date() < $1.startTime ?? Date() }), id: \.self.id) { act in
+                            ForEach(actsInSlot.sorted(by: { $0.startTime ?? Date() > $1.startTime ?? Date() }), id: \.self.id) { act in
                                 let actViewModel = ActViewModel(act: act){
                                 }
                                 SGActSchedule(viewModel: actViewModel, hasAdd: inContext == .fullSchedule)
                             }
                         }
                     }
-                    .padding(.trailing, 4)
+                    .padding(.trailing, 8)
                     .padding(.top, 8)
                     .overlay(
                         Rectangle()
@@ -52,6 +52,8 @@ struct SGLineupSchedule: View {
                 }
             }
             .padding(.leading, 16)
+            VStack {}
+                .frame(height: 8)
         }
     }
 }

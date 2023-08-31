@@ -4,6 +4,11 @@
 <dict>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>comgooglemaps://</string>
+		<string>maps://</string>
+	</array>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Satoshi-Regular.otf</string>
