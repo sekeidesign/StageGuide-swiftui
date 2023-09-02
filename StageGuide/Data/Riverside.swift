@@ -17,7 +17,7 @@ func populateInitialData() {
     let vanpage = Act(context: context)
     vanpage.id = UUID()
     vanpage.name = "Vanpage"
-    vanpage.startTime = dateFrom(year: 2023, month: 9, day: 1, hour: 15, minute: 0, timeZone: timeZone)
+    vanpage.startTime = dateFrom(year: 2023, month: 9, day: 8, hour: 15, minute: 0, timeZone: timeZone)
     vanpage.endTime = dateFrom(year: 2023, month: 9, day: 8, hour: 15, minute: 40, timeZone: timeZone)
     vanpage.imageName = "Acts/Vanpage"
     vanpage.bio = "Whether in intimate club settings or expansive festival stages, let Vanpage guide you through a dynamic musical journey that echoes the essence of Ottawa's vibrant energy."
@@ -27,7 +27,7 @@ func populateInitialData() {
     let niceotope = Act(context: context)
     niceotope.id = UUID()
     niceotope.name = "Niceotope"
-    niceotope.startTime = dateFrom(year: 2023, month: 9, day: 8, hour: 15, minute: 40, timeZone: timeZone)
+    niceotope.startTime = dateFrom(year: 2023, month: 9, day: 2, hour: 15, minute: 40, timeZone: timeZone)
     niceotope.endTime = dateFrom(year: 2023, month: 9, day: 8, hour: 16, minute: 20, timeZone: timeZone)
     niceotope.imageName = "Acts/Niceotope"
     niceotope.bio = "Niceotope is an electronic producer who takes influences from a wide variety of electronic genres. From all sorts of house music to downtempo and synthwave - Niceotope covers the spectrum."
@@ -37,7 +37,7 @@ func populateInitialData() {
     let paqs = Act(context: context)
     paqs.id = UUID()
     paqs.name = "PAQS"
-    paqs.startTime = dateFrom(year: 2023, month: 9, day: 8, hour: 16, minute: 20, timeZone: timeZone)
+    paqs.startTime = dateFrom(year: 2023, month: 9, day: 2, hour: 16, minute: 20, timeZone: timeZone)
     paqs.endTime = dateFrom(year: 2023, month: 9, day: 8, hour: 17, minute: 0, timeZone: timeZone)
     paqs.imageName = "Acts/Paqs"
     paqs.bio = "Dive into the electrifying sounds of PAQS, the house DJ hailing from the vibrant city of Ottawa. With a passion for crafting sonic landscapes that transcend boundaries, PAQS has emerged as a driving force in the local music scene."

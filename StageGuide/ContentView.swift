@@ -57,7 +57,7 @@ struct ContentView: View {
             }
             print("Festival day has started")
             // Find act where now >= startTime && now < endTime
-            let todayActs = today.acts?.compactMap { $0 as? Act }
+            let todayActs = today.acts?.compactMap { $0 as? Act }.sorted(by: { $0.startTime ?? Date() < $1.startTime ?? Date()})
             let currentAct = todayActs?.first(where: { act in
                 act.startTime ?? Date() <= Date() && act.endTime ?? Date() > Date()
             })
