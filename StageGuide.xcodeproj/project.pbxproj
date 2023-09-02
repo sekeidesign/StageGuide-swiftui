@@ -25,6 +25,16 @@
 		281B51A62A7C837200F4EAFC /* SGPillButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281B51A52A7C837200F4EAFC /* SGPillButton.swift */; };
 		281B51A92A7C8D2200F4EAFC /* Placeholders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281B51A82A7C8D2200F4EAFC /* Placeholders.swift */; };
 		282EEF9A2A91184B00BE6BE7 /* SGActViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282EEF992A91184B00BE6BE7 /* SGActViewModel.swift */; };
+		283C7AB32AA3693F0021BB3C /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 283C7AB22AA3693F0021BB3C /* WidgetKit.framework */; };
+		283C7AB52AA3693F0021BB3C /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 283C7AB42AA3693F0021BB3C /* SwiftUI.framework */; };
+		283C7AB82AA3693F0021BB3C /* StageGuideWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283C7AB72AA3693F0021BB3C /* StageGuideWidgetBundle.swift */; };
+		283C7ABA2AA3693F0021BB3C /* StageGuideWidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283C7AB92AA3693F0021BB3C /* StageGuideWidgetLiveActivity.swift */; };
+		283C7ABC2AA3693F0021BB3C /* StageGuideWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283C7ABB2AA3693F0021BB3C /* StageGuideWidget.swift */; };
+		283C7ABE2AA369400021BB3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 283C7ABD2AA369400021BB3C /* Assets.xcassets */; };
+		283C7AC22AA369400021BB3C /* StageGuideWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 283C7AB02AA3693F0021BB3C /* StageGuideWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		283C7AC82AA36A1F0021BB3C /* LiveScheduleAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283C7AC72AA36A1F0021BB3C /* LiveScheduleAttributes.swift */; };
+		283C7AC92AA36A1F0021BB3C /* LiveScheduleAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283C7AC72AA36A1F0021BB3C /* LiveScheduleAttributes.swift */; };
+		283C7ACB2AA37A2D0021BB3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 281B51722A7B045200F4EAFC /* Assets.xcassets */; };
 		2867ED8C2A9156D3007065A6 /* SGActDetailSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2867ED8B2A9156D3007065A6 /* SGActDetailSheet.swift */; };
 		2867ED8F2A917911007065A6 /* SGReadMore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2867ED8E2A917911007065A6 /* SGReadMore.swift */; };
 		2867ED922A9529A7007065A6 /* FullScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2867ED912A9529A7007065A6 /* FullScheduleView.swift */; };
@@ -51,6 +61,30 @@
 		28F789BA2A8E8E1D00051F5E /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F789B92A8E8E1D00051F5E /* PersistenceController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		283C7AC02AA369400021BB3C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 281B51632A7B045100F4EAFC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 283C7AAF2AA3693F0021BB3C;
+			remoteInfo = StageGuideWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		283C7AC32AA369400021BB3C /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				283C7AC22AA369400021BB3C /* StageGuideWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		281777202A7D86BB00D2EF40 /* SGCircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGCircleButton.swift; sourceTree = "<group>"; };
 		281777222A7D916700D2EF40 /* SGAddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGAddButton.swift; sourceTree = "<group>"; };
@@ -72,6 +106,15 @@
 		281B51A52A7C837200F4EAFC /* SGPillButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGPillButton.swift; sourceTree = "<group>"; };
 		281B51A82A7C8D2200F4EAFC /* Placeholders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placeholders.swift; sourceTree = "<group>"; };
 		282EEF992A91184B00BE6BE7 /* SGActViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGActViewModel.swift; sourceTree = "<group>"; };
+		283C7AB02AA3693F0021BB3C /* StageGuideWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = StageGuideWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		283C7AB22AA3693F0021BB3C /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		283C7AB42AA3693F0021BB3C /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		283C7AB72AA3693F0021BB3C /* StageGuideWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageGuideWidgetBundle.swift; sourceTree = "<group>"; };
+		283C7AB92AA3693F0021BB3C /* StageGuideWidgetLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageGuideWidgetLiveActivity.swift; sourceTree = "<group>"; };
+		283C7ABB2AA3693F0021BB3C /* StageGuideWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageGuideWidget.swift; sourceTree = "<group>"; };
+		283C7ABD2AA369400021BB3C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		283C7ABF2AA369400021BB3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		283C7AC72AA36A1F0021BB3C /* LiveScheduleAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveScheduleAttributes.swift; sourceTree = "<group>"; };
 		2867ED8B2A9156D3007065A6 /* SGActDetailSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGActDetailSheet.swift; sourceTree = "<group>"; };
 		2867ED8E2A917911007065A6 /* SGReadMore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGReadMore.swift; sourceTree = "<group>"; };
 		2867ED912A9529A7007065A6 /* FullScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScheduleView.swift; sourceTree = "<group>"; };
@@ -106,6 +149,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		283C7AAD2AA3693F0021BB3C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				283C7AB52AA3693F0021BB3C /* SwiftUI.framework in Frameworks */,
+				283C7AB32AA3693F0021BB3C /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -113,6 +165,8 @@
 			isa = PBXGroup;
 			children = (
 				2887768E2A82F78B00326204 /* .gitignore */,
+				283C7AB62AA3693F0021BB3C /* StageGuideWidget */,
+				283C7AB12AA3693F0021BB3C /* Frameworks */,
 				281B516C2A7B045100F4EAFC /* Products */,
 				281B516D2A7B045100F4EAFC /* StageGuide */,
 			);
@@ -122,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				281B516B2A7B045100F4EAFC /* StageGuide.app */,
+				283C7AB02AA3693F0021BB3C /* StageGuideWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -308,6 +363,27 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		283C7AB12AA3693F0021BB3C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				283C7AB22AA3693F0021BB3C /* WidgetKit.framework */,
+				283C7AB42AA3693F0021BB3C /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		283C7AB62AA3693F0021BB3C /* StageGuideWidget */ = {
+			isa = PBXGroup;
+			children = (
+				283C7AB72AA3693F0021BB3C /* StageGuideWidgetBundle.swift */,
+				283C7AB92AA3693F0021BB3C /* StageGuideWidgetLiveActivity.swift */,
+				283C7ABB2AA3693F0021BB3C /* StageGuideWidget.swift */,
+				283C7ABD2AA369400021BB3C /* Assets.xcassets */,
+				283C7ABF2AA369400021BB3C /* Info.plist */,
+			);
+			path = StageGuideWidget;
+			sourceTree = "<group>";
+		};
 		2867ED8A2A9156B1007065A6 /* Sheets */ = {
 			isa = PBXGroup;
 			children = (
@@ -350,6 +426,7 @@
 				288776942A831B7C00326204 /* Riverside.swift */,
 				28F035552A8C404B009719C2 /* FestivalModels.swift */,
 				28F789B92A8E8E1D00051F5E /* PersistenceController.swift */,
+				283C7AC72AA36A1F0021BB3C /* LiveScheduleAttributes.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -392,10 +469,12 @@
 				281B51672A7B045100F4EAFC /* Sources */,
 				281B51682A7B045100F4EAFC /* Frameworks */,
 				281B51692A7B045100F4EAFC /* Resources */,
+				283C7AC32AA369400021BB3C /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				283C7AC12AA369400021BB3C /* PBXTargetDependency */,
 			);
 			name = StageGuide;
 			packageProductDependencies = (
@@ -404,6 +483,23 @@
 			productName = StageGuide;
 			productReference = 281B516B2A7B045100F4EAFC /* StageGuide.app */;
 			productType = "com.apple.product-type.application";
+		};
+		283C7AAF2AA3693F0021BB3C /* StageGuideWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 283C7AC62AA369400021BB3C /* Build configuration list for PBXNativeTarget "StageGuideWidgetExtension" */;
+			buildPhases = (
+				283C7AAC2AA3693F0021BB3C /* Sources */,
+				283C7AAD2AA3693F0021BB3C /* Frameworks */,
+				283C7AAE2AA3693F0021BB3C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StageGuideWidgetExtension;
+			productName = StageGuideWidgetExtension;
+			productReference = 283C7AB02AA3693F0021BB3C /* StageGuideWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -416,6 +512,9 @@
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					281B516A2A7B045100F4EAFC = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					283C7AAF2AA3693F0021BB3C = {
 						CreatedOnToolsVersion = 14.3.1;
 					};
 				};
@@ -437,6 +536,7 @@
 			projectRoot = "";
 			targets = (
 				281B516A2A7B045100F4EAFC /* StageGuide */,
+				283C7AAF2AA3693F0021BB3C /* StageGuideWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -456,6 +556,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		283C7AAE2AA3693F0021BB3C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				283C7ACB2AA37A2D0021BB3C /* Assets.xcassets in Resources */,
+				283C7ABE2AA369400021BB3C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -466,6 +575,7 @@
 				28A2F0502A81BB03006A59DA /* SGAppIconButton.swift in Sources */,
 				28F789BA2A8E8E1D00051F5E /* PersistenceController.swift in Sources */,
 				28F035562A8C404B009719C2 /* FestivalModels.swift in Sources */,
+				283C7AC82AA36A1F0021BB3C /* LiveScheduleAttributes.swift in Sources */,
 				281B519E2A7B395C00F4EAFC /* Extensions.swift in Sources */,
 				281B51A62A7C837200F4EAFC /* SGPillButton.swift in Sources */,
 				281B518C2A7B1C7A00F4EAFC /* SGLiveBadge.swift in Sources */,
@@ -500,7 +610,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		283C7AAC2AA3693F0021BB3C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				283C7ABC2AA3693F0021BB3C /* StageGuideWidget.swift in Sources */,
+				283C7ABA2AA3693F0021BB3C /* StageGuideWidgetLiveActivity.swift in Sources */,
+				283C7AB82AA3693F0021BB3C /* StageGuideWidgetBundle.swift in Sources */,
+				283C7AC92AA36A1F0021BB3C /* LiveScheduleAttributes.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		283C7AC12AA369400021BB3C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 283C7AAF2AA3693F0021BB3C /* StageGuideWidgetExtension */;
+			targetProxy = 283C7AC02AA369400021BB3C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		281B51772A7B045200F4EAFC /* Debug */ = {
@@ -620,6 +749,7 @@
 		281B517A2A7B045200F4EAFC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
@@ -630,6 +760,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = StageGuide/Info.plist;
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -656,6 +787,7 @@
 		281B517B2A7B045200F4EAFC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
@@ -666,6 +798,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = StageGuide/Info.plist;
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -689,6 +822,60 @@
 			};
 			name = Release;
 		};
+		283C7AC42AA369400021BB3C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JMQQK9934E;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StageGuideWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = StageGuideWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.sekei.StageGuide.StageGuideWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		283C7AC52AA369400021BB3C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JMQQK9934E;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StageGuideWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = StageGuideWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.sekei.StageGuide.StageGuideWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -706,6 +893,15 @@
 			buildConfigurations = (
 				281B517A2A7B045200F4EAFC /* Debug */,
 				281B517B2A7B045200F4EAFC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		283C7AC62AA369400021BB3C /* Build configuration list for PBXNativeTarget "StageGuideWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				283C7AC42AA369400021BB3C /* Debug */,
+				283C7AC52AA369400021BB3C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
