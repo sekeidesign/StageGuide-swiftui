@@ -17,7 +17,7 @@ func populateInitialData() {
     let vanpage = Act(context: context)
     vanpage.id = UUID()
     vanpage.name = "Vanpage"
-    vanpage.startTime = dateFrom(year: 2023, month: 9, day: 8, hour: 15, minute: 0, timeZone: timeZone)
+    vanpage.startTime = dateFrom(year: 2023, month: 9, day: 1, hour: 15, minute: 0, timeZone: timeZone)
     vanpage.endTime = dateFrom(year: 2023, month: 9, day: 8, hour: 15, minute: 40, timeZone: timeZone)
     vanpage.imageName = "Acts/Vanpage"
     vanpage.bio = "Whether in intimate club settings or expansive festival stages, let Vanpage guide you through a dynamic musical journey that echoes the essence of Ottawa's vibrant energy."
@@ -334,8 +334,8 @@ func populateInitialData() {
     // ——————————— DAYS ———————————
     let friday = Day(context: context)
     friday.name = "Friday"
-    friday.startTime = dateFrom(year: 2023, month: 9, day: 8, hour: 15, minute: 0, timeZone: timeZone)
-    friday.endTime = dateFrom(year: 2023, month: 9, day: 8, hour: 23, minute: 0, timeZone: timeZone)
+    friday.startTime = dateFrom(year: 2023, month: 9, day: 2, hour: 10, minute: 0, timeZone: timeZone)
+    friday.endTime = dateFrom(year: 2023, month: 9, day: 2, hour: 23, minute: 45, timeZone: timeZone)
     
     let saturday = Day(context: context)
     saturday.name = "Saturday"
