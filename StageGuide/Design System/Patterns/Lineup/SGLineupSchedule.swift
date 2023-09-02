@@ -37,8 +37,12 @@ struct SGLineupSchedule: View {
                             ForEach(actsInSlot.sorted(by: { $0.startTime ?? Date() > $1.startTime ?? Date() }), id: \.self.id) { act in
                                 let actViewModel = ActViewModel(act: act){
                                 }
-                                SGActSchedule(viewModel: actViewModel, hasAdd: inContext == .fullSchedule)
-                                    .isHidden(act.isFavorite == false, remove: true)
+                                if inContext == .fullSchedule {
+                                    SGActSchedule(viewModel: actViewModel, hasAdd: true)
+                                } else {
+                                    SGActSchedule(viewModel: actViewModel, hasAdd: false)
+                                        .isHidden(act.isFavorite == false, remove: true)
+                                }
                             }
                         }
                     }

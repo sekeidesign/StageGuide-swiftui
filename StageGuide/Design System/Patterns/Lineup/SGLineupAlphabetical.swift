@@ -36,8 +36,12 @@ struct SGLineupAlphabetical: View {
                                 let actViewModel = ActViewModel(act: act){
                                     // toggle
                                 }
-                                SGActSchedule(viewModel: actViewModel, hasAdd: inContext != .yourSchedule)
-                                    .isHidden(act.isFavorite == false, remove: true)
+                                if inContext == .fullSchedule {
+                                    SGActSchedule(viewModel: actViewModel, hasAdd: true)
+                                } else {
+                                    SGActSchedule(viewModel: actViewModel, hasAdd: false)
+                                        .isHidden(act.isFavorite == false, remove: true)
+                                }
                             }
                         }
                         .padding(.trailing, 8)
