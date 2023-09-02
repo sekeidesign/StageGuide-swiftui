@@ -10,9 +10,7 @@ import WidgetKit
 import SwiftUI
 
 struct StageGuideWidgetLiveActivity: Widget {
-    
     var body: some WidgetConfiguration {
-        
         ActivityConfiguration(for: LiveScheduleAttributes.self) { context in
             var progressInterval: ClosedRange<Date> {
                 let start = Date()
@@ -164,7 +162,7 @@ struct StageGuideWidgetLiveActivity: Widget {
 
 struct StageGuideWidgetLiveActivity_Previews: PreviewProvider {
     static let attributes = LiveScheduleAttributes(festivalName: "Riverside", totalDays: 3, todayCount: 1)
-    static let contentState = LiveScheduleAttributes.ContentState(currentAct: "Bundarr", currentActStartTime: dateFrom(year: 2023, month: 9, day: 2, hour: 9, minute: 0, timeZone: "America/New_York"), nextAct: "Lucky Rose", nextActStartTime: dateFrom(year: 2023, month: 9, day: 2, hour: 13, minute: 0, timeZone: "America/New_York"))
+    static let contentState = LiveScheduleAttributes.ContentState(currentAct: "Bundarr", currentActStartTime: dateFrom(year: 2023, month: 9, day: 2, hour: 9, minute: 0, timeZone: "America/New_York"), nextAct: "Tchami", nextActStartTime: Date().addingTimeInterval(45 * 60))
     
     static var previews: some View {
         attributes

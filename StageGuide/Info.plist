@@ -16,5 +16,9 @@
 		<string>Satoshi-Bold.otf</string>
 		<string>Satoshi-BoldItalic.otf</string>
 	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+	</array>
 </dict>
 </plist>
