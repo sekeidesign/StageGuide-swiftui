@@ -38,6 +38,7 @@ struct SGLineupSchedule: View {
                                 let actViewModel = ActViewModel(act: act){
                                 }
                                 SGActSchedule(viewModel: actViewModel, hasAdd: inContext == .fullSchedule)
+                                    .isHidden(act.isFavorite == false, remove: true)
                             }
                         }
                     }

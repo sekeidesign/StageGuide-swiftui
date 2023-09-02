@@ -18,7 +18,7 @@ struct SGLineupAlphabetical: View {
         let initialSlots = extractInitials(lineup: inContext == .yourSchedule ? lineupDayFavorites! : lineupDay ?? [])
         let placeholderName = "Unknown"
         ScrollView {
-            VStack {
+            VStack (spacing: 8) {
                 ForEach(initialSlots, id: \.self) { initial in
                     let actsInSlot: [Act] = lineupDay?.filter {
                         let actName = $0.name
@@ -36,7 +36,8 @@ struct SGLineupAlphabetical: View {
                                 let actViewModel = ActViewModel(act: act){
                                     // toggle
                                 }
-                                SGActSchedule(viewModel: actViewModel)
+                                SGActSchedule(viewModel: actViewModel, hasAdd: inContext != .yourSchedule)
+                                    .isHidden(act.isFavorite == false, remove: true)
                             }
                         }
                         .padding(.trailing, 8)
