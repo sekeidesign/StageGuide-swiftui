@@ -7,11 +7,12 @@
 
 import SwiftUI
 import WrappingHStack
+import ActivityKit
 
 struct SettingsView: View {
-    @AppStorage("AreNotificationsEnabled") private var areNotificationsEnabled: Bool = UserDefaults.standard.bool(forKey: "AreNotificationsEnabled")
-    @AppStorage("AreLiveActivitiesEnabled") private var areLiveActivitiesEnabled: Bool = UserDefaults.standard.bool(forKey: "AreLiveActivitiesEnabled")
-    @AppStorage("NotificationTiming") private var notificationTiming: Int = UserDefaults.standard.integer(forKey: "NotificationTiming")
+//    @AppStorage("AreNotificationsEnabled") private var areNotificationsEnabled: Bool = UserDefaults.standard.bool(forKey: "AreNotificationsEnabled")
+//    @AppStorage("AreLiveActivitiesEnabled") private var areLiveActivitiesEnabled: Bool
+//    @AppStorage("NotificationTiming") private var notificationTiming: Int = UserDefaults.standard.integer(forKey: "NotificationTiming")
     @AppStorage("ActiveAppIcon") private var activeAppIcon: String = (UserDefaults.standard.string(forKey: "ActiveAppIcon") ?? "OG")
     
     private let persistenceController = PersistenceController.shared
@@ -27,46 +28,55 @@ struct SettingsView: View {
                     .padding(.horizontal, 20)
                     .padding(.top, 8)
                 List {
-                    Section(header: Text("Notifications")) {
-                        HStack{
-                            VStack(alignment: .leading) {
-                                Text("Toggle Notifications")
-                                Text("Get alerts before scheduled sets")
-                                    .font(.subheadline)
-                                    .foregroundStyle(Color(uiColor: .secondaryLabel))
+//                    Section(header: Text("Notifications")) {
+//                        HStack{
+//                            VStack(alignment: .leading) {
+//                                Text("Toggle Notifications")
+//                                Text("Get alerts before scheduled sets")
+//                                    .font(.subheadline)
+//                                    .foregroundStyle(Color(uiColor: .secondaryLabel))
+//                            }
+//                            Spacer()
+//                            Toggle("Toggle Notifications", isOn: $areNotificationsEnabled)
+//                                .labelsHidden()
+//                        }
+//                        NavigationLink {
+//                            NotificationTimingView(notificationTiming: notificationTiming)
+//                        } label: {
+//                            HStack{
+//                                VStack(alignment: .leading) {
+//                                    Text("Notification timing")
+//                                    Text("When to receive notifications")
+//                                        .font(.subheadline)
+//                                        .foregroundColor(Color(uiColor: .secondaryLabel))
+//                                }
+//                                Spacer()
+//                                Text("\(notificationTiming)min")
+//                                    .foregroundColor(Color(uiColor: .tertiaryLabel))
+//                            }
+//                        }
+//                    }
+                    
+                    Section(header: Text("Live Activities")) {
+                        Button {
+                            if let bundle = Bundle.main.bundleIdentifier,
+                                let settings = URL(string: UIApplication.openSettingsURLString + bundle) {
+                                if UIApplication.shared.canOpenURL(settings) {
+                                    UIApplication.shared.open(settings)
+                                }
                             }
-                            Spacer()
-                            Toggle("Toggle Notifications", isOn: $areNotificationsEnabled)
-                                .labelsHidden()
-                        }
-                        NavigationLink {
-                            NotificationTimingView(notificationTiming: notificationTiming)
                         } label: {
                             HStack{
                                 VStack(alignment: .leading) {
-                                    Text("Notification timing")
-                                    Text("When to receive notifications")
+                                    Text("Show Live Activity")
+                                        .foregroundColor(.white)
+                                    Text("Live timeline on your lock screen")
                                         .font(.subheadline)
-                                        .foregroundColor(Color(uiColor: .secondaryLabel))
+                                        .foregroundStyle(Color(uiColor: .secondaryLabel))
                                 }
                                 Spacer()
-                                Text("\(notificationTiming)min")
-                                    .foregroundColor(Color(uiColor: .tertiaryLabel))
+                                Image(systemName: "chevron.right")
                             }
-                        }
-                    }
-                    
-                    Section(header: Text("Live Activities")) {
-                        HStack{
-                            VStack(alignment: .leading) {
-                                Text("Show Live Activity")
-                                Text("Live timeline on your lock screen")
-                                    .font(.subheadline)
-                                    .foregroundStyle(Color(uiColor: .secondaryLabel))
-                            }
-                            Spacer()
-                            Toggle("Toggle Live Activities", isOn: $areLiveActivitiesEnabled)
-                                .labelsHidden()
                         }
                     }
                     Section(header: Text("App icon")) {
