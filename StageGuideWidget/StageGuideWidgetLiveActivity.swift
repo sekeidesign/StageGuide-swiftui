@@ -10,14 +10,15 @@ import WidgetKit
 import SwiftUI
 
 struct StageGuideWidgetLiveActivity: Widget {
+    
     var body: some WidgetConfiguration {
+        
         ActivityConfiguration(for: LiveScheduleAttributes.self) { context in
             var progressInterval: ClosedRange<Date> {
                 let start = Date()
                 let end = context.state.nextActStartTime
                 return start...end
             }
-            
             VStack(spacing: 0) {
                 HStack {
                     HStack(spacing: 4) {
@@ -35,7 +36,7 @@ struct StageGuideWidgetLiveActivity: Widget {
                 .padding(.trailing, 16)
                 .padding(.vertical, 12)
                 Rectangle()
-                    .fill(Color(uiColor: .separator))
+                    .fill(Color(uiColor: .darkGray).opacity(0.5))
                     .frame(height: 1)
                     .frame(maxWidth: .infinity)
                 VStack {
@@ -72,39 +73,98 @@ struct StageGuideWidgetLiveActivity: Widget {
                 .padding(.vertical, 12)
             }
             .padding(.leading, 16)
-            .activityBackgroundTint(.black.opacity(0.7))
+            .activityBackgroundTint(.black.opacity(0.8))
             .activitySystemActionForegroundColor(Color(red: 0.85, green: 0.98, blue: 0.31))
             
         } dynamicIsland: { context in
-            DynamicIsland {
+            var progressInterval: ClosedRange<Date> {
+                let start = context.state.currentActStartTime
+                let end = context.state.nextActStartTime
+                return start...end
+            }
+            
+            return DynamicIsland {
                 // Expanded UI goes here.  Compose the expanded UI through
                 // various regions, like leading/trailing/center/bottom
                 DynamicIslandExpandedRegion(.leading) {
-                    Text("Leading")
+                    HStack(spacing: 4) {
+                        Text(context.attributes.festivalName)
+                        Text("Day \(context.attributes.todayCount)/\(context.attributes.totalDays)")
+                            .foregroundColor(Color(uiColor: .darkGray))
+                    }
+                    .foregroundColor(Color(uiColor: .lightGray))
+                    .font(.caption2)
+                    .fontWeight(.semibold)
+                    .padding(.top, 2)
+                    .padding(.leading, 4)
                 }
                 DynamicIslandExpandedRegion(.trailing) {
-                    Text("Trailing")
+                    Text("StageGuide")
+                        .foregroundColor(Color(uiColor: .darkGray))
+                        .font(.caption2)
+                        .fontWeight(.semibold)
+                        .padding(.top, 2)
+                        .padding(.trailing, 4)
                 }
                 DynamicIslandExpandedRegion(.bottom) {
-                    Text("Bottom")
-                    // more content
+                    VStack {
+                        Spacer()
+                        HStack {
+                            VStack(alignment: .leading, spacing: 4) {
+                                Text("Now")
+                                    .font(.footnote)
+                                    .fontWeight(.semibold)
+                                    .foregroundColor(Color(uiColor: .lightGray))
+                                Text("\(context.state.currentAct)")
+                                    .font(.callout)
+                                    .fontWeight(.semibold)
+                                    .foregroundColor(.white)
+                                
+                            }
+                            Spacer()
+                            VStack(alignment: .trailing, spacing: 4) {
+                                Text(context.state.nextActStartTime, style: .timer)
+                                    .font(.footnote)
+                                    .fontWeight(.semibold)
+                                    .foregroundColor(Color(red: 0.85, green: 0.98, blue: 0.31))
+                                    .multilineTextAlignment(.trailing)
+                                Text("\(context.state.nextAct)")
+                                    .font(.callout)
+                                    .fontWeight(.semibold)
+                                    .foregroundColor(.white)
+                                
+                            }
+                        }
+                        ProgressView(timerInterval: progressInterval, countsDown: false, label: {}, currentValueLabel: {})
+                            .progressViewStyle(WithBackgroundProgressViewStyle())
+                    }
+                    .padding(.horizontal, 4)
+                    .padding(.vertical, 4)
                 }
             } compactLeading: {
-                Text("L")
+                Text("\(context.state.nextAct)")
+                    .fontWeight(.semibold)
+                    .foregroundColor(Color(red: 0.85, green: 0.98, blue: 0.31))
             } compactTrailing: {
-                Text("T")
+                Text(context.state.nextActStartTime, style: .timer)
+                    .font(.footnote)
+                    .fontWeight(.semibold)
+                    .foregroundColor(Color(red: 0.85, green: 0.98, blue: 0.31))
+                    .frame(maxWidth: 40)
+                    .multilineTextAlignment(.trailing)
             } minimal: {
-                Text("Min")
+                Text("\(context.attributes.todayCount)/\(context.attributes.totalDays)")
+                    .fontWeight(.semibold)
+                    .foregroundColor(Color(red: 0.85, green: 0.98, blue: 0.31))
+                    .frame(width: 48)
             }
-            .widgetURL(URL(string: "http://www.apple.com"))
-            .keylineTint(Color.red)
         }
     }
 }
 
 struct StageGuideWidgetLiveActivity_Previews: PreviewProvider {
     static let attributes = LiveScheduleAttributes(festivalName: "Riverside", totalDays: 3, todayCount: 1)
-    static let contentState = LiveScheduleAttributes.ContentState(currentAct: "Bundarr", currentActStartTime: dateFrom(year: 2023, month: 9, day: 2, hour: 9, minute: 0, timeZone: "America/New_York"), nextAct: "Lucky Rose", nextActStartTime: dateFrom(year: 2023, month: 9, day: 2, hour: 10, minute: 30, timeZone: "America/New_York"))
+    static let contentState = LiveScheduleAttributes.ContentState(currentAct: "Bundarr", currentActStartTime: dateFrom(year: 2023, month: 9, day: 2, hour: 9, minute: 0, timeZone: "America/New_York"), nextAct: "Lucky Rose", nextActStartTime: dateFrom(year: 2023, month: 9, day: 2, hour: 13, minute: 0, timeZone: "America/New_York"))
     
     static var previews: some View {
         attributes
@@ -140,24 +200,4 @@ func dateFrom(year: Int, month: Int, day: Int, hour: Int, minute: Int, timeZone:
     components.timeZone = TimeZone(identifier: timeZone)
     let calendar = Calendar.current
     return calendar.date(from: components)!
-}
-
-func distanceString(from date: Date) -> String {
-    let calendar = Calendar.current
-    let now = Date()
-    
-    let components = calendar.dateComponents([.minute], from: now, to: date)
-    
-    if let minutes = components.minute {
-        if minutes == 0 {
-            return "Now"
-        } else if minutes < 60 {
-            return "\(minutes) min"
-        } else {
-            let hours = minutes / 60
-            return "\(hours) hour\(hours > 1 ? "s" : "")"
-        }
-    } else {
-        return "Invalid Date"
-    }
 }
