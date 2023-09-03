@@ -339,13 +339,13 @@ func populateInitialData() {
     
     let saturday = Day(context: context)
     saturday.name = "Saturday"
-    saturday.startTime = dateFrom(year: 2023, month: 9, day: 9, hour: 15, minute: 0, timeZone: timeZone)
-    saturday.endTime = dateFrom(year: 2023, month: 9, day: 9, hour: 23, minute: 0, timeZone: timeZone)
+    saturday.startTime = dateFrom(year: 2023, month: 9, day: 3, hour: 9, minute: 0, timeZone: timeZone)
+    saturday.endTime = dateFrom(year: 2023, month: 9, day: 3, hour: 23, minute: 0, timeZone: timeZone)
     
     let sunday = Day(context: context)
     sunday.name = "Sunday"
-    sunday.startTime = dateFrom(year: 2023, month: 9, day: 10, hour: 15, minute: 0, timeZone: timeZone)
-    sunday.endTime = dateFrom(year: 2023, month: 9, day: 10, hour: 23, minute: 0, timeZone: timeZone)
+    sunday.startTime = dateFrom(year: 2023, month: 9, day: 4, hour: 15, minute: 0, timeZone: timeZone)
+    sunday.endTime = dateFrom(year: 2023, month: 9, day: 4, hour: 23, minute: 0, timeZone: timeZone)
     
     
     

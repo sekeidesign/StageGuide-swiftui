@@ -59,20 +59,36 @@ struct ContentView: View {
             }
             // check if the festival has started but not ended yet
             let today = matchingDays[0]
+            print("Today: \(today)")
             guard Date() >= today.startTime ?? Date() && Date() < today.endTime ?? Date() else {
                 print("Festival hasn't started yet, or has already ended")
                 return
             }
             print("Festival day has started")
-            // Find act where now >= startTime && now < endTime
-            let daysArray = days.compactMap { $0 as Day }.sorted(by: { $0.startTime ?? Date() < $1.startTime ?? Date()})
-            todayActs = today.acts?.compactMap { $0 as? Act }.sorted(by: { $0.startTime ?? Date() < $1.startTime ?? Date()})
-            currentAct = todayActs?.first(where: { act in
-                act.startTime ?? Date() <= Date() && act.endTime ?? Date() > Date()
-            })
-            print("Current Act: \(String(describing: currentAct))")
-            nextAct = getFollowingAct(currentAct: currentAct ?? Act(), todayActs: todayActs ?? [])
             
+            // Find act that is happening now
+            let daysArray = days.compactMap { $0 as Day }.sorted(by: { $0.startTime ?? Date() < $1.startTime ?? Date()})
+            
+            // Create an array of acts happening today
+            guard let todayActs = today.acts?.compactMap({ $0 as? Act }).sorted(by: { $0.startTime ?? Date() < $1.startTime ?? Date()}) else {
+                print("No acts today")
+                return
+            }
+            
+            guard let currentAct = todayActs.first(where: { act in
+                act.startTime ?? Date() <= Date() && act.endTime ?? Date() > Date()
+            }) else {
+                print("No acts live yet")
+                return
+            }
+            print("Current Act: \(String(describing: currentAct))")
+            
+            nextAct = getFollowingAct(currentAct: currentAct, todayActs: todayActs)
+            
+            guard nextAct != nil else {
+                print("No more acts after this")
+                return
+            }
             
             // Start Live Activity
             liveScheduleActivity = startLiveActivity(currentAct: currentAct, nextAct: nextAct, days: daysArray)
