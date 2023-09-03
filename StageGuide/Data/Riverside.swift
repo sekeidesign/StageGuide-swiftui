@@ -17,8 +17,8 @@ func populateInitialData() {
     let vanpage = Act(context: context)
     vanpage.id = UUID()
     vanpage.name = "Vanpage"
-    vanpage.startTime = dateFrom(year: 2023, month: 9, day: 8, hour: 15, minute: 0, timeZone: timeZone)
-    vanpage.endTime = dateFrom(year: 2023, month: 9, day: 8, hour: 15, minute: 40, timeZone: timeZone)
+    vanpage.startTime = dateFrom(year: 2023, month: 9, day: 2, hour: 15, minute: 0, timeZone: timeZone)
+    vanpage.endTime = dateFrom(year: 2023, month: 9, day: 2, hour: 15, minute: 40, timeZone: timeZone)
     vanpage.imageName = "Acts/Vanpage"
     vanpage.bio = "Whether in intimate club settings or expansive festival stages, let Vanpage guide you through a dynamic musical journey that echoes the essence of Ottawa's vibrant energy."
     vanpage.links = ["https://www.instagram.com/vanpagex/", "https://soundcloud.com/paige-van-dinther"]
@@ -28,7 +28,7 @@ func populateInitialData() {
     niceotope.id = UUID()
     niceotope.name = "Niceotope"
     niceotope.startTime = dateFrom(year: 2023, month: 9, day: 2, hour: 15, minute: 40, timeZone: timeZone)
-    niceotope.endTime = dateFrom(year: 2023, month: 9, day: 8, hour: 16, minute: 20, timeZone: timeZone)
+    niceotope.endTime = dateFrom(year: 2023, month: 9, day: 2, hour: 16, minute: 20, timeZone: timeZone)
     niceotope.imageName = "Acts/Niceotope"
     niceotope.bio = "Niceotope is an electronic producer who takes influences from a wide variety of electronic genres. From all sorts of house music to downtempo and synthwave - Niceotope covers the spectrum."
     niceotope.links = ["https://www.instagram.com/niceotope/", "https://www.facebook.com/Niceotope", "https://twitter.com/niceotope",  "https://soundcloud.com/niceotope", "https://open.spotify.com/artist/7aMxWqpL1v0ziq6guTVcNR?si=zeyiTV9NQimORLhcBYem3w"]
@@ -38,7 +38,7 @@ func populateInitialData() {
     paqs.id = UUID()
     paqs.name = "PAQS"
     paqs.startTime = dateFrom(year: 2023, month: 9, day: 2, hour: 16, minute: 20, timeZone: timeZone)
-    paqs.endTime = dateFrom(year: 2023, month: 9, day: 8, hour: 17, minute: 0, timeZone: timeZone)
+    paqs.endTime = dateFrom(year: 2023, month: 9, day: 2, hour: 17, minute: 0, timeZone: timeZone)
     paqs.imageName = "Acts/Paqs"
     paqs.bio = "Dive into the electrifying sounds of PAQS, the house DJ hailing from the vibrant city of Ottawa. With a passion for crafting sonic landscapes that transcend boundaries, PAQS has emerged as a driving force in the local music scene."
     paqs.links = ["https://www.instagram.com/paqsofficial/", "https://www.youtube.com/c/PaqsPaqs", "https://tiktok.com/@paqsofficial", "https://soundcloud.com/paqsmusic", "https://open.spotify.com/artist/3wVvompAinPGfNoXB9SVNL?si=5ZU2n4OtReSMdr16_hwUBA"]
@@ -47,8 +47,8 @@ func populateInitialData() {
     let hamro = Act(context: context)
     hamro.id = UUID()
     hamro.name = "HAMRO"
-    hamro.startTime = dateFrom(year: 2023, month: 9, day: 8, hour: 17, minute: 0, timeZone: timeZone)
-    hamro.endTime = dateFrom(year: 2023, month: 9, day: 8, hour: 17, minute: 50, timeZone: timeZone)
+    hamro.startTime = dateFrom(year: 2023, month: 9, day: 2, hour: 17, minute: 0, timeZone: timeZone)
+    hamro.endTime = dateFrom(year: 2023, month: 9, day: 2, hour: 17, minute: 50, timeZone: timeZone)
     hamro.imageName = "Acts/Hamro"
     hamro.bio = "Tarik Hamrouni aka Hamro is a 23 year old producer/DJ hailing from Ottawa, Canada who has quickly risen to become one of the most prominent up and coming artists in the underground dubstep and riddim world. Since 2018 Hamro has been diligently working on his sound design and social media presence which has caused major waves in the industry. With his eclectic sound design, undeniable consistent work ethic and uniquely pieced together songs that range from precise and beautiful melodies to heart pounding aggressive bass sounds, Hamro has truly become a leader for the revolution of the dubstep sound."
     hamro.links = ["https://www.facebook.com/djhamro", "https://www.facebook.com/djhamro", "https://twitter.com/djhamro", "https://www.tiktok.com/@djhamro?lang=en", "https://soundcloud.com/djhamro", "https://open.spotify.com/artist/45tIGuLKx3RA70cm4rnSLH?si=9DrRBcVSQRGnx5dGKLkIig"]
@@ -58,8 +58,8 @@ func populateInitialData() {
     let waves = Act(context: context)
     waves.id = UUID()
     waves.name = "Waves"
-    waves.startTime = dateFrom(year: 2023, month: 9, day: 8, hour: 17, minute: 50, timeZone: timeZone)
-    waves.endTime = dateFrom(year: 2023, month: 9, day: 8, hour: 18, minute: 40, timeZone: timeZone)
+    waves.startTime = dateFrom(year: 2023, month: 9, day: 2, hour: 17, minute: 50, timeZone: timeZone)
+    waves.endTime = dateFrom(year: 2023, month: 9, day: 2, hour: 18, minute: 40, timeZone: timeZone)
     waves.imageName = "Acts/Waves"
     waves.bio = "Frankie Grant & Spencer Bridle are the creative duo behind WAVES and share a love for producing and performing electronic dance music. Bridle leads on songwriting and production while Grant helms live performance, each adding to the other’s vision. \n Since signing a record deal with Ultra Records, the duo has received Canadian radio play on their first single \"Mr. Wilson\". They will look to build off their 2022 momentum and have set a goal to release as much music as possible in 2023. \n WAVES first batch of releases were “tropical house” influenced and clocked over 5 million streams on Spotify alone. They have since pivoted and are more focused on groovy house and club driven records. Stay tuned for the next wave."
     waves.links = ["https://www.instagram.com/wearewaves/", "https://twitter.com/djwavesmusic", "https://www.tiktok.com/@wearewaves?lang=en", "https://open.spotify.com/artist/6p32HfiKpYD3wdKHV7utxQ"]
@@ -68,8 +68,8 @@ func populateInitialData() {
     let laszewo = Act(context: context)
     laszewo.id = UUID()
     laszewo.name = "Laszewo"
-    laszewo.startTime = dateFrom(year: 2023, month: 9, day: 8, hour: 18, minute: 40, timeZone: timeZone)
-    laszewo.endTime = dateFrom(year: 2023, month: 9, day: 8, hour: 19, minute: 40, timeZone: timeZone)
+    laszewo.startTime = dateFrom(year: 2023, month: 9, day: 2, hour: 18, minute: 40, timeZone: timeZone)
+    laszewo.endTime = dateFrom(year: 2023, month: 9, day: 2, hour: 19, minute: 40, timeZone: timeZone)
     laszewo.imageName = "Acts/Laszewo"
     laszewo.bio = "we don’t know how to pronounce it either"
     laszewo.links = ["https://www.instagram.com/laszewo/", "https://www.tiktok.com/@laszewooo?is_from_webapp=1&sender_device=pc", "https://www.youtube.com/channel/UCnOZUDbRc2Ae76IhROupOfA/videos?sub_confirmation=1", "https://soundcloud.com/laszewo", "https://open.spotify.com/artist/6jxGLrn1I14RIeRYodOpLN?si=vNVkq9zxQd2dL_NrQYjpcw&nd=1"]
@@ -78,8 +78,8 @@ func populateInitialData() {
     let peekaboo = Act(context: context)
     peekaboo.id = UUID()
     peekaboo.name = "PEEKABOO"
-    peekaboo.startTime = dateFrom(year: 2023, month: 9, day: 8, hour: 19, minute: 40, timeZone: timeZone)
-    peekaboo.endTime = dateFrom(year: 2023, month: 9, day: 8, hour: 20, minute: 40, timeZone: timeZone)
+    peekaboo.startTime = dateFrom(year: 2023, month: 9, day: 2, hour: 19, minute: 40, timeZone: timeZone)
+    peekaboo.endTime = dateFrom(year: 2023, month: 9, day: 2, hour: 20, minute: 40, timeZone: timeZone)
     peekaboo.imageName = "Acts/Peekaboo"
     peekaboo.bio = "It’s easy to say that Matthew Lucas, a.k.a PEEKABOO, is the hottest act to break out in the electronic music scene in 2018. After a string of massively successful EP's, singles, and remixes, all within a few short months, audiences around the world have been captivated by PEEKABOO’s fresh, distinctive, and unique production style. His tracks, “Maniac”, and “Babatunde” have become iconic festival anthems, gaining support from the likes of Skrillex, Zeds Dead, Rezz, RL Grime, and the list goes on."
     peekaboo.links = ["https://instagram.com/peekaboobeats", "https://www.facebook.com/peekaboobeats", "https://twitter.com/peekaboobeats", "https://tiktok.com/@peekaboobeats", "https://soundcloud.com/peekaboobeats", "https://open.spotify.com/artist/4Ok1Cm5YX5StCQZgH0r2xF"]
@@ -90,8 +90,8 @@ func populateInitialData() {
     dvk.id = UUID()
     dvk.name = "Deorro B2B Valentino Khan"
     dvk.shortName = "VK B2B Deorro"
-    dvk.startTime = dateFrom(year: 2023, month: 9, day: 8, hour: 20, minute: 40, timeZone: timeZone)
-    dvk.endTime = dateFrom(year: 2023, month: 9, day: 8, hour: 21, minute: 40, timeZone: timeZone)
+    dvk.startTime = dateFrom(year: 2023, month: 9, day: 2, hour: 20, minute: 40, timeZone: timeZone)
+    dvk.endTime = dateFrom(year: 2023, month: 9, day: 2, hour: 21, minute: 40, timeZone: timeZone)
     dvk.imageName = "Acts/VK & Deorro"
     dvk.bio = "A legendary back to back. Valentino Khan makes everything. The Los Angeles-based DJ and producer is an artist whose music knows no bounds. From producing hip-hop tracks for Grammy-winning artists to pumping out electronic anthems at top venues around the world, he's been breaking barriers with original tracks, production credentials and live sets. Los Angeles native Erick Orrosquieta, known as Deorro (and TON!C as well), is a house/EDM producer and DJ, as well as a proud Mexican American. After he developed a following through his SoundCloud page, he reached a wider audience in his early twenties, from 2012 through 2014, with extensive touring, as well as brash solo releases and collaborations on the Dim Mak and Mad Decent labels."
     dvk.links = ["https://valentinokhan.com/", "https://deorro.com/"]
@@ -100,17 +100,17 @@ func populateInitialData() {
     //    ———
     let sevenLionsBreak = Act(context: context)
     sevenLionsBreak.id = UUID()
-    sevenLionsBreak.name = "Intermission"
-    sevenLionsBreak.startTime = dateFrom(year: 2023, month: 9, day: 8, hour: 21, minute: 40, timeZone: timeZone)
-    sevenLionsBreak.endTime = dateFrom(year: 2023, month: 9, day: 8, hour: 21, minute: 45, timeZone: timeZone)
+    sevenLionsBreak.name = "Break"
+    sevenLionsBreak.startTime = dateFrom(year: 2023, month: 9, day: 2, hour: 21, minute: 40, timeZone: timeZone)
+    sevenLionsBreak.endTime = dateFrom(year: 2023, month: 9, day: 2, hour: 21, minute: 45, timeZone: timeZone)
     sevenLionsBreak.bio = "Short intermission"
     sevenLionsBreak.isFavorite = false
     //    ———
     let sevenLions = Act(context: context)
     sevenLions.id = UUID()
     sevenLions.name = "Seven Lions"
-    sevenLions.startTime = dateFrom(year: 2023, month: 9, day: 8, hour: 21, minute: 45, timeZone: timeZone)
-    sevenLions.endTime = dateFrom(year: 2023, month: 9, day: 8, hour: 23, minute: 0, timeZone: timeZone)
+    sevenLions.startTime = dateFrom(year: 2023, month: 9, day: 2, hour: 21, minute: 45, timeZone: timeZone)
+    sevenLions.endTime = dateFrom(year: 2023, month: 9, day: 2, hour: 23, minute: 0, timeZone: timeZone)
     sevenLions.imageName = "Acts/Seven Lions"
     sevenLions.bio = "Melding mainstream pop, trance, and dubstep, California producer Jeff Montalvo quickly amassed a cult following under the alias Seven Lions, which issued the debut EP Days to Come in 2012. He made his Billboard 200 debut with third EP Worlds Apart in 2014. After follow-up EPs like 2015's The Throes of Winter and 2017's dance chart-topping Creation reflected a growing emphasis on song form, he landed just outside of the dance/electronic Top Ten with 2019's \"Need Your Love,\" a collaboration with Gryffin and singer/songwriter Noah Kahan. A decade into his recording career, he presented his first official album-length release, Beyond the Veil, in 2022."
     sevenLions.links = ["https://www.facebook.com/SevenLions", "https://twitter.com/SevenLionsMusic", "https://www.youtube.com/channel/UChVfER-3s533FTh8Uae0Rhg", "https://soundcloud.com/seven-lions", "https://open.spotify.com/artist/6fcTRFpz0yH79qSKfof7lp", "https://google.com"]
@@ -182,7 +182,7 @@ func populateInitialData() {
     //    ———
     let adventureClubBreak = Act(context: context)
     adventureClubBreak.id = UUID()
-    adventureClubBreak.name = "Intermission"
+    adventureClubBreak.name = "Break"
     adventureClubBreak.startTime = dateFrom(year: 2023, month: 9, day: 9, hour: 20, minute: 20, timeZone: timeZone)
     adventureClubBreak.endTime = dateFrom(year: 2023, month: 9, day: 9, hour: 20, minute: 25, timeZone: timeZone)
     adventureClubBreak.bio = "Short intermission"
@@ -201,7 +201,7 @@ func populateInitialData() {
     //    ———
     let twoFriendsBreak = Act(context: context)
     twoFriendsBreak.id = UUID()
-    twoFriendsBreak.name = "Intermission"
+    twoFriendsBreak.name = "Break"
     twoFriendsBreak.startTime = dateFrom(year: 2023, month: 9, day: 9, hour: 21, minute: 40, timeZone: timeZone)
     twoFriendsBreak.endTime = dateFrom(year: 2023, month: 9, day: 9, hour: 21, minute: 45, timeZone: timeZone)
     twoFriendsBreak.bio = "Short intermission"
@@ -271,7 +271,7 @@ func populateInitialData() {
     //    ———
     let audienBreak = Act(context: context)
     audienBreak.id = UUID()
-    audienBreak.name = "Intermission"
+    audienBreak.name = "Break"
     audienBreak.startTime = dateFrom(year: 2023, month: 9, day: 10, hour: 19, minute: 40, timeZone: timeZone)
     audienBreak.endTime = dateFrom(year: 2023, month: 9, day: 10, hour: 19, minute: 45, timeZone: timeZone)
     audienBreak.bio = "Short intermission."
@@ -290,7 +290,7 @@ func populateInitialData() {
     //    ———
     let tchamiBreak = Act(context: context)
     tchamiBreak.id = UUID()
-    tchamiBreak.name = "Intermission"
+    tchamiBreak.name = "Break"
     tchamiBreak.startTime = dateFrom(year: 2023, month: 9, day: 10, hour: 20, minute: 45, timeZone: timeZone)
     tchamiBreak.endTime = dateFrom(year: 2023, month: 9, day: 10, hour: 20, minute: 50, timeZone: timeZone)
     tchamiBreak.bio = "Short intermission."
@@ -309,7 +309,7 @@ func populateInitialData() {
     //    ———
     let zedsDeadBreak = Act(context: context)
     zedsDeadBreak.id = UUID()
-    zedsDeadBreak.name = "Intermission"
+    zedsDeadBreak.name = "Break"
     zedsDeadBreak.startTime = dateFrom(year: 2023, month: 9, day: 10, hour: 21, minute: 50, timeZone: timeZone)
     zedsDeadBreak.endTime = dateFrom(year: 2023, month: 9, day: 10, hour: 22, minute: 0, timeZone: timeZone)
     zedsDeadBreak.bio = "***UPDATE DESCRIPTION***"
