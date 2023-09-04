@@ -35,7 +35,7 @@ extension YourScheduleView {
             }
             
             // check if the festival has started but not ended yet
-            guard matchingDays?[0] != nil else {
+            guard !(matchingDays?.isEmpty ?? false) else {
                 print("Festival hasn't started yet, or has already ended")
                 return false
             }

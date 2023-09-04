@@ -11,22 +11,26 @@ import BackgroundTasks
 
 struct ContentView: View {
     @StateObject private var viewModel = ContentViewModel()
+    @State private var activeTab = 2
     
     var body: some View {
         NavigationStack{
-            TabView{
+            TabView(selection: $activeTab) {
                 EventInfoView()
                     .tabItem {
                         Label("Event info", systemImage: "music.note.house")
                     }
+                    .tag(1)
                 FullScheduleView(days: viewModel.days ?? [])
                     .tabItem {
                         Label("Full schedule", systemImage: "sparkles.rectangle.stack")
                     }
+                    .tag(2)
                 YourScheduleView(days: viewModel.days ?? [])
                     .tabItem {
                         Label("Your schedule", systemImage: "calendar")
                     }
+                    .tag(3)
             }
             .onAppear {
                 let appearance = UITabBarAppearance()

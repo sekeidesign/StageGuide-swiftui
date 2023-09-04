@@ -49,9 +49,8 @@
 		288776932A8314CB00326204 /* Riverside.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 288776912A8314CB00326204 /* Riverside.xcdatamodeld */; };
 		288776952A831B7C00326204 /* Riverside.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288776942A831B7C00326204 /* Riverside.swift */; };
 		288776992A85743300326204 /* SGLineupSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288776982A85743300326204 /* SGLineupSchedule.swift */; };
-		2887769B2A858A1F00326204 /* Schedules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2887769A2A858A1F00326204 /* Schedules.swift */; };
+		2887769B2A858A1F00326204 /* DateTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2887769A2A858A1F00326204 /* DateTime.swift */; };
 		2887769D2A8AB8C200326204 /* SGLineupAlphabetical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2887769C2A8AB8C200326204 /* SGLineupAlphabetical.swift */; };
-		28892D122AA3AA29005B5E16 /* LiveActivityRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28892D112AA3AA29005B5E16 /* LiveActivityRefresh.swift */; };
 		28892D142AA4C000005B5E16 /* ContentView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28892D132AA4C000005B5E16 /* ContentView-ViewModel.swift */; };
 		28892D162AA4DB3C005B5E16 /* YourScheduleView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28892D152AA4DB3C005B5E16 /* YourScheduleView-ViewModel.swift */; };
 		28A2F0502A81BB03006A59DA /* SGAppIconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A2F04F2A81BB03006A59DA /* SGAppIconButton.swift */; };
@@ -127,13 +126,13 @@
 		2867EDA02A97FA7E007065A6 /* SGTopNav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGTopNav.swift; sourceTree = "<group>"; };
 		2867EDA22A980D3D007065A6 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		2878C8C22A99082A00AA14B2 /* YourScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourScheduleView.swift; sourceTree = "<group>"; };
+		288626BF2AA63A9400289EA7 /* StageGuide.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StageGuide.entitlements; sourceTree = "<group>"; };
 		2887768E2A82F78B00326204 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		288776922A8314CB00326204 /* Riverside.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Riverside.xcdatamodel; sourceTree = "<group>"; };
 		288776942A831B7C00326204 /* Riverside.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Riverside.swift; sourceTree = "<group>"; };
 		288776982A85743300326204 /* SGLineupSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGLineupSchedule.swift; sourceTree = "<group>"; };
-		2887769A2A858A1F00326204 /* Schedules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedules.swift; sourceTree = "<group>"; };
+		2887769A2A858A1F00326204 /* DateTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTime.swift; sourceTree = "<group>"; };
 		2887769C2A8AB8C200326204 /* SGLineupAlphabetical.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGLineupAlphabetical.swift; sourceTree = "<group>"; };
-		28892D112AA3AA29005B5E16 /* LiveActivityRefresh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivityRefresh.swift; sourceTree = "<group>"; };
 		28892D132AA4C000005B5E16 /* ContentView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView-ViewModel.swift"; sourceTree = "<group>"; };
 		28892D152AA4DB3C005B5E16 /* YourScheduleView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "YourScheduleView-ViewModel.swift"; sourceTree = "<group>"; };
 		28A2F04F2A81BB03006A59DA /* SGAppIconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGAppIconButton.swift; sourceTree = "<group>"; };
@@ -190,13 +189,13 @@
 		281B516D2A7B045100F4EAFC /* StageGuide */ = {
 			isa = PBXGroup;
 			children = (
+				288626BF2AA63A9400289EA7 /* StageGuide.entitlements */,
 				288776902A8314B400326204 /* Data */,
 				281B51982A7B2A8C00F4EAFC /* Info.plist */,
 				281B517C2A7B160800F4EAFC /* Design System */,
 				2867ED902A952993007065A6 /* Views */,
 				28F7777B2A9E8B470073DD93 /* ViewModels */,
 				281B516E2A7B045100F4EAFC /* StageGuideApp.swift */,
-				28892D112AA3AA29005B5E16 /* LiveActivityRefresh.swift */,
 				281B51702A7B045100F4EAFC /* ContentView.swift */,
 				28892D132AA4C000005B5E16 /* ContentView-ViewModel.swift */,
 				281B51722A7B045200F4EAFC /* Assets.xcassets */,
@@ -365,7 +364,7 @@
 			isa = PBXGroup;
 			children = (
 				281B51A82A7C8D2200F4EAFC /* Placeholders.swift */,
-				2887769A2A858A1F00326204 /* Schedules.swift */,
+				2887769A2A858A1F00326204 /* DateTime.swift */,
 				2867ED982A9697EB007065A6 /* Links.swift */,
 			);
 			path = Utilities;
@@ -588,7 +587,6 @@
 				281B519E2A7B395C00F4EAFC /* Extensions.swift in Sources */,
 				281B51A62A7C837200F4EAFC /* SGPillButton.swift in Sources */,
 				281B518C2A7B1C7A00F4EAFC /* SGLiveBadge.swift in Sources */,
-				28892D122AA3AA29005B5E16 /* LiveActivityRefresh.swift in Sources */,
 				281B51A92A7C8D2200F4EAFC /* Placeholders.swift in Sources */,
 				28F035542A8C3D9B009719C2 /* SGLineupTimeline.swift in Sources */,
 				2867ED8C2A9156D3007065A6 /* SGActDetailSheet.swift in Sources */,
@@ -615,7 +613,7 @@
 				2867EDA32A980D3D007065A6 /* SettingsView.swift in Sources */,
 				2867ED922A9529A7007065A6 /* FullScheduleView.swift in Sources */,
 				2867ED992A9697EB007065A6 /* Links.swift in Sources */,
-				2887769B2A858A1F00326204 /* Schedules.swift in Sources */,
+				2887769B2A858A1F00326204 /* DateTime.swift in Sources */,
 				282EEF9A2A91184B00BE6BE7 /* SGActViewModel.swift in Sources */,
 				2887769D2A8AB8C200326204 /* SGLineupAlphabetical.swift in Sources */,
 				281777232A7D916700D2EF40 /* SGAddButton.swift in Sources */,
@@ -765,6 +763,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = StageGuide/StageGuide.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2023090201;
 				DEVELOPMENT_ASSET_PATHS = "\"StageGuide/Preview Content\"";
@@ -773,6 +772,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = StageGuide/Info.plist;
 				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
+				INFOPLIST_KEY_NSSupportsLiveActivitiesFrequentUpdates = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -803,6 +803,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = StageGuide/StageGuide.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2023090201;
 				DEVELOPMENT_ASSET_PATHS = "\"StageGuide/Preview Content\"";
@@ -811,6 +812,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = StageGuide/Info.plist;
 				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
+				INFOPLIST_KEY_NSSupportsLiveActivitiesFrequentUpdates = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

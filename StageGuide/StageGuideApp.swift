@@ -58,9 +58,5 @@ struct StageGuideApp: App {
                 print("")
             }
         }
-        .backgroundTask(.appRefresh("ca.sekei.StageGuide.liveActivityRefresh")) {
-            let contentViewModel = await ContentViewModel()
-            await contentViewModel.startNextAct()
-        }
     }
 }

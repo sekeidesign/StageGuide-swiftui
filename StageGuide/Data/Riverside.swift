@@ -121,8 +121,8 @@ func populateInitialData() {
     let matfroninja = Act(context: context)
     matfroninja.id = UUID()
     matfroninja.name = "MATFRONINJA"
-    matfroninja.startTime = dateFrom(year: 2023, month: 9, day: 3, hour: 9, minute: 0, timeZone: timeZone)
-    matfroninja.endTime = dateFrom(year: 2023, month: 9, day: 3, hour: 15, minute: 40, timeZone: timeZone)
+    matfroninja.startTime = dateFrom(year: 2023, month: 9, day: 4, hour: 9, minute: 0, timeZone: timeZone)
+    matfroninja.endTime = dateFrom(year: 2023, month: 9, day: 4, hour: 15, minute: 40, timeZone: timeZone)
     matfroninja.imageName = "Acts/Matfroninja"
     matfroninja.bio = "Unlike most artists Matfroninja doesn't focus on one style/genre, or have different names for different projects. Matfroninja is not just some brand he's built, it's everything that encompasses him...good and bad. He's always looking to create genre bending songs, although future bass is definitely his bread and butter."
     matfroninja.links = ["https://www.instagram.com/matfroninja/", "https://www.youtube.com/channel/UC8JSU4mYl0KfEuDWd1foMyQ", "https://www.instagram.com/matfroninja/", "https://vm.tiktok.com/ZMjeY7Rp4/", "https://soundcloud.com/matfroninja", "https://open.spotify.com/artist/42L9z0w9T9yyJAwLmlY6XJ?si=NSTI2WDfR3OjwaZwTOrCPw"]
@@ -131,8 +131,8 @@ func populateInitialData() {
     let oliWest = Act(context: context)
     oliWest.id = UUID()
     oliWest.name = "Oli West"
-    oliWest.startTime = dateFrom(year: 2023, month: 9, day: 3, hour: 15, minute: 40, timeZone: timeZone)
-    oliWest.endTime = dateFrom(year: 2023, month: 9, day: 3, hour: 16, minute: 20, timeZone: timeZone)
+    oliWest.startTime = dateFrom(year: 2023, month: 9, day: 4, hour: 15, minute: 40, timeZone: timeZone)
+    oliWest.endTime = dateFrom(year: 2023, month: 9, day: 4, hour: 16, minute: 20, timeZone: timeZone)
     oliWest.imageName = "Acts/Oli West"
     oliWest.bio = "Canadian producer & DJ Oli West grew up in a deeply musical household and was exposed to countless genres throughout his childhood, ranging from classical music, to 60s soft rock to Malian folk music. He fell in love with electronic music after stumbling upon Strobe by Deadmau5 in 2011, and started producing music just a couple of years later at the tender age of 14. He burst onto Ottawa’s dance music scene in 2022 with his dark, groovy and uniquely hypnotic sound, earning regular headlining shows at the Canadian Capital’s hottest clubs. His growth and development has continued to be exponential in 2023 with his latest releases."
     oliWest.links = ["https://www.instagram.com/oliwestmusic/", "https://soundcloud.app.goo.gl/14epBsLyTPkfrNaY7", "https://open.spotify.com/artist/4nEhQtFiZrBvvvcbsRYPol?si=BiBG1PfDTLSgyTJwVAGDFw"]
@@ -141,8 +141,8 @@ func populateInitialData() {
     let etienneOzborne = Act(context: context)
     etienneOzborne.id = UUID()
     etienneOzborne.name = "Etienne Ozborne"
-    etienneOzborne.startTime = dateFrom(year: 2023, month: 9, day: 9, hour: 16, minute: 20, timeZone: timeZone)
-    etienneOzborne.endTime = dateFrom(year: 2023, month: 9, day: 9, hour: 17, minute: 20, timeZone: timeZone)
+    etienneOzborne.startTime = dateFrom(year: 2023, month: 9, day: 4, hour: 16, minute: 20, timeZone: timeZone)
+    etienneOzborne.endTime = dateFrom(year: 2023, month: 9, day: 4, hour: 17, minute: 20, timeZone: timeZone)
     etienneOzborne.imageName = "Acts/Etienne Ozborne"
     etienneOzborne.bio = "Etienne is a monthly resident at Montreal’s New City Gas and Circus Afterhours, both clubs having at one time or another been featured in DJ Mag’s Top 100 clubs. He also recently signed on as monthly resident at Club Aléa located inside the Casino Lac Leamy in Gatineau, Québec. On the international circuit, Etienne has been an in-demand DJ having played notably in the United States, Russia, Mexico, Brazil, South Korea, Maldives Island and Germany. Etienne is entering the pinnacle of his career and is destined for great success. His dancefloor experience and distinctive style make him one of the most promising and exciting DJ’s to watch in 2017."
     etienneOzborne.links = ["https://www.facebook.com/EtienneOzborne/", "https://open.spotify.com/artist/7bzairu1T7FcC67iXENiEH?si=3TdXd9qKStK2qTJkyOQIJg"]
@@ -151,8 +151,8 @@ func populateInitialData() {
     let vavo = Act(context: context)
     vavo.id = UUID()
     vavo.name = "Vavo"
-    vavo.startTime = dateFrom(year: 2023, month: 9, day: 9, hour: 17, minute: 20, timeZone: timeZone)
-    vavo.endTime = dateFrom(year: 2023, month: 9, day: 9, hour: 18, minute: 20, timeZone: timeZone)
+    vavo.startTime = dateFrom(year: 2023, month: 9, day: 4, hour: 17, minute: 20, timeZone: timeZone)
+    vavo.endTime = dateFrom(year: 2023, month: 9, day: 4, hour: 18, minute: 20, timeZone: timeZone)
     vavo.imageName = "Acts/Vavo"
     vavo.bio = "VAVO, the genre-bending DJ/Producer duo comprised of Jesse Fischer and Alden Martin, have been making serious moves in the music industry. The Vancouver native and London-born pair have garnered impressive milestones, including multiple #1 spots on Dance Radio USA and hitting the top 3 on the Billboard Dance Charts. However, it's their explosive YEEDM movement that's been turning heads and making waves across the music world in 2023. Blending EDM and Country, this unique movement has gone viral and been embraced by fans with open arms. \n VAVO's A-grade approach to production has earned them the support of industry heavyweights such as Tiësto, The Chainsmokers, and David Guetta. Their hard work, signature sound, and memorable singles have led them to be recognized as a Billboard charting Dance/Pop/Country crossover act that's always happy to be pushing boundaries."
     vavo.links = ["http://instagram.com/vavomusic", "https://twitter.com/VAVOmusic", "https://www.facebook.com/vavomusic/", "http://soundcloud.com/vavomusic", "https://open.spotify.com/artist/44re77WwNG34C182Jq3WIK"]
@@ -161,8 +161,8 @@ func populateInitialData() {
     let wuki = Act(context: context)
     wuki.id = UUID()
     wuki.name = "Wuki"
-    wuki.startTime = dateFrom(year: 2023, month: 9, day: 9, hour: 18, minute: 20, timeZone: timeZone)
-    wuki.endTime = dateFrom(year: 2023, month: 9, day: 9, hour: 19, minute: 20, timeZone: timeZone)
+    wuki.startTime = dateFrom(year: 2023, month: 9, day: 4, hour: 18, minute: 20, timeZone: timeZone)
+    wuki.endTime = dateFrom(year: 2023, month: 9, day: 4, hour: 19, minute: 20, timeZone: timeZone)
     wuki.imageName = "Acts/Wuki"
     wuki.bio = "Wuki is the genre-blending solo project of Los Angeles-based producer Kris Barman. Influenced by the sounds of Detroit ghettotech and Chicago footwork scenes, Barman’s ability to seamlessly mix booty, breaks, electro, and house into hard-hitting club-shakers has become a trademark of the Wuki sound. The ever evolving Wuki, has done official remixes for some of Electronic Music’s top artists including for The Chainsmokers, RL Grime, Kill The Noise, Galantis and has releases on notable imprints such as Mad Decent, OWSLA and more."
     wuki.links = ["https://www.instagram.com/wuki/", "https://www.facebook.com/IAMwuki/", "https://www.tiktok.com/@wukiwukiwuki?source=h5_m", "https://www.youtube.com/c/wuki", "https://soundcloud.com/iamwuki", "https://open.spotify.com/artist/6Se1y4vDcu9fVHLqdj1N3q?si=BKtntpeHTYaNZolLBlc_pA"]
@@ -172,8 +172,8 @@ func populateInitialData() {
     let hugel = Act(context: context)
     hugel.id = UUID()
     hugel.name = "HUGEL"
-    hugel.startTime = dateFrom(year: 2023, month: 9, day: 9, hour: 19, minute: 20, timeZone: timeZone)
-    hugel.endTime = dateFrom(year: 2023, month: 9, day: 9, hour: 20, minute: 20, timeZone: timeZone)
+    hugel.startTime = dateFrom(year: 2023, month: 9, day: 4, hour: 19, minute: 20, timeZone: timeZone)
+    hugel.endTime = dateFrom(year: 2023, month: 9, day: 4, hour: 20, minute: 20, timeZone: timeZone)
     hugel.imageName = "Acts/Hugel"
     hugel.bio = "Instigator of the Latin House movement with his hit \"Morenita\". HUGEL is a multi gold and platinum selling artist with over 1 Billion streams to his name, and with many of his tracks reaching the number 1 spot on Beatport, his music is played in parties all over the world. \n He grew up in Marseille by the Mediteranean sea (South of France) His Mom raised him with funk, disco and soul. He discovered the art of Dj’ing with vinyls at the age of 16 years old, influenced by the likes of Carl Cox, Laurent Garnier, Daft Punk, Amine Edge and David Guetta. After few years learning production he became a Hit-Maker. His house music is inspired by ibiza (Spain) and the Latin culture that he soaked up during his time living on the Island. Selling out shows in America, Space (Miami), Superior ingredients (Nyc), Academy (Los Angeles) He’s had residencies at Pacha & Ushuaia in Ibiza, and has played the biggest festivals in the world such as: EDC Vegas, EDC Mexico, Tomorrowland, Lollapalooza, Parookaville, World Club Dome, Mysteryland."
     hugel.links = ["https://www.instagram.com/hugelthug/", "https://www.djhugel.com/", "https://www.youtube.com/@HUGELMUSIC", "https://soundcloud.com/hugelmusic", "https://open.spotify.com/artist/5PlfkPxwCpRRWQJBxCa0By"]
@@ -183,16 +183,16 @@ func populateInitialData() {
     let adventureClubBreak = Act(context: context)
     adventureClubBreak.id = UUID()
     adventureClubBreak.name = "Break"
-    adventureClubBreak.startTime = dateFrom(year: 2023, month: 9, day: 9, hour: 20, minute: 20, timeZone: timeZone)
-    adventureClubBreak.endTime = dateFrom(year: 2023, month: 9, day: 9, hour: 20, minute: 25, timeZone: timeZone)
+    adventureClubBreak.startTime = dateFrom(year: 2023, month: 9, day: 4, hour: 20, minute: 20, timeZone: timeZone)
+    adventureClubBreak.endTime = dateFrom(year: 2023, month: 9, day: 4, hour: 20, minute: 25, timeZone: timeZone)
     adventureClubBreak.bio = "Short intermission"
     adventureClubBreak.isFavorite = false
     //    ———
     let adventureClub = Act(context: context)
     adventureClub.id = UUID()
     adventureClub.name = "Adventure Club"
-    adventureClub.startTime = dateFrom(year: 2023, month: 9, day: 9, hour: 20, minute: 25, timeZone: timeZone)
-    adventureClub.endTime = dateFrom(year: 2023, month: 9, day: 9, hour: 21, minute: 40, timeZone: timeZone)
+    adventureClub.startTime = dateFrom(year: 2023, month: 9, day: 4, hour: 20, minute: 25, timeZone: timeZone)
+    adventureClub.endTime = dateFrom(year: 2023, month: 9, day: 4, hour: 21, minute: 40, timeZone: timeZone)
     adventureClub.imageName = "Acts/Adventure Club"
     adventureClub.bio = "Grammy nominated electronic duo from Montreal, Canada. Our real names are Leighton and Christian. \n Some people say we invented melodic bass."
     adventureClub.links = ["https://www.instagram.com/adventureclub", "https://www.facebook.com/adventureclub", "https://twitter.com/adventureclub", "https://www.youtube.com/user/adventureclubdubstep", "https://soundcloud.com/adventureclub", "https://open.spotify.com/artist/5CdJjUi9f0cVgo9nFuJrFa?si=3bFJ6d7lT5u7s8JndyJWeQ"]
@@ -202,16 +202,16 @@ func populateInitialData() {
     let twoFriendsBreak = Act(context: context)
     twoFriendsBreak.id = UUID()
     twoFriendsBreak.name = "Break"
-    twoFriendsBreak.startTime = dateFrom(year: 2023, month: 9, day: 9, hour: 21, minute: 40, timeZone: timeZone)
-    twoFriendsBreak.endTime = dateFrom(year: 2023, month: 9, day: 9, hour: 21, minute: 45, timeZone: timeZone)
+    twoFriendsBreak.startTime = dateFrom(year: 2023, month: 9, day: 4, hour: 21, minute: 40, timeZone: timeZone)
+    twoFriendsBreak.endTime = dateFrom(year: 2023, month: 9, day: 4, hour: 21, minute: 45, timeZone: timeZone)
     twoFriendsBreak.bio = "Short intermission"
     twoFriendsBreak.isFavorite = false
     //    ———
     let twoFriends = Act(context: context)
     twoFriends.id = UUID()
     twoFriends.name = "Two Friends"
-    twoFriends.startTime = dateFrom(year: 2023, month: 9, day: 9, hour: 21, minute: 45, timeZone: timeZone)
-    twoFriends.endTime = dateFrom(year: 2023, month: 9, day: 9, hour: 23, minute: 0, timeZone: timeZone)
+    twoFriends.startTime = dateFrom(year: 2023, month: 9, day: 4, hour: 21, minute: 45, timeZone: timeZone)
+    twoFriends.endTime = dateFrom(year: 2023, month: 9, day: 4, hour: 23, minute: 0, timeZone: timeZone)
     twoFriends.links = ["https://www.instagram.com/twofriends/", "https://www.facebook.com/twofriendsmusic", "https://twitter.com/twofriendsmusic", "https://www.youtube.com/c/TwoFriendsMusic", "https://open.spotify.com/artist/44Ewva5aHOX00EwaX2D2mh?si=MK4YIs4sRXa9103133riow", "https://soundcloud.com/two-friends"]
     twoFriends.imageName = "Acts/Two Friends"
     twoFriends.bio = "Two Friends is the musical creation of best friends Matt Halper and Eli Sones. The dance-pop duo’s fitting name is a reflection of their lifelong bond as both musical collaborators and best friends.  They exploded into the global dance music landscape with their originals, their viral remixes of The Killers’ “Mr. Brightside,” Blink 182’s “I Miss You,” and their award-winning Big Bootie Mix series. Amassing millions of streams across YouTube and SoundCloud per installment, the Big Bootie Mix series has become the soundtrack to many a good-night-out across 10 years of regular releases.  With their intricately-produced live sets, Two Friends have performed at iconic venues from the likes of Red Rocks, Northerly Island, and Forest Hills Stadium, just to name a few. At the heels of their sold-out 2023 Planet Two Friends tour, the pair continue their ascent to the upper echelons of dance-pop excellence via new original productions, a relentless touring schedule, and the burgeoning of the Big Bootie Universe. As they continue building a legacy crossover brand, Matt and Eli will always just be Two Friends."
@@ -339,13 +339,13 @@ func populateInitialData() {
     
     let saturday = Day(context: context)
     saturday.name = "Saturday"
-    saturday.startTime = dateFrom(year: 2023, month: 9, day: 3, hour: 9, minute: 0, timeZone: timeZone)
-    saturday.endTime = dateFrom(year: 2023, month: 9, day: 3, hour: 23, minute: 0, timeZone: timeZone)
+    saturday.startTime = dateFrom(year: 2023, month: 9, day: 4, hour: 9, minute: 0, timeZone: timeZone)
+    saturday.endTime = dateFrom(year: 2023, month: 9, day: 4, hour: 23, minute: 0, timeZone: timeZone)
     
     let sunday = Day(context: context)
     sunday.name = "Sunday"
-    sunday.startTime = dateFrom(year: 2023, month: 9, day: 4, hour: 15, minute: 0, timeZone: timeZone)
-    sunday.endTime = dateFrom(year: 2023, month: 9, day: 4, hour: 23, minute: 0, timeZone: timeZone)
+    sunday.startTime = dateFrom(year: 2023, month: 9, day: 5, hour: 15, minute: 0, timeZone: timeZone)
+    sunday.endTime = dateFrom(year: 2023, month: 9, day: 5, hour: 23, minute: 0, timeZone: timeZone)
     
     
     
