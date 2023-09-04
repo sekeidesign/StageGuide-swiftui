@@ -8,6 +8,7 @@
 import Foundation
 import ActivityKit
 import CoreData
+import UserNotifications
 
 //extension ContentView {
 @MainActor class ContentViewModel: ObservableObject {
@@ -17,9 +18,11 @@ import CoreData
     @Published var currentAct: Act?
     @Published var nextAct: Act?
     @Published var liveScheduleActivity: Activity<LiveScheduleAttributes>?
+    @Published var areNotificationsEnabled = false
+    @Published var deviceToken: Data?
     
 #if DEBUG
-//    let apiURL = "http://localhost:3000"
+//        let apiURL = "http://localhost:3000"
     let apiURL = "https://stageguide-server.onrender.com"
 #else
     let apiURL = "https://stageguide-server.onrender.com"
@@ -34,6 +37,35 @@ import CoreData
                 fatalError("Error: \(error.localizedDescription)")
             }
         }
+    }
+    
+    func setDeviceToken(_ token: Data) {
+        self.deviceToken = token
+    }
+    
+    func requestNotificationPermission() {
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert]) { granted, error in
+            
+            if let error = error {
+                print("Notification request error: \(error)")
+                // Handle the error here.
+            }
+            
+            guard granted else {
+                print("Notifications not granted")
+                return
+            }
+            DispatchQueue.main.async {
+                self.setNotificationsEnabled(true)
+            }
+            
+            // Enable or disable features based on the authorization.
+        }
+    }
+    
+    func setNotificationsEnabled(_ areEnabled: Bool) {
+        self.areNotificationsEnabled = true
     }
     
     func loadData() {
@@ -108,8 +140,6 @@ import CoreData
     func initLiveActivity() {
         // check if today is equal to any [days]
         
-        Timer.scheduledTimer(withTimeInterval: 200, repeats: false, block: { _ in print("Timer fired") })
-        
         guard !(matchingDays?.isEmpty ?? false) else {
             print("Today is not a festival day")
             return
@@ -178,6 +208,16 @@ import CoreData
             var request = URLRequest(url: url)
             request.httpMethod = "POST"
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            if self.deviceToken == nil {
+                request.setValue("No token", forHTTPHeaderField: "deviceToken")
+            } else {
+                if let encodedData = try? encoder.encode(self.deviceToken) {
+                    request.setValue(String(data: encodedData, encoding: .utf8), forHTTPHeaderField: "deviceToken")
+                } else {
+                    print("Failed to stringify")
+                }
+            }
+            request.setValue((currentAct.id)?.uuidString, forHTTPHeaderField: "currentAct")
             request.httpBody = jsonData
             
             let task = URLSession.shared.dataTask(with: request) { data, response, error in
@@ -193,7 +233,7 @@ import CoreData
             }
             task.resume()
             liveScheduleActivity = startLiveActivity(currentAct: currentAct.name!, currentActStartTime: currentAct.startTime!, nextAct: (nextAct?.name)!, nextActStartTime: (nextAct?.startTime)!, days: daysArray ?? [], today: today)
-//            print("Started live activity")
+            //            print("Started live activity")
         } else {
             print("Error encoding JSON data")
             return
@@ -203,9 +243,10 @@ import CoreData
     private func convertToLineup(_ acts: [Act]) -> [[String: String]] {
         return acts.map { act in
             let name = act.name ?? "No name"
+            let id = (act.id)?.uuidString ?? "0"
             let startTime = dateToString(act.startTime ?? Date())
             let endTime = dateToString(act.endTime ?? Date())
-            return ["name": name, "startTime": startTime, "endTime": endTime]
+            return ["name": name, "id": id,  "startTime": startTime, "endTime": endTime]
         }
     }
     

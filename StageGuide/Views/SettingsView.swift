@@ -60,6 +60,26 @@ struct SettingsView: View {
                     Section(header: Text("Live Activities")) {
                         Button {
                             if let bundle = Bundle.main.bundleIdentifier,
+                                let settings = URL(string: UIApplication.openNotificationSettingsURLString + bundle) {
+                                if UIApplication.shared.canOpenURL(settings) {
+                                    UIApplication.shared.open(settings)
+                                }
+                            }
+                        } label: {
+                            HStack{
+                                VStack(alignment: .leading) {
+                                    Text("Allow notifications")
+                                        .foregroundColor(.white)
+                                    Text("Notifications are required for the live activity")
+                                        .font(.subheadline)
+                                        .foregroundStyle(Color(uiColor: .secondaryLabel))
+                                }
+                                Spacer()
+                                Image(systemName: "chevron.right")
+                            }
+                        }
+                        Button {
+                            if let bundle = Bundle.main.bundleIdentifier,
                                 let settings = URL(string: UIApplication.openSettingsURLString + bundle) {
                                 if UIApplication.shared.canOpenURL(settings) {
                                     UIApplication.shared.open(settings)
@@ -93,39 +113,7 @@ struct SettingsView: View {
                         Text("Reset data")
                             .foregroundColor(.red)
                     }
-                    Button {
-                        // Prepare URL
-                        let url = URL(string: "https://stageguide-server.onrender.com/live_activity")
-                        guard let requestUrl = url else { fatalError() }
-
-                        // Prepare URL Request Object
-                        var request = URLRequest(url: requestUrl)
-                        request.httpMethod = "POST"
-                         
-                        // HTTP Request Parameters which will be sent in HTTP Request Body
-                        let postString = "userId=300&title=My urgent task&completed=false";
-
-                        // Set HTTP Request Body
-                        request.httpBody = postString.data(using: String.Encoding.utf8);
-
-                        // Perform HTTP Request
-                        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-                                
-                                // Check for Error
-                                if let error = error {
-                                    print("Error took place \(error)")
-                                    return
-                                }
-                         
-                                // Convert HTTP Response Data to a String
-                                if let data = data, let dataString = String(data: data, encoding: .utf8) {
-                                    print("Response data string:\n \(dataString)")
-                                }
-                        }
-                        task.resume()
-                    } label: {
-                        Text("Test POST request")
-                    }
+                    
 #endif
                 }
                 .frame( maxWidth: .infinity)
