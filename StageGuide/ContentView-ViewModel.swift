@@ -105,33 +105,6 @@ import CoreData
         return nil
     }
     
-    private func updateActivity(newCurrentAct: String, newCurrentActStartTime: Date, newNextAct: String, newNextActStartTime: Date) async {
-        guard let activity = liveScheduleActivity else {
-            return
-        }
-        
-        let newContent = LiveScheduleAttributes.ContentState(currentAct: newCurrentAct, currentActStartTime: newCurrentActStartTime, nextAct: newNextAct, nextActStartTime: newNextActStartTime)
-        
-        await activity.update(using: newContent)
-    }
-    
-    private func endActivity() async {
-        guard let activity = liveScheduleActivity else {
-            return
-        }
-        
-        let finalContent = LiveScheduleAttributes.ContentState(currentAct: "Get home safe!", currentActStartTime: Date(), nextAct: "See you next time!", nextActStartTime: Date().addingTimeInterval(60*60)
-        )
-        
-        let dismissalPolicy: ActivityUIDismissalPolicy = .immediate
-        
-        if #available(iOS 16.2, *) {
-            await activity.end(ActivityContent(state: finalContent, staleDate: nil), dismissalPolicy: dismissalPolicy)
-        } else {
-            await activity.end(using: finalContent, dismissalPolicy: dismissalPolicy)
-        }
-    }
-    
     func initLiveActivity() {
         // check if today is equal to any [days]
         
@@ -227,7 +200,7 @@ import CoreData
         }
     }
     
-    func convertToLineup(_ acts: [Act]) -> [[String: String]] {
+    private func convertToLineup(_ acts: [Act]) -> [[String: String]] {
         return acts.map { act in
             let name = act.name ?? "No name"
             let startTime = dateToString(act.startTime ?? Date())
