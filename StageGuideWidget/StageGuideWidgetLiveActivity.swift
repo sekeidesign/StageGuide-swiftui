@@ -71,7 +71,7 @@ struct StageGuideWidgetLiveActivity: Widget {
                 .padding(.vertical, 12)
             }
             .padding(.leading, 16)
-            .activityBackgroundTint(.black.opacity(0.8))
+            .activityBackgroundTint(.black.opacity(0.7))
             .activitySystemActionForegroundColor(Color(red: 0.85, green: 0.98, blue: 0.31))
             
         } dynamicIsland: { context in
@@ -85,7 +85,7 @@ struct StageGuideWidgetLiveActivity: Widget {
                 // Expanded UI goes here.  Compose the expanded UI through
                 // various regions, like leading/trailing/center/bottom
                 DynamicIslandExpandedRegion(.leading) {
-                    HStack(spacing: 4) {
+                    HStack(spacing: 8) {
                         Text(context.attributes.festivalName)
                         Text("Day \(context.attributes.todayCount)/\(context.attributes.totalDays)")
                             .foregroundColor(Color(uiColor: .darkGray))

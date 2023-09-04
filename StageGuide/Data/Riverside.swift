@@ -121,8 +121,8 @@ func populateInitialData() {
     let matfroninja = Act(context: context)
     matfroninja.id = UUID()
     matfroninja.name = "MATFRONINJA"
-    matfroninja.startTime = dateFrom(year: 2023, month: 9, day: 9, hour: 15, minute: 0, timeZone: timeZone)
-    matfroninja.endTime = dateFrom(year: 2023, month: 9, day: 9, hour: 15, minute: 40, timeZone: timeZone)
+    matfroninja.startTime = dateFrom(year: 2023, month: 9, day: 3, hour: 9, minute: 0, timeZone: timeZone)
+    matfroninja.endTime = dateFrom(year: 2023, month: 9, day: 3, hour: 15, minute: 40, timeZone: timeZone)
     matfroninja.imageName = "Acts/Matfroninja"
     matfroninja.bio = "Unlike most artists Matfroninja doesn't focus on one style/genre, or have different names for different projects. Matfroninja is not just some brand he's built, it's everything that encompasses him...good and bad. He's always looking to create genre bending songs, although future bass is definitely his bread and butter."
     matfroninja.links = ["https://www.instagram.com/matfroninja/", "https://www.youtube.com/channel/UC8JSU4mYl0KfEuDWd1foMyQ", "https://www.instagram.com/matfroninja/", "https://vm.tiktok.com/ZMjeY7Rp4/", "https://soundcloud.com/matfroninja", "https://open.spotify.com/artist/42L9z0w9T9yyJAwLmlY6XJ?si=NSTI2WDfR3OjwaZwTOrCPw"]
@@ -131,8 +131,8 @@ func populateInitialData() {
     let oliWest = Act(context: context)
     oliWest.id = UUID()
     oliWest.name = "Oli West"
-    oliWest.startTime = dateFrom(year: 2023, month: 9, day: 9, hour: 15, minute: 40, timeZone: timeZone)
-    oliWest.endTime = dateFrom(year: 2023, month: 9, day: 9, hour: 16, minute: 20, timeZone: timeZone)
+    oliWest.startTime = dateFrom(year: 2023, month: 9, day: 3, hour: 15, minute: 40, timeZone: timeZone)
+    oliWest.endTime = dateFrom(year: 2023, month: 9, day: 3, hour: 16, minute: 20, timeZone: timeZone)
     oliWest.imageName = "Acts/Oli West"
     oliWest.bio = "Canadian producer & DJ Oli West grew up in a deeply musical household and was exposed to countless genres throughout his childhood, ranging from classical music, to 60s soft rock to Malian folk music. He fell in love with electronic music after stumbling upon Strobe by Deadmau5 in 2011, and started producing music just a couple of years later at the tender age of 14. He burst onto Ottawa’s dance music scene in 2022 with his dark, groovy and uniquely hypnotic sound, earning regular headlining shows at the Canadian Capital’s hottest clubs. His growth and development has continued to be exponential in 2023 with his latest releases."
     oliWest.links = ["https://www.instagram.com/oliwestmusic/", "https://soundcloud.app.goo.gl/14epBsLyTPkfrNaY7", "https://open.spotify.com/artist/4nEhQtFiZrBvvvcbsRYPol?si=BiBG1PfDTLSgyTJwVAGDFw"]

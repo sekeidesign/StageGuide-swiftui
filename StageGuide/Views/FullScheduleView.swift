@@ -6,9 +6,10 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct FullScheduleView: View {
-    @State var days: FetchedResults<Day>
+    @State var days: [Day]
     @AppStorage("ActiveDay") private var activeDay: String = (UserDefaults.standard.string(forKey: "ActiveDay") ?? "Friday")
     @State private var activeScheduleView: String = "Schedule"
     

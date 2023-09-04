@@ -51,29 +51,16 @@ struct StageGuideApp: App {
             case .background:
                 persistenceController.save()
             case .inactive:
-                print("App inactive")
+                print("")
             case .active:
-                print("App active")
+                print("")
             @unknown default:
-                print("App phase unknown")
+                print("")
             }
         }
         .backgroundTask(.appRefresh("ca.sekei.StageGuide.liveActivityRefresh")) {
-            // Background task to refresh
-            // if currentAct is last item in today's Acts
-//            if let index = todayActs.firstIndex(of: currentAct) {
-//                if index == todayActs.count - 1 {
-//                    print("The current item is the last item in the array.")
-//                } else {
-//                    print("The current item is not the last item in the array.")
-//                }
-//            } else {
-//                print("The current item is not in the array.")
-//            }
-            // schedule end Live Activity
-            // else
-            // update Live Activity with current and next act
-            // schedule next refresh
+            let contentViewModel = await ContentViewModel()
+            await contentViewModel.startNextAct()
         }
     }
 }
