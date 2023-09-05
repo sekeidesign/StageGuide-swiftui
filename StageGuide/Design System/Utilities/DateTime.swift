@@ -72,3 +72,10 @@ func extractInitials(lineup: [Act]) -> [String] {
     
     return initials
 }
+
+func dateToString(_ date: Date) -> String {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
+    dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+    return dateFormatter.string(from: date)
+}

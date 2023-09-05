@@ -18,8 +18,8 @@ struct SGLineupSchedule: View {
     
     var body: some View {
         let rawLineupDay = day?.acts?.compactMap { $0 as? Act }
-        let lineupDay = rawLineupDay?.filter({$0.name != "Intermission"})
-        let lineupDayFavorites = rawLineupDay?.filter({$0.name != "Intermission"}).filter({$0.isFavorite == true})
+        let lineupDay = rawLineupDay?.filter({$0.name != "Break"})
+        let lineupDayFavorites = rawLineupDay?.filter({$0.name != "Break"}).filter({$0.isFavorite == true})
         let timeSlots = extractTimeSlots(lineup: inContext == .yourSchedule ? lineupDayFavorites! : lineupDay ?? [])
         ScrollView {
             VStack (spacing: 8) {
@@ -37,7 +37,12 @@ struct SGLineupSchedule: View {
                             ForEach(actsInSlot.sorted(by: { $0.startTime ?? Date() > $1.startTime ?? Date() }), id: \.self.id) { act in
                                 let actViewModel = ActViewModel(act: act){
                                 }
-                                SGActSchedule(viewModel: actViewModel, hasAdd: inContext == .fullSchedule)
+                                if inContext == .fullSchedule {
+                                    SGActSchedule(viewModel: actViewModel, hasAdd: true)
+                                } else {
+                                    SGActSchedule(viewModel: actViewModel, hasAdd: false)
+                                        .isHidden(act.isFavorite == false, remove: true)
+                                }
                             }
                         }
                     }

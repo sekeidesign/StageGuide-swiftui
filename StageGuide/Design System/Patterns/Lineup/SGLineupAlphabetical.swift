@@ -13,12 +13,12 @@ struct SGLineupAlphabetical: View {
     
     var body: some View {
         let rawLineupDay = day?.acts?.compactMap { $0 as? Act }
-        let lineupDay = rawLineupDay?.filter({$0.name != "Intermission"})
-        let lineupDayFavorites = rawLineupDay?.filter({$0.name != "Intermission"}).filter({$0.isFavorite == true})
+        let lineupDay = rawLineupDay?.filter({$0.name != "Break"})
+        let lineupDayFavorites = rawLineupDay?.filter({$0.name != "Break"}).filter({$0.isFavorite == true})
         let initialSlots = extractInitials(lineup: inContext == .yourSchedule ? lineupDayFavorites! : lineupDay ?? [])
         let placeholderName = "Unknown"
         ScrollView {
-            VStack {
+            VStack (spacing: 8) {
                 ForEach(initialSlots, id: \.self) { initial in
                     let actsInSlot: [Act] = lineupDay?.filter {
                         let actName = $0.name
@@ -36,7 +36,12 @@ struct SGLineupAlphabetical: View {
                                 let actViewModel = ActViewModel(act: act){
                                     // toggle
                                 }
-                                SGActSchedule(viewModel: actViewModel)
+                                if inContext == .fullSchedule {
+                                    SGActSchedule(viewModel: actViewModel, hasAdd: true)
+                                } else {
+                                    SGActSchedule(viewModel: actViewModel, hasAdd: false)
+                                        .isHidden(act.isFavorite == false, remove: true)
+                                }
                             }
                         }
                         .padding(.trailing, 8)

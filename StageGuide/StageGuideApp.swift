@@ -6,15 +6,17 @@
 //
 
 import SwiftUI
+import BackgroundTasks
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     let persistenceController = PersistenceController.shared
+    let viewModel = ContentViewModel()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-        
         print("Has launched before: \(UserDefaults.standard.bool(forKey: "HasLaunchedBefore"))")
         
-//        UserDefaults.standard.set(false, forKey: "HasLaunchedBefore")
+        //        UserDefaults.standard.set(false, forKey: "HasLaunchedBefore")
+        UIApplication.shared.registerForRemoteNotifications()
         
         if !UserDefaults.standard.bool(forKey: "HasLaunchedBefore") {
             
@@ -30,18 +32,36 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         
         return true
     }
+    func application(_ application: UIApplication,
+                     didRegisterForRemoteNotificationsWithDeviceToken
+                     deviceToken: Data) {
+        guard deviceToken != viewModel.deviceToken else {
+            print("Didn't update token")
+            return
+        }
+        viewModel.setDeviceToken(deviceToken)
+        //       self.sendDeviceTokenToServer(data: deviceToken)
+    }
+    
+    
+    func application(_ application: UIApplication,
+                     didFailToRegisterForRemoteNotificationsWithError
+                     error: Error) {
+        print("Error: \(error)")
+        // Try again later.
+    }
 }
 
 @main
 struct StageGuideApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @Environment(\.scenePhase) var scenePhase
-        
+    
     let persistenceController = PersistenceController.shared
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(viewModel: appDelegate.viewModel)
                 .preferredColorScheme(.dark)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
@@ -50,11 +70,11 @@ struct StageGuideApp: App {
             case .background:
                 persistenceController.save()
             case .inactive:
-                print("App inactive")
+                print("")
             case .active:
-                print("App active")
+                print("")
             @unknown default:
-                print("App phase unknown")
+                print("")
             }
         }
     }
