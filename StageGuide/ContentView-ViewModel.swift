@@ -112,7 +112,7 @@ import UserNotifications
                     let activity = try Activity.request(
                         attributes: today,
                         content: .init(state: initialState, staleDate: nil),
-                        pushType: nil
+                        pushType: .token
                     )
                     return activity
                     
@@ -189,21 +189,32 @@ import UserNotifications
             return
         }
         
-        // Send lineup to server
-        
-        // Encode the lineup to JSON data
-        let encoder = JSONEncoder()
-        encoder.outputFormatting = .prettyPrinted
+        // Start live activity
+        liveScheduleActivity = startLiveActivity(currentAct: currentAct.name!, currentActStartTime: currentAct.startTime!, nextAct: (nextAct?.name)!, nextActStartTime: (nextAct?.startTime)!, days: daysArray ?? [], today: today)
         
         struct RequestBody: Codable {
-            let deviceToken: Data
+            let deviceToken: String
             let lineup: [[String: String]]
         }
         
         // Convert lineup to codable array
         let codableLineup = convertToLineup(todayActs)
-        let requestBody = RequestBody(deviceToken: self.deviceToken!, lineup: codableLineup)
+        Task {
+            for await pushToken in liveScheduleActivity!.pushTokenUpdates {
+                let pushTokenString = pushToken.reduce("") {
+                      $0 + String(format: "%02x", $1)
+                }
+                let requestBody = RequestBody(deviceToken: pushTokenString, lineup: codableLineup)
+                self.sendToServer(requestBody: requestBody, currentAct: currentAct)
+            }
+        }
         
+    }
+    
+    private func sendToServer(requestBody: Codable, currentAct: Act) {
+        // Encode the lineup to JSON data
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = .prettyPrinted
         
         if let jsonData = try? encoder.encode(requestBody) {
             // Step 4: Send the JSON data in an HTTP request
@@ -215,16 +226,8 @@ import UserNotifications
             var request = URLRequest(url: url)
             request.httpMethod = "POST"
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-            if self.deviceToken == nil {
-                request.setValue("No token", forHTTPHeaderField: "deviceToken")
-            } else {
-                if let encodedData = try? encoder.encode(self.deviceToken) {
-                    request.httpBody = jsonData
-                } else {
-                    print("Failed to stringify")
-                }
-            }
             request.setValue((currentAct.id)?.uuidString, forHTTPHeaderField: "currentAct")
+            request.httpBody = jsonData
             
             let task = URLSession.shared.dataTask(with: request) { data, response, error in
                 if let error = error {
@@ -238,7 +241,6 @@ import UserNotifications
                 }
             }
             task.resume()
-            liveScheduleActivity = startLiveActivity(currentAct: currentAct.name!, currentActStartTime: currentAct.startTime!, nextAct: (nextAct?.name)!, nextActStartTime: (nextAct?.startTime)!, days: daysArray ?? [], today: today)
             //            print("Started live activity")
         } else {
             print("Error encoding JSON data")
