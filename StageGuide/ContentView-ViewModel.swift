@@ -195,10 +195,17 @@ import UserNotifications
         let encoder = JSONEncoder()
         encoder.outputFormatting = .prettyPrinted
         
+        struct RequestBody: Codable {
+            let deviceToken: Data
+            let lineup: [[String: String]]
+        }
+        
         // Convert lineup to codable array
         let codableLineup = convertToLineup(todayActs)
+        let requestBody = RequestBody(deviceToken: self.deviceToken!, lineup: codableLineup)
         
-        if let jsonData = try? encoder.encode(codableLineup) {
+        
+        if let jsonData = try? encoder.encode(requestBody) {
             // Step 4: Send the JSON data in an HTTP request
             // You can use URLSession to send the JSON data as part of your HTTP request
             // Example code to send the JSON data to a server:
@@ -212,13 +219,12 @@ import UserNotifications
                 request.setValue("No token", forHTTPHeaderField: "deviceToken")
             } else {
                 if let encodedData = try? encoder.encode(self.deviceToken) {
-                    request.setValue(String(data: encodedData, encoding: .utf8), forHTTPHeaderField: "deviceToken")
+                    request.httpBody = jsonData
                 } else {
                     print("Failed to stringify")
                 }
             }
             request.setValue((currentAct.id)?.uuidString, forHTTPHeaderField: "currentAct")
-            request.httpBody = jsonData
             
             let task = URLSession.shared.dataTask(with: request) { data, response, error in
                 if let error = error {

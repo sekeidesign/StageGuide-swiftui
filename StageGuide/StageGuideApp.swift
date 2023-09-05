@@ -35,6 +35,10 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication,
                      didRegisterForRemoteNotificationsWithDeviceToken
                      deviceToken: Data) {
+        guard deviceToken != viewModel.deviceToken else {
+            print("Didn't update token")
+            return
+        }
         viewModel.setDeviceToken(deviceToken)
         //       self.sendDeviceTokenToServer(data: deviceToken)
     }
