@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+// Fetch request core data
+
 class ActViewModel: ObservableObject {
     @Published var act: Act
     var toggleFavorite: () -> Void
@@ -28,3 +30,6 @@ class ActViewModel: ObservableObject {
         
     }
 }
+
+// Generate for each act
+
