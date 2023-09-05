@@ -23,7 +23,7 @@ import UserNotifications
     
 #if DEBUG
 //        let apiURL = "http://localhost:3000"
-    let apiURL = "https://stageguide-server.onrender.com"
+    let apiURL = "https://seven-jobs-laugh.loca.lt"
 #else
     let apiURL = "https://stageguide-server.onrender.com"
 #endif
