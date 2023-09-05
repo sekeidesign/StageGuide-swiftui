@@ -8,19 +8,20 @@
 import SwiftUI
 import ActivityKit
 import BackgroundTasks
+import UserNotifications
 
 struct ContentView: View {
     @StateObject var viewModel: ContentViewModel
     @State private var activeTab = 2
     
     var body: some View {
-        if viewModel.deviceToken == nil {
+        if !viewModel.areNotificationsEnabled {
             Button("Request notifications") {
                 viewModel.requestNotificationPermission()
             }
             .buttonStyle(.bordered)
             Button("Print token") {
-                print(viewModel.deviceToken as Any)
+                print(viewModel.areNotificationsEnabled as Any)
             }
             .buttonStyle(.bordered)
         } else {

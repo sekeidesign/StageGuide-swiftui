@@ -9,6 +9,7 @@ import Foundation
 import ActivityKit
 import CoreData
 import UserNotifications
+import Combine
 
 //extension ContentView {
 @MainActor class ContentViewModel: ObservableObject {
@@ -23,7 +24,7 @@ import UserNotifications
     
 #if DEBUG
 //        let apiURL = "http://localhost:3000"
-    let apiURL = "https://seven-jobs-laugh.loca.lt"
+    let apiURL = "https://proud-lions-worry.loca.lt"
 #else
     let apiURL = "https://stageguide-server.onrender.com"
 #endif
@@ -56,8 +57,10 @@ import UserNotifications
                 print("Notifications not granted")
                 return
             }
+            
             DispatchQueue.main.async {
                 self.setNotificationsEnabled(true)
+                print("Notifications enabled")
             }
             
             // Enable or disable features based on the authorization.
