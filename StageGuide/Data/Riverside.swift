@@ -217,12 +217,13 @@ func populateInitialData() {
     twoFriends.bio = "Two Friends is the musical creation of best friends Matt Halper and Eli Sones. The dance-pop duo’s fitting name is a reflection of their lifelong bond as both musical collaborators and best friends.  They exploded into the global dance music landscape with their originals, their viral remixes of The Killers’ “Mr. Brightside,” Blink 182’s “I Miss You,” and their award-winning Big Bootie Mix series. Amassing millions of streams across YouTube and SoundCloud per installment, the Big Bootie Mix series has become the soundtrack to many a good-night-out across 10 years of regular releases.  With their intricately-produced live sets, Two Friends have performed at iconic venues from the likes of Red Rocks, Northerly Island, and Forest Hills Stadium, just to name a few. At the heels of their sold-out 2023 Planet Two Friends tour, the pair continue their ascent to the upper echelons of dance-pop excellence via new original productions, a relentless touring schedule, and the burgeoning of the Big Bootie Universe. As they continue building a legacy crossover brand, Matt and Eli will always just be Two Friends."
     twoFriends.isFavorite = false
     twoFriends.isFeatured = true
-    //    ———
+    
+    // ——————————— ** SUNDAY ACTS ** ———————————
     let igluu = Act(context: context)
     igluu.id = UUID()
     igluu.name = "IGLUU"
-    igluu.startTime = dateFrom(year: 2023, month: 9, day: 10, hour: 15, minute: 0, timeZone: timeZone)
-    igluu.endTime = dateFrom(year: 2023, month: 9, day: 10, hour: 15, minute: 50, timeZone: timeZone)
+    igluu.startTime = dateFrom(year: 2023, month: 9, day: 6, hour: 7, minute: 0, timeZone: timeZone)
+    igluu.endTime = dateFrom(year: 2023, month: 9, day: 6, hour: 15, minute: 50, timeZone: timeZone)
     igluu.imageName = "Acts/Igluu"
     igluu.bio = "Delving into the darker and more hypnotic corners of electronic music, Igluu captures the essence of the city's industrial vibe and transforms it into pulsating beats that challenge norms. Drawing inspiration from Ottawa's gritty underground scene, their sets are a fusion of expert sonic craftsmanship, blending intricate textures with unwavering rhythms that venture beyond the expected."
     igluu.links = ["https://www.instagram.com/igluu.music/", "https://soundcloud.com/igluuhouse"]
@@ -231,8 +232,8 @@ func populateInitialData() {
     let bundarr = Act(context: context)
     bundarr.id = UUID()
     bundarr.name = "Bundarr"
-    bundarr.startTime = dateFrom(year: 2023, month: 9, day: 10, hour: 15, minute: 50, timeZone: timeZone)
-    bundarr.endTime = dateFrom(year: 2023, month: 9, day: 10, hour: 16, minute: 40, timeZone: timeZone)
+    bundarr.startTime = dateFrom(year: 2023, month: 9, day: 6, hour: 15, minute: 50, timeZone: timeZone)
+    bundarr.endTime = dateFrom(year: 2023, month: 9, day: 6, hour: 16, minute: 40, timeZone: timeZone)
     bundarr.imageName = "Acts/Bundarr"
     bundarr.bio = "DJ/Producer Bundarr thrives on the art of genre-blending, with an insatiable appetite for all things bass. From the depths of bass house to the heights of 400bpm hardcore, his music embodies the essence of controlled chaos, uniting all genres with a shared love for volume. Rooted in Ottawa's vibrant scene, Bundarr's sets are a dynamic showcase of his passion for delivering powerful, ear-rattling experiences."
     bundarr.links = ["https://www.instagram.com/bundarrmusic/", "https://soundcloud.com/bundarr", "https://open.spotify.com/artist/5KL3rf2ky4z1moGQXX2rqG?si=iLP_YvN_SmuxU1xmcvtYoA"]
@@ -242,8 +243,8 @@ func populateInitialData() {
     let luckyRose = Act(context: context)
     luckyRose.id = UUID()
     luckyRose.name = "Lucky Rose"
-    luckyRose.startTime = dateFrom(year: 2023, month: 9, day: 10, hour: 16, minute: 40, timeZone: timeZone)
-    luckyRose.endTime = dateFrom(year: 2023, month: 9, day: 10, hour: 17, minute: 40, timeZone: timeZone)
+    luckyRose.startTime = dateFrom(year: 2023, month: 9, day: 6, hour: 16, minute: 40, timeZone: timeZone)
+    luckyRose.endTime = dateFrom(year: 2023, month: 9, day: 6, hour: 17, minute: 40, timeZone: timeZone)
     luckyRose.imageName = "Acts/Lucky Rose"
     luckyRose.bio = "Lucky Rose is producers/DJs Vincent Carrier and Marc-Antoine Thibeault, a French-Canadian duo with their signature mix of bright beats, catchy hooks and organic instruments. \n It started as Carrier’s solo project in 2015, albeit unintentionally. While remixing other artists from his Quebec City hometown, Carrier wrote original tropical house jam “The Way You Want Me.” When nobody else wanted it, he brought in vocalist Yan Etchevary and released it as Lucky Rose.  Supported by buzzy YouTube channels with millions of subs, the song soon made it to Stingray Music and then Montreal radio. From there, Lucky Rose won Virgin Radio’s Future Star contest, climbed Canada’s Billboard Top 40 and Hot AC charts and got signed by Ultra Music.  Carrier’s next release, “Wild One,” featuring Toronto singer-producer Tep No, was even bigger. Riding soaring synths, acoustic guitar strums and an earworm whistle, it clocked tens of millions of streams, cracked pop radio’s top 20 and went Gold in Canada. \n Still, something was missing — and that something turned out to be Thibeault, a Facebook friend, DJ and fellow ex-drummer who’d ditched rock for electronic dance music. Complementing each other's skill sets, the pair joined forces in 2017 and put out “Lost” featuring Jordan Hart which again went Gold and cracked pop radio while getting them live gigs.   Now with some hot new pandemic-era productions in hand, Lucky Rose is ready to prove they’re no fluke."
     luckyRose.links = ["https://www.instagram.com/luckyroseofficial/", "https://www.tiktok.com/@luckyrosemusic", "https://luckyrosemusic.com/", "https://soundcloud.com/lucky-rose-music", "https://open.spotify.com/artist/5ShkaitLUorYdZgJMqTF5E?si=jg2hEF2uQvS0XyxRqgVFvA"]
@@ -252,8 +253,8 @@ func populateInitialData() {
     let suraySertin = Act(context: context)
     suraySertin.id = UUID()
     suraySertin.name = "Suray Sertin"
-    suraySertin.startTime = dateFrom(year: 2023, month: 9, day: 10, hour: 17, minute: 40, timeZone: timeZone)
-    suraySertin.endTime = dateFrom(year: 2023, month: 9, day: 10, hour: 18, minute: 40, timeZone: timeZone)
+    suraySertin.startTime = dateFrom(year: 2023, month: 9, day: 6, hour: 17, minute: 40, timeZone: timeZone)
+    suraySertin.endTime = dateFrom(year: 2023, month: 9, day: 6, hour: 18, minute: 40, timeZone: timeZone)
     suraySertin.imageName = "Acts/Suray Sertin"
     suraySertin.bio = "Suray Sertin is a record producer hailing from Montreal, Canada. \n With his unique blend of house, chillwave, r&b, and pop, he creates a sound that is both fresh and timeless. His music is an artful combination of musical elements and textures, resulting in an immersive listening experience that captivates the senses. As a producer, Suray's approach to music-making is constantly evolving, and his quest for innovation is establishing him as a leading figure in the Montreal electronic music scene. \n Suray Sertin's innovative sound has captured the attention of heavyweights in the electronic music scene, including Zeds Dead, and playlist curators at Higher Ground and Foreign Family Collective. With support from these industry leaders, he is cementing his place as a standout in the electronic music world."
     suraySertin.links = ["https://instagram.com/suraysertin", "https://twitter.com/suraysertin", "https://tiktok.com/@suraysertin", "https://soundcloud.com/suraysertin", "https://open.spotify.com/artist/4Fne9Gai1GmN22jvAENRtP?si=3fX74nF-QryXT9NYhu7sRQ"]
@@ -262,8 +263,8 @@ func populateInitialData() {
     let dubdogz = Act(context: context)
     dubdogz.id = UUID()
     dubdogz.name = "DUBDOGZ"
-    dubdogz.startTime = dateFrom(year: 2023, month: 9, day: 10, hour: 18, minute: 40, timeZone: timeZone)
-    dubdogz.endTime = dateFrom(year: 2023, month: 9, day: 10, hour: 19, minute: 40, timeZone: timeZone)
+    dubdogz.startTime = dateFrom(year: 2023, month: 9, day: 6, hour: 18, minute: 40, timeZone: timeZone)
+    dubdogz.endTime = dateFrom(year: 2023, month: 9, day: 6, hour: 19, minute: 40, timeZone: timeZone)
     dubdogz.imageName = "Acts/Dubdogz"
     dubdogz.bio = "Brazil’s fastest rising stars, Dubdogz have taken the Electronic music world by storm. Though still in their early twenties the twin brothers -Marcos & Lucas Schmidt- are already one of the leading electronic acts in Brazil with numerous hit dance tracks in South America, Europe and North America. The duo has to their credit performances at major festivals such as Rock In Rio, Lollapalooza, Tomorrowland Brazil, XXXperience, Electric Zoo and Ultra Music Brazil. Known for their high energy performances, pulsating dance rhythms of Brazilian Bass and instantly contagious melodies, Dubdogz is now focused on the world with new original tracks, new collaborations and remixes underway."
     dubdogz.links = ["https://www.instagram.com/dubdogz/", "https://twitter.com/dubdogzmusic", "https://www.youtube.com/c/Dubdogz", "https://dubdogz.com.br/", "https://soundcloud.com/dubdogzmusic", "https://open.spotify.com/artist/4cdyqaBREB68H77QKCrKP1"]
@@ -344,7 +345,7 @@ func populateInitialData() {
     
     let sunday = Day(context: context)
     sunday.name = "Sunday"
-    sunday.startTime = dateFrom(year: 2023, month: 9, day: 6, hour: 15, minute: 0, timeZone: timeZone)
+    sunday.startTime = dateFrom(year: 2023, month: 9, day: 6, hour: 7, minute: 0, timeZone: timeZone)
     sunday.endTime = dateFrom(year: 2023, month: 9, day: 6, hour: 23, minute: 0, timeZone: timeZone)
     
     
