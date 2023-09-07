@@ -12,11 +12,11 @@ import SwiftUI
 struct StageGuideWidgetLiveActivity: Widget {
     var body: some WidgetConfiguration {
         ActivityConfiguration(for: LiveScheduleAttributes.self) { context in
-            var progressInterval: ClosedRange<Date> {
-                let start = Date()
-                let end = context.state.nextActStartTime
-                return start...end
-            }
+//            var progressInterval: ClosedRange<Date> {
+//                let start = Date()
+//                let end = context.state.nextActStartTime
+//                return start...end
+//            }
             VStack(spacing: 0) {
                 HStack {
                     HStack(spacing: 4) {
@@ -52,7 +52,8 @@ struct StageGuideWidgetLiveActivity: Widget {
                         }
                         Spacer()
                         VStack(alignment: .trailing, spacing: 4) {
-                            Text(context.state.nextActStartTime, style: .timer)
+//                            Text(context.state.nextActStartTime, style: .timer)
+                            Text(context.state.nextAct)
                                 .font(.footnote)
                                 .fontWeight(.semibold)
                                 .foregroundColor(Color(red: 0.85, green: 0.98, blue: 0.31))
@@ -64,8 +65,8 @@ struct StageGuideWidgetLiveActivity: Widget {
                             
                         }
                     }
-                    ProgressView(timerInterval: progressInterval, countsDown: false, label: {}, currentValueLabel: {})
-                        .progressViewStyle(WithBackgroundProgressViewStyle())
+//                    ProgressView(timerInterval: progressInterval, countsDown: false, label: {}, currentValueLabel: {})
+//                        .progressViewStyle(WithBackgroundProgressViewStyle())
                 }
                 .padding(.trailing, 16)
                 .padding(.vertical, 12)
@@ -75,11 +76,11 @@ struct StageGuideWidgetLiveActivity: Widget {
             .activitySystemActionForegroundColor(Color(red: 0.85, green: 0.98, blue: 0.31))
             
         } dynamicIsland: { context in
-            var progressInterval: ClosedRange<Date> {
-                let start = context.state.currentActStartTime
-                let end = context.state.nextActStartTime
-                return start...end
-            }
+//            var progressInterval: ClosedRange<Date> {
+//                let start = context.state.currentActStartTime
+//                let end = context.state.nextActStartTime
+//                return start...end
+//            }
             
             return DynamicIsland {
                 // Expanded UI goes here.  Compose the expanded UI through
@@ -121,7 +122,8 @@ struct StageGuideWidgetLiveActivity: Widget {
                             }
                             Spacer()
                             VStack(alignment: .trailing, spacing: 4) {
-                                Text(context.state.nextActStartTime, style: .timer)
+//                                Text(context.state.nextActStartTime, style: .timer)
+                                Text(context.state.nextAct)
                                     .font(.footnote)
                                     .fontWeight(.semibold)
                                     .foregroundColor(Color(red: 0.85, green: 0.98, blue: 0.31))
@@ -133,8 +135,8 @@ struct StageGuideWidgetLiveActivity: Widget {
                                 
                             }
                         }
-                        ProgressView(timerInterval: progressInterval, countsDown: false, label: {}, currentValueLabel: {})
-                            .progressViewStyle(WithBackgroundProgressViewStyle())
+//                        ProgressView(timerInterval: progressInterval, countsDown: false, label: {}, currentValueLabel: {})
+//                            .progressViewStyle(WithBackgroundProgressViewStyle())
                     }
                     .padding(.horizontal, 4)
                     .padding(.vertical, 4)
@@ -144,7 +146,8 @@ struct StageGuideWidgetLiveActivity: Widget {
                     .fontWeight(.semibold)
                     .foregroundColor(Color(red: 0.85, green: 0.98, blue: 0.31))
             } compactTrailing: {
-                Text(context.state.nextActStartTime, style: .timer)
+//                Text(context.state.nextActStartTime, style: .timer)
+                Text(context.state.nextAct)
                     .font(.footnote)
                     .fontWeight(.semibold)
                     .foregroundColor(Color(red: 0.85, green: 0.98, blue: 0.31))
@@ -162,7 +165,8 @@ struct StageGuideWidgetLiveActivity: Widget {
 
 struct StageGuideWidgetLiveActivity_Previews: PreviewProvider {
     static let attributes = LiveScheduleAttributes(festivalName: "Riverside", totalDays: 3, todayCount: 1)
-    static let contentState = LiveScheduleAttributes.ContentState(currentAct: "Bundarr", currentActStartTime: dateFrom(year: 2023, month: 9, day: 2, hour: 9, minute: 0, timeZone: "America/New_York"), nextAct: "Tchami", nextActStartTime: Date().addingTimeInterval(45 * 60))
+//    static let contentState = LiveScheduleAttributes.ContentState(currentAct: "Bundarr", currentActStartTime: dateFrom(year: 2023, month: 9, day: 2, hour: 9, minute: 0, timeZone: "America/New_York"), nextAct: "Tchami", nextActStartTime: Date().addingTimeInterval(45 * 60))
+    static let contentState = LiveScheduleAttributes.ContentState(currentAct: "Bundarr", nextAct: "Tchami")
     
     static var previews: some View {
         attributes

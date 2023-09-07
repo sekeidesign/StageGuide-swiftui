@@ -24,7 +24,7 @@ import Combine
     
 #if DEBUG
 //        let apiURL = "http://localhost:3000"
-    let apiURL = "https://proud-lions-worry.loca.lt"
+    let apiURL = "https://pink-wasps-fry.loca.lt"
 #else
     let apiURL = "https://stageguide-server.onrender.com"
 #endif
@@ -109,7 +109,8 @@ import Combine
             
             do {
                 let today = LiveScheduleAttributes(festivalName: "Riverside", totalDays: days.count, todayCount: todayCount)
-                let initialState = LiveScheduleAttributes.ContentState(currentAct: currentAct, currentActStartTime: currentActStartTime, nextAct: nextAct, nextActStartTime: nextActStartTime)
+//                let initialState = LiveScheduleAttributes.ContentState(currentAct: currentAct, currentActStartTime: currentActStartTime, nextAct: nextAct, nextActStartTime: nextActStartTime)
+                let initialState = LiveScheduleAttributes.ContentState(currentAct: currentAct, nextAct: nextAct)
                 
                 if #available(iOS 16.2, *) {
                     let activity = try Activity.request(

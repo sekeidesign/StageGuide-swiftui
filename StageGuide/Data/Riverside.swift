@@ -273,16 +273,16 @@ func populateInitialData() {
     let audienBreak = Act(context: context)
     audienBreak.id = UUID()
     audienBreak.name = "Break"
-    audienBreak.startTime = dateFrom(year: 2023, month: 9, day: 10, hour: 19, minute: 40, timeZone: timeZone)
-    audienBreak.endTime = dateFrom(year: 2023, month: 9, day: 10, hour: 19, minute: 45, timeZone: timeZone)
+    audienBreak.startTime = dateFrom(year: 2023, month: 9, day: 6, hour: 19, minute: 40, timeZone: timeZone)
+    audienBreak.endTime = dateFrom(year: 2023, month: 9, day: 6, hour: 19, minute: 45, timeZone: timeZone)
     audienBreak.bio = "Short intermission."
     audienBreak.isFavorite = false
     //    ———
     let audien = Act(context: context)
     audien.id = UUID()
     audien.name = "Audien"
-    audien.startTime = dateFrom(year: 2023, month: 9, day: 10, hour: 19, minute: 45, timeZone: timeZone)
-    audien.endTime = dateFrom(year: 2023, month: 9, day: 10, hour: 20, minute: 45, timeZone: timeZone)
+    audien.startTime = dateFrom(year: 2023, month: 9, day: 6, hour: 19, minute: 45, timeZone: timeZone)
+    audien.endTime = dateFrom(year: 2023, month: 9, day: 6, hour: 20, minute: 45, timeZone: timeZone)
     audien.imageName = "Acts/Audien"
     audien.bio = "Grammy nominated producer and songwriter Audien has established himself as a fixture in the dance community, known for his production prowess and unique propensity for uplifting melodies. Considered a staple in the progressive house genre, Audien launched his career in 2008 with a string of releases on Anjunabeats, Armada Music, Spinnin’ Records, and Astralwerks. Over the years Audien solidified his signature sound and garnered the support of industry veterans like Tiësto, Above & Beyond, and Armin van Buuren. In 2014, Audien released his Grammy nominated remix of Bastille’s “Pompeii”, which went on to become the most played track at Electric Daisy Carnival and Coachella, and one of the five most played tracks at Tomorrowland. It is no surprise then that Audien has become a mainstay at marquee festival brands across the world including Tomorrowland, EDC, Ultra, Lollapalooza, and many more. Audien’s career growth and influence is evidenced by his impressive list of collaborators, which include Lady Antebellum, MAX, and Echosmith, on top of official remixes for Michael Jackson, Coldplay, and Halsey. Audien released his debut LP ‘Escapism’ in November 2019. The album is a definitive effort encapsulating both Audien’s signature style and his dominance in the dance landscape. Audien states, “I’m not reinventing the wheel, but I’m accentuating the art I’ve created for almost a decade. It’s the best form of what I’m known for.”"
     audien.links = ["https://www.instagram.com/audien/?hl=en", "https://soundcloud.com/audien", "https://twitter.com/audien", "https://www.youtube.com/user/AudienTV", "https://open.spotify.com/artist/4xnMDfgEmXZEEDdITKcGuE"]
@@ -292,16 +292,16 @@ func populateInitialData() {
     let tchamiBreak = Act(context: context)
     tchamiBreak.id = UUID()
     tchamiBreak.name = "Break"
-    tchamiBreak.startTime = dateFrom(year: 2023, month: 9, day: 10, hour: 20, minute: 45, timeZone: timeZone)
-    tchamiBreak.endTime = dateFrom(year: 2023, month: 9, day: 10, hour: 20, minute: 50, timeZone: timeZone)
+    tchamiBreak.startTime = dateFrom(year: 2023, month: 9, day: 6, hour: 20, minute: 45, timeZone: timeZone)
+    tchamiBreak.endTime = dateFrom(year: 2023, month: 9, day: 6, hour: 20, minute: 50, timeZone: timeZone)
     tchamiBreak.bio = "Short intermission."
     tchamiBreak.isFavorite = false
     //    ———
     let tchami = Act(context: context)
     tchami.id = UUID()
     tchami.name = "Tchami"
-    tchami.startTime = dateFrom(year: 2023, month: 9, day: 10, hour: 20, minute: 50, timeZone: timeZone)
-    tchami.endTime = dateFrom(year: 2023, month: 9, day: 10, hour: 21, minute: 50, timeZone: timeZone)
+    tchami.startTime = dateFrom(year: 2023, month: 9, day: 6, hour: 20, minute: 50, timeZone: timeZone)
+    tchami.endTime = dateFrom(year: 2023, month: 9, day: 6, hour: 21, minute: 50, timeZone: timeZone)
     tchami.imageName = "Acts/Tchami"
     tchami.bio = "Tchami is one of the world's most popular DJs, and alongside his friends and partners DJ Snake, Malaa and Mercer, he's helping to push dance music forward via the future house movement, a collection of artists seeking to honor the history of dance music by continually finding innovative ways to add new sounds and textures while staying true to the core tenets of the house aesthetic. Born Martin Bresso in Paris, France, Tchami was a regular fixture at the record store Samad, studying classic house, r&amp;b and hip-hop imported from England and America. He began producing around town finding his voice, and eventually hit upon a sound that's equally energetic and soulful - one capable of moving audiences and leaving them with a feeling of deep bliss. \n Tchami tours the globe most days out of the year, and has played major international festivals including the Ultra Music Festivals, Electric Daisy Carnival, HARD Summer Music Festival, Coachella, multiple iterations of Lollapalooza (US, Paris, Brazil) and VELD Music Festival, to name just a few, always with the goal to take the audience higher and higher."
     tchami.links = ["https://www.instagram.com/tchami/", "https://www.instagram.com/tchami/", "https://twitter.com/iamTchami", "https://www.youtube.com/user/TchamiTV", "https://soundcloud.com/iamtchami", "https://open.spotify.com/artist/1KpCi9BOfviCVhmpI4G2sY"]
@@ -311,16 +311,16 @@ func populateInitialData() {
     let zedsDeadBreak = Act(context: context)
     zedsDeadBreak.id = UUID()
     zedsDeadBreak.name = "Break"
-    zedsDeadBreak.startTime = dateFrom(year: 2023, month: 9, day: 10, hour: 21, minute: 50, timeZone: timeZone)
-    zedsDeadBreak.endTime = dateFrom(year: 2023, month: 9, day: 10, hour: 22, minute: 0, timeZone: timeZone)
+    zedsDeadBreak.startTime = dateFrom(year: 2023, month: 9, day: 6, hour: 21, minute: 50, timeZone: timeZone)
+    zedsDeadBreak.endTime = dateFrom(year: 2023, month: 9, day: 6, hour: 22, minute: 0, timeZone: timeZone)
     zedsDeadBreak.bio = "***UPDATE DESCRIPTION***"
     zedsDeadBreak.isFavorite = false
     //    ———
     let zedsDead = Act(context: context)
     zedsDead.id = UUID()
     zedsDead.name = "Zeds Dead"
-    zedsDead.startTime = dateFrom(year: 2023, month: 9, day: 10, hour: 22, minute: 0, timeZone: timeZone)
-    zedsDead.endTime = dateFrom(year: 2023, month: 9, day: 10, hour: 23, minute: 0, timeZone: timeZone)
+    zedsDead.startTime = dateFrom(year: 2023, month: 9, day: 6, hour: 22, minute: 0, timeZone: timeZone)
+    zedsDead.endTime = dateFrom(year: 2023, month: 9, day: 6, hour: 23, minute: 0, timeZone: timeZone)
     zedsDead.imageName = "Acts/Zeds Dead"
     zedsDead.bio = "Formed in 2009 in Toronto by producers/DJs Dylan “DC” Mamid and Zachary “Hooks” Rapp-Rovan, Zeds Dead is one of the most successful independent electronic acts of the past decade, counting hundreds of millions of streams, dozens of Top 20 Billboard hits and multiple JUNO Award nominations. \n Zeds Dead have crafted a limitless sound across their expansive discography, which includes multiple breakout singles, remixes and EPs. In 2016, Zeds Dead released their debut album, 'Northern Lights,' which features Diplo, Twin Shadow, Pusha T, Weezer’s Rivers Cuomo and more. A Top 10 hit on Billboard’s Top Dance/Electronic Albums and Heatseekers Albums charts, the album received a nomination for Dance Recording of the Year at the 2017 JUNO Awards. \n In 2016, Zeds Dead launched their tastemaker Deadbeats Records, one of today’s leading independent labels in dance music, with +150 releases from emerging artists like DNMO, PEEKABOO, Subtronics, 1788-L and others. Deadbeats has released a handful of compilations: We Are Deadbeats (Vol. 1 - Vol. 4), which feature original tracks from its wide artist roster, including REZZ, Megalodon and Zeds Dead themselves. \n Zeds Dead and Deadbeats have recently expanded into the live events space via the branded Deadbeats Tour and the annual DeadRocks, a headlining show at Red Rocks Amphitheatre in Denver, which has sold out every year since launching in 2014."
     zedsDead.links = ["https://www.facebook.com/zedsdead", "https://twitter.com/zedsdead", "https://tiktok.com/@zedsdead", "https://www.youtube.com/channel/UCsYkUlicwVBtW-pAInUSyPA", "https://soundcloud.com/zedsdead", "https://open.spotify.com/artist/67qogtRNI0GjUr8PlaG6Zh"]

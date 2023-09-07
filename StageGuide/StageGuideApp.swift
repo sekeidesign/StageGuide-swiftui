@@ -69,16 +69,22 @@ struct StageGuideApp: App {
                         switch settings.authorizationStatus {
                         case .authorized:
                             // Notifications are enabled for your app
-                            print("Notifications are enabled.")
-                            appDelegate.viewModel.areNotificationsEnabled = true
+                            DispatchQueue.main.async {
+                                appDelegate.viewModel.areNotificationsEnabled = true
+                                print("Notifications are enabled.")
+                            }
                         case .denied:
                             // Notifications are explicitly disabled for your app
                             print("Notifications are denied.")
-                            appDelegate.viewModel.areNotificationsEnabled = false
+                            DispatchQueue.main.async {
+                                appDelegate.viewModel.areNotificationsEnabled = false
+                            }
                         case .notDetermined:
                             // User hasn't been asked for notification permissions yet
                             print("Notifications not determined.")
-                            appDelegate.viewModel.areNotificationsEnabled = false
+                            DispatchQueue.main.async {
+                                appDelegate.viewModel.areNotificationsEnabled = false
+                            }
                         case .provisional:
                             // Notifications are provisionally authorized (iOS 12+)
                             print("Notifications are provisionally authorized.")
