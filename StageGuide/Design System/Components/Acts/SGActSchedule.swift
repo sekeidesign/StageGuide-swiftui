@@ -22,7 +22,7 @@ struct SGActSchedule: View {
 //                .background(stageColor)
 //                .cornerRadius(99)
 //                .isHidden(!showStageColor, remove: true)
-            VStack(alignment: .leading, spacing: 8) {
+            VStack(alignment: .leading, spacing: 6) {
                 HStack {
                     Text(act.name ?? "Uknown name")
                         .font(.body)
@@ -53,7 +53,7 @@ struct SGActSchedule: View {
                 .isHidden(true, remove: true)
         }
         .frame(maxWidth: .infinity)
-        .padding(12)
+        .padding(14)
         .padding(.trailing, 4)
         .background(act.isFavorite ? Color(UIColor.secondarySystemFill) : Color(UIColor.tertiarySystemFill))
         .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))

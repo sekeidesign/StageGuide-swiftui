@@ -35,10 +35,10 @@ struct LiveScheduleAttributes: ActivityAttributes {
 //            }
         
         var currentAct: String
-//        var currentActStartTime: Date
+        var currentActStartTime: Date
         
         var nextAct: String
-//        var nextActStartTime: Date
+        var nextActStartTime: Date
     }
     
     var festivalName: String

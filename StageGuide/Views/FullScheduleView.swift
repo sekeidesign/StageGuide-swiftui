@@ -51,7 +51,6 @@ struct FullScheduleView: View {
                     Image(systemName: "chevron.up")
                         .rotationEffect(.degrees(areFeaturedActsExpanded ? 0 : -180))
                 }
-                .foregroundColor(areFeaturedActsExpanded ? .accentColor : Color(uiColor: .secondaryLabel))
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.horizontal)

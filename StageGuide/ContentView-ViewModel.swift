@@ -8,7 +8,7 @@
 import Foundation
 import ActivityKit
 import CoreData
-import UserNotifications
+//import UserNotifications
 import Combine
 
 //extension ContentView {
@@ -19,7 +19,7 @@ import Combine
     @Published var currentAct: Act?
     @Published var nextAct: Act?
     @Published var liveScheduleActivity: Activity<LiveScheduleAttributes>?
-    @Published var areNotificationsEnabled = false
+//    @Published var areNotificationsEnabled = false
     @Published var deviceToken: Data?
     
 #if DEBUG
@@ -44,32 +44,32 @@ import Combine
         self.deviceToken = token
     }
     
-    func requestNotificationPermission() {
-        let center = UNUserNotificationCenter.current()
-        center.requestAuthorization(options: [.alert]) { granted, error in
-            
-            if let error = error {
-                print("Notification request error: \(error)")
-                // Handle the error here.
-            }
-            
-            guard granted else {
-                print("Notifications not granted")
-                return
-            }
-            
-            DispatchQueue.main.async {
-                self.setNotificationsEnabled(true)
-                print("Notifications enabled")
-            }
-            
-            // Enable or disable features based on the authorization.
-        }
-    }
+//    func requestNotificationPermission() {
+//        let center = UNUserNotificationCenter.current()
+//        center.requestAuthorization(options: [.alert]) { granted, error in
+//            
+//            if let error = error {
+//                print("Notification request error: \(error)")
+//                // Handle the error here.
+//            }
+//            
+//            guard granted else {
+//                print("Notifications not granted")
+//                return
+//            }
+//            
+//            DispatchQueue.main.async {
+//                self.setNotificationsEnabled(true)
+//                print("Notifications enabled")
+//            }
+//            
+//            // Enable or disable features based on the authorization.
+//        }
+//    }
     
-    func setNotificationsEnabled(_ areEnabled: Bool) {
-        self.areNotificationsEnabled = true
-    }
+//    func setNotificationsEnabled(_ areEnabled: Bool) {
+//        self.areNotificationsEnabled = true
+//    }
     
     func loadData() {
         let daysRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Day")
@@ -110,13 +110,13 @@ import Combine
             do {
                 let today = LiveScheduleAttributes(festivalName: "Riverside", totalDays: days.count, todayCount: todayCount)
 //                let initialState = LiveScheduleAttributes.ContentState(currentAct: currentAct, currentActStartTime: currentActStartTime, nextAct: nextAct, nextActStartTime: nextActStartTime)
-                let initialState = LiveScheduleAttributes.ContentState(currentAct: currentAct, nextAct: nextAct)
+                let initialState = LiveScheduleAttributes.ContentState(currentAct: currentAct, currentActStartTime: matchingDays?[0].startTime ?? Date(), nextAct: nextAct, nextActStartTime: matchingDays?[0].endTime ?? Date().addingTimeInterval(60*8))
                 
                 if #available(iOS 16.2, *) {
                     let activity = try Activity.request(
                         attributes: today,
                         content: .init(state: initialState, staleDate: nil),
-                        pushType: .token
+                        pushType: nil
                     )
                     return activity
                     
@@ -196,22 +196,22 @@ import Combine
         // Start live activity
         liveScheduleActivity = startLiveActivity(currentAct: currentAct.name!, currentActStartTime: currentAct.startTime!, nextAct: (nextAct?.name)!, nextActStartTime: (nextAct?.startTime)!, days: daysArray ?? [], today: today)
         
-        struct RequestBody: Codable {
-            let deviceToken: String
-            let lineup: [[String: String]]
-        }
-        
-        // Convert lineup to codable array
-        let codableLineup = convertToLineup(todayActs)
-        Task {
-            for await pushToken in liveScheduleActivity!.pushTokenUpdates {
-                let pushTokenString = pushToken.reduce("") {
-                      $0 + String(format: "%02x", $1)
-                }
-                let requestBody = RequestBody(deviceToken: pushTokenString, lineup: codableLineup)
-                self.sendToServer(requestBody: requestBody, currentAct: currentAct)
-            }
-        }
+//        struct RequestBody: Codable {
+//            let deviceToken: String
+//            let lineup: [[String: String]]
+//        }
+//
+//        // Convert lineup to codable array
+//        let codableLineup = convertToLineup(todayActs)
+//        Task {
+//             for await pushToken in liveScheduleActivity!.pushTokenUpdates {
+//                let pushTokenString = pushToken.reduce("") {
+//                      $0 + String(format: "%02x", $1)
+//                }
+//                let requestBody = RequestBody(deviceToken: pushTokenString, lineup: codableLineup)
+//                self.sendToServer(requestBody: requestBody, currentAct: currentAct)
+//            }
+//        }
         
     }
     

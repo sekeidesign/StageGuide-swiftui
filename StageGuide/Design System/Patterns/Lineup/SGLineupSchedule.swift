@@ -46,7 +46,7 @@ struct SGLineupSchedule: View {
                             }
                         }
                     }
-                    .padding(.trailing, 8)
+                    .padding(.trailing, 16)
 //                    .padding(.top, 8)
 //                    .overlay(
 //                        Rectangle()

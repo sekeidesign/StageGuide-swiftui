@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import BackgroundTasks
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     let persistenceController = PersistenceController.shared
@@ -16,7 +15,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         print("Has launched before: \(UserDefaults.standard.bool(forKey: "HasLaunchedBefore"))")
         
         //        UserDefaults.standard.set(false, forKey: "HasLaunchedBefore")
-        UIApplication.shared.registerForRemoteNotifications()
+//        UIApplication.shared.registerForRemoteNotifications()
         
         if !UserDefaults.standard.bool(forKey: "HasLaunchedBefore") {
             

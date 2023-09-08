@@ -8,7 +8,7 @@
 import SwiftUI
 import ActivityKit
 import BackgroundTasks
-import UserNotifications
+//import UserNotifications
 
 struct ContentView: View {
     @StateObject var viewModel: ContentViewModel

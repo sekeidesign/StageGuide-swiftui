@@ -12,11 +12,11 @@ import SwiftUI
 struct StageGuideWidgetLiveActivity: Widget {
     var body: some WidgetConfiguration {
         ActivityConfiguration(for: LiveScheduleAttributes.self) { context in
-//            var progressInterval: ClosedRange<Date> {
-//                let start = Date()
-//                let end = context.state.nextActStartTime
-//                return start...end
-//            }
+            var progressInterval: ClosedRange<Date> {
+                let start = context.state.currentActStartTime
+                let end = context.state.nextActStartTime
+                return start...end
+            }
             VStack(spacing: 0) {
                 HStack {
                     HStack(spacing: 4) {
@@ -24,63 +24,70 @@ struct StageGuideWidgetLiveActivity: Widget {
                         Text("•")
                         Text("Day \(context.attributes.todayCount)/\(context.attributes.totalDays)")
                     }
-                    .foregroundColor(Color(uiColor: .lightGray))
+                    .foregroundColor(Color(uiColor: .black))
+                    .font(.footnote)
                     Spacer()
                     Text("StageGuide")
-                        .foregroundColor(Color(uiColor: .darkGray))
+                        .foregroundColor(Color(uiColor: .darkGray).opacity(0.5))
+                        .font(.caption2)
                 }
-                .font(.caption2)
-                .fontWeight(.semibold)
-                .padding(.trailing, 16)
-                .padding(.vertical, 12)
-                Rectangle()
-                    .fill(Color(uiColor: .darkGray).opacity(0.5))
-                    .frame(height: 1)
-                    .frame(maxWidth: .infinity)
+                .fontWeight(.medium)
+                .padding(.horizontal, 16)
+                .padding(.vertical, 10)
+                .background(Color(red: 0.85, green: 0.98, blue: 0.31))
+                //                Rectangle()
+                //                    .fill(Color(uiColor: .darkGray).opacity(0.5))
+                //                    .frame(height: 1)
+                //                    .frame(maxWidth: .infinity)
                 VStack {
                     HStack {
-                        VStack(alignment: .leading, spacing: 4) {
-                            Text("Now")
-                                .font(.footnote)
-                                .fontWeight(.semibold)
+                        VStack(alignment: .leading, spacing: 6) {
+                            Text("Start")
+                                .font(.subheadline)
+                            //                                .fontWeight(.semibold)
                                 .foregroundColor(Color(uiColor: .lightGray))
-                            Text("\(context.state.currentAct)")
+                            //                            Text("\(context.state.currentAct)")
+                            Text("3:00PM")
                                 .font(.callout)
                                 .fontWeight(.semibold)
                                 .foregroundColor(.white)
                             
                         }
                         Spacer()
-                        VStack(alignment: .trailing, spacing: 4) {
-//                            Text(context.state.nextActStartTime, style: .timer)
-                            Text(context.state.nextAct)
-                                .font(.footnote)
-                                .fontWeight(.semibold)
-                                .foregroundColor(Color(red: 0.85, green: 0.98, blue: 0.31))
+                        Text("See full schedule")
+                            .font(.caption)
+                            .foregroundColor(Color(uiColor: .lightGray).opacity(0.5))
+                        Spacer()
+                        VStack(alignment: .trailing, spacing: 6) {
+                            //                            Text(context.state.nextActStartTime, style: .timer)
+                            Text("End")
+                                .font(.subheadline)
+                            //                                .fontWeight(.semibold)
+                            //                                .foregroundColor(Color(red: 0.85, green: 0.98, blue: 0.31))
+                                .foregroundColor(Color(uiColor: .lightGray))
                                 .multilineTextAlignment(.trailing)
-                            Text("\(context.state.nextAct)")
+                            Text("11:00PM")
                                 .font(.callout)
                                 .fontWeight(.semibold)
                                 .foregroundColor(.white)
                             
                         }
                     }
-//                    ProgressView(timerInterval: progressInterval, countsDown: false, label: {}, currentValueLabel: {})
-//                        .progressViewStyle(WithBackgroundProgressViewStyle())
+                    ProgressView(timerInterval: progressInterval, countsDown: false, label: {}, currentValueLabel: {})
+                        .progressViewStyle(WithBackgroundProgressViewStyle())
                 }
-                .padding(.trailing, 16)
-                .padding(.vertical, 12)
+                .padding(.horizontal, 16)
+                .padding(.vertical, 16)
             }
-            .padding(.leading, 16)
-            .activityBackgroundTint(.black.opacity(0.7))
+            .activityBackgroundTint(.black.opacity(0.8))
             .activitySystemActionForegroundColor(Color(red: 0.85, green: 0.98, blue: 0.31))
             
         } dynamicIsland: { context in
-//            var progressInterval: ClosedRange<Date> {
-//                let start = context.state.currentActStartTime
-//                let end = context.state.nextActStartTime
-//                return start...end
-//            }
+            var progressInterval: ClosedRange<Date> {
+                let start = context.state.currentActStartTime
+                let end = context.state.nextActStartTime
+                return start...end
+            }
             
             return DynamicIsland {
                 // Expanded UI goes here.  Compose the expanded UI through
@@ -109,45 +116,53 @@ struct StageGuideWidgetLiveActivity: Widget {
                     VStack {
                         Spacer()
                         HStack {
-                            VStack(alignment: .leading, spacing: 4) {
-                                Text("Now")
-                                    .font(.footnote)
-                                    .fontWeight(.semibold)
+                            VStack(alignment: .leading, spacing: 8) {
+                                Text("Start")
+                                    .font(.subheadline)
+                                //                                .fontWeight(.semibold)
                                     .foregroundColor(Color(uiColor: .lightGray))
-                                Text("\(context.state.currentAct)")
+                                //                            Text("\(context.state.currentAct)")
+                                Text("3:00PM")
                                     .font(.callout)
                                     .fontWeight(.semibold)
                                     .foregroundColor(.white)
                                 
                             }
                             Spacer()
-                            VStack(alignment: .trailing, spacing: 4) {
-//                                Text(context.state.nextActStartTime, style: .timer)
-                                Text(context.state.nextAct)
-                                    .font(.footnote)
-                                    .fontWeight(.semibold)
-                                    .foregroundColor(Color(red: 0.85, green: 0.98, blue: 0.31))
+                            Text("See full schedule")
+                                .font(.caption)
+                                .foregroundColor(Color(uiColor: .lightGray).opacity(0.5))
+                            Spacer()
+                            VStack(alignment: .trailing, spacing: 8) {
+                                //                            Text(context.state.nextActStartTime, style: .timer)
+                                Text("End")
+                                    .font(.subheadline)
+                                //                                .fontWeight(.semibold)
+                                //                                .foregroundColor(Color(red: 0.85, green: 0.98, blue: 0.31))
+                                    .foregroundColor(Color(uiColor: .lightGray))
                                     .multilineTextAlignment(.trailing)
-                                Text("\(context.state.nextAct)")
+                                Text("11:00PM")
                                     .font(.callout)
                                     .fontWeight(.semibold)
                                     .foregroundColor(.white)
                                 
                             }
                         }
-//                        ProgressView(timerInterval: progressInterval, countsDown: false, label: {}, currentValueLabel: {})
-//                            .progressViewStyle(WithBackgroundProgressViewStyle())
+                        ProgressView(timerInterval: progressInterval, countsDown: false, label: {}, currentValueLabel: {})
+                            .progressViewStyle(WithBackgroundProgressViewStyle())
                     }
                     .padding(.horizontal, 4)
                     .padding(.vertical, 4)
                 }
             } compactLeading: {
-                Text("\(context.state.nextAct)")
+                //                Text("\(context.state.nextAct)")
+                Text("Riverside")
                     .fontWeight(.semibold)
                     .foregroundColor(Color(red: 0.85, green: 0.98, blue: 0.31))
             } compactTrailing: {
-//                Text(context.state.nextActStartTime, style: .timer)
-                Text(context.state.nextAct)
+                //                Text(context.state.nextActStartTime, style: .timer)
+                //                Text(context.state.nextAct)
+                Text("\(context.attributes.todayCount)/\(context.attributes.totalDays)")
                     .font(.footnote)
                     .fontWeight(.semibold)
                     .foregroundColor(Color(red: 0.85, green: 0.98, blue: 0.31))
@@ -165,8 +180,7 @@ struct StageGuideWidgetLiveActivity: Widget {
 
 struct StageGuideWidgetLiveActivity_Previews: PreviewProvider {
     static let attributes = LiveScheduleAttributes(festivalName: "Riverside", totalDays: 3, todayCount: 1)
-//    static let contentState = LiveScheduleAttributes.ContentState(currentAct: "Bundarr", currentActStartTime: dateFrom(year: 2023, month: 9, day: 2, hour: 9, minute: 0, timeZone: "America/New_York"), nextAct: "Tchami", nextActStartTime: Date().addingTimeInterval(45 * 60))
-    static let contentState = LiveScheduleAttributes.ContentState(currentAct: "Bundarr", nextAct: "Tchami")
+    static let contentState = LiveScheduleAttributes.ContentState(currentAct: "Bundarr", currentActStartTime: dateFrom(year: 2023, month: 9, day: 8, hour: 8, minute: 0, timeZone: "America/New_York"), nextAct: "Tchami", nextActStartTime: Date().addingTimeInterval(45 * 60))
     
     static var previews: some View {
         attributes
