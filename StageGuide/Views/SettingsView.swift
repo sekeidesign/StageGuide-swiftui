@@ -138,23 +138,19 @@ struct SurveyCard: View {
             .font(.caption)
             .fontWeight(.bold)
             HStack(spacing: 4) {
-                Text("Get")
-                Text("one free year")
-                    .textCase(.uppercase)
-                    .foregroundColor(.accentColor)
-                    .bold()
-                Text("of StageGuide")
+                Text("Help us make music festivals better for everyone! Your feedback means the world to us, tell us what you loved and what you hated!")
             }
             .font(.subheadline)
             .foregroundColor(Color(uiColor: .label))
             HStack {
-                Text("Add your email in the survey for a free year")
+                Text("Thank you")
                     .font(.caption2)
                     .foregroundColor(Color(uiColor: .tertiaryLabel))
                 Spacer()
-                SGPillButton(symbol: Image(systemName: "arrow.right.doc.on.clipboard"), label: Text("Survey"), link: "https://google.com", linkFromDomain: false)
+                SGPillButton(symbol: Image(systemName: "arrow.right.doc.on.clipboard"), label: Text("Give feedback"), link: "https://docs.google.com/forms/d/e/1FAIpQLSeWm6FYWqX0h3ytNpA93ye0CnSiYrTq0OHjhPdhoRBBecPQtg/viewform?usp=sf_link", linkFromDomain: false)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.top, 8)
         }
         .padding(12)
         .frame(maxWidth: .infinity, alignment: .leading)
