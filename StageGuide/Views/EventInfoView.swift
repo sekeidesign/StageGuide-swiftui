@@ -144,7 +144,8 @@ struct EventLinks: View {
     let riversideLinks = [
         "https://www.instagram.com/festivalriverside/",
         "https://www.facebook.com/riversidefest",
-        "https://billetterie.festivalriverside.ca/Online/default.asp"
+        "https://billetterie.festivalriverside.ca/Online/default.asp",
+        "https://festivalriverside.ca/en/faqs"
     ]
     var body: some View {
         VStack (spacing: 8) {

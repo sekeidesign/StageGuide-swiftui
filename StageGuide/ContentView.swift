@@ -15,16 +15,16 @@ struct ContentView: View {
     @State private var activeTab = 2
     
     var body: some View {
-        if !viewModel.areNotificationsEnabled {
-            Button("Request notifications") {
-                viewModel.requestNotificationPermission()
-            }
-            .buttonStyle(.bordered)
-            Button("Print token") {
-                print(viewModel.areNotificationsEnabled as Any)
-            }
-            .buttonStyle(.bordered)
-        } else {
+//        if !viewModel.areNotificationsEnabled {
+//            Button("Request notifications") {
+//                viewModel.requestNotificationPermission()
+//            }
+//            .buttonStyle(.bordered)
+//            Button("Print token") {
+//                print(viewModel.areNotificationsEnabled as Any)
+//            }
+//            .buttonStyle(.bordered)
+//        } else {
             NavigationStack{
                 TabView(selection: $activeTab) {
                     EventInfoView()
@@ -37,11 +37,11 @@ struct ContentView: View {
                             Label("Full schedule", systemImage: "sparkles.rectangle.stack")
                         }
                         .tag(2)
-                    YourScheduleView(days: viewModel.days ?? [])
-                        .tabItem {
-                            Label("Your schedule", systemImage: "calendar")
-                        }
-                        .tag(3)
+//                    YourScheduleView(days: viewModel.days ?? [])
+//                        .tabItem {
+//                            Label("Your schedule", systemImage: "calendar")
+//                        }
+//                        .tag(3)
                 }
                 .onAppear {
                     let appearance = UITabBarAppearance()
@@ -57,7 +57,7 @@ struct ContentView: View {
             .onAppear {
                 viewModel.loadData()
                 viewModel.initLiveActivity()
-            }
+//            }
         }
     }
 }

@@ -109,8 +109,8 @@ func populateInitialData() {
     let sevenLions = Act(context: context)
     sevenLions.id = UUID()
     sevenLions.name = "Seven Lions"
-    sevenLions.startTime = dateFrom(year: 2023, month: 9, day: 5, hour: 21, minute: 45, timeZone: timeZone)
-    sevenLions.endTime = dateFrom(year: 2023, month: 9, day: 5, hour: 23, minute: 0, timeZone: timeZone)
+    sevenLions.startTime = dateFrom(year: 2023, month: 9, day: 7, hour: 21, minute: 45, timeZone: timeZone)
+    sevenLions.endTime = dateFrom(year: 2023, month: 9, day: 7, hour: 23, minute: 13, timeZone: timeZone)
     sevenLions.imageName = "Acts/Seven Lions"
     sevenLions.bio = "Melding mainstream pop, trance, and dubstep, California producer Jeff Montalvo quickly amassed a cult following under the alias Seven Lions, which issued the debut EP Days to Come in 2012. He made his Billboard 200 debut with third EP Worlds Apart in 2014. After follow-up EPs like 2015's The Throes of Winter and 2017's dance chart-topping Creation reflected a growing emphasis on song form, he landed just outside of the dance/electronic Top Ten with 2019's \"Need Your Love,\" a collaboration with Gryffin and singer/songwriter Noah Kahan. A decade into his recording career, he presented his first official album-length release, Beyond the Veil, in 2022."
     sevenLions.links = ["https://www.facebook.com/SevenLions", "https://twitter.com/SevenLionsMusic", "https://www.youtube.com/channel/UChVfER-3s533FTh8Uae0Rhg", "https://soundcloud.com/seven-lions", "https://open.spotify.com/artist/6fcTRFpz0yH79qSKfof7lp", "https://google.com"]

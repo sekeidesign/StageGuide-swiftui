@@ -32,7 +32,9 @@ struct SGPillButton: View {
         }
     
     var body: some View {
-        let linkLabel = extractDomain(from: link ?? "") == "Festivalriverside" ? "Tickets" : extractDomain(from: link ?? "")
+        // This is fucking ass, needs to be fixed
+        let firstLinkLabel = extractDomain(from: link ?? "") == "Festivalriverside" ? "Tickets" : extractDomain(from: link ?? "")
+        let linkLabel = link?.hasSuffix("faqs") ?? false ? "FAQS" : firstLinkLabel
         let computedLabel = link != nil && linkFromDomain ? Text(linkLabel) : label
         let supportedDomains: Set<String> = ["Facebook", "Instagram", "Twitter", "Soundcloud", "Spotify", "Google"]
         let linkSymbol = supportedDomains.contains(linkLabel) ? Image(systemName: "globe") : Image(systemName: "globe")

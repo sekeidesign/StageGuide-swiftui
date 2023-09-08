@@ -64,38 +64,38 @@ struct StageGuideApp: App {
             ContentView(viewModel: appDelegate.viewModel)
                 .preferredColorScheme(.dark)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
-                .onAppear {
-                    UNUserNotificationCenter.current().getNotificationSettings { settings in
-                        switch settings.authorizationStatus {
-                        case .authorized:
-                            // Notifications are enabled for your app
-                            DispatchQueue.main.async {
-                                appDelegate.viewModel.areNotificationsEnabled = true
-                                print("Notifications are enabled.")
-                            }
-                        case .denied:
-                            // Notifications are explicitly disabled for your app
-                            print("Notifications are denied.")
-                            DispatchQueue.main.async {
-                                appDelegate.viewModel.areNotificationsEnabled = false
-                            }
-                        case .notDetermined:
-                            // User hasn't been asked for notification permissions yet
-                            print("Notifications not determined.")
-                            DispatchQueue.main.async {
-                                appDelegate.viewModel.areNotificationsEnabled = false
-                            }
-                        case .provisional:
-                            // Notifications are provisionally authorized (iOS 12+)
-                            print("Notifications are provisionally authorized.")
-                        case .ephemeral:
-                            print("Notifications are ephemeral.")
-                        @unknown default:
-                            // Handle any future authorization status
-                            break
-                        }
-                    }
-                }
+//                .onAppear {
+//                    UNUserNotificationCenter.current().getNotificationSettings { settings in
+//                        switch settings.authorizationStatus {
+//                        case .authorized:
+//                            // Notifications are enabled for your app
+//                            DispatchQueue.main.async {
+//                                appDelegate.viewModel.areNotificationsEnabled = true
+//                                print("Notifications are enabled.")
+//                            }
+//                        case .denied:
+//                            // Notifications are explicitly disabled for your app
+//                            print("Notifications are denied.")
+//                            DispatchQueue.main.async {
+//                                appDelegate.viewModel.areNotificationsEnabled = false
+//                            }
+//                        case .notDetermined:
+//                            // User hasn't been asked for notification permissions yet
+//                            print("Notifications not determined.")
+//                            DispatchQueue.main.async {
+//                                appDelegate.viewModel.areNotificationsEnabled = false
+//                            }
+//                        case .provisional:
+//                            // Notifications are provisionally authorized (iOS 12+)
+//                            print("Notifications are provisionally authorized.")
+//                        case .ephemeral:
+//                            print("Notifications are ephemeral.")
+//                        @unknown default:
+//                            // Handle any future authorization status
+//                            break
+//                        }
+//                    }
+//                }
         }
         .onChange(of: scenePhase) { (newScenePhase) in
             switch newScenePhase {

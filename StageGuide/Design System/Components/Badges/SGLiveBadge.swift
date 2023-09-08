@@ -17,7 +17,7 @@ struct SGLiveBadge: View {
     
     var body: some View {
         
-        let label = size == .small ? "Now" : "Live Now"
+        let label = size == .small ? "Live" : "Live Now"
             HStack(alignment: .center, spacing: 4) {
                 Image(systemName: "dot.radiowaves.left.and.right")
                     .font(.system(size: 10))

@@ -46,7 +46,7 @@ struct SGActDetailSheet: View {
                                 .foregroundColor(Color(uiColor: .label))
                                 .multilineTextAlignment(.leading)
                             Spacer()
-                            SGAddButton(isActive: act.isFavorite, action: viewModel.toggleFavoriteStatus)
+//                            SGAddButton(isActive: act.isFavorite, action: viewModel.toggleFavoriteStatus)
                         }
                         .frame(alignment: .leading)
                     }

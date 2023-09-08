@@ -15,16 +15,21 @@ struct SGActSchedule: View {
     
     var body: some View {
         let act = viewModel.act
+        let isLiveNow = Date() >= act.startTime! && Date() < act.endTime!
         HStack(spacing: 12) {
 //            HStack {}
 //                .frame(width: 2, height: 52)
 //                .background(stageColor)
 //                .cornerRadius(99)
 //                .isHidden(!showStageColor, remove: true)
-            VStack(alignment: .leading, spacing: 2) {
-                Text(act.name ?? "Uknown name")
-                        .font(.callout)
+            VStack(alignment: .leading, spacing: 8) {
+                HStack {
+                    Text(act.name ?? "Uknown name")
+                        .font(.body)
                         .bold()
+                    SGLiveBadge(size: .small)
+                        .isHidden(!isLiveNow, remove: true)
+                }
 //                HStack (spacing: 4) {
 //                    Image(systemName: "mappin.and.ellipse")
 //                        .font(.system(size: 10))
@@ -38,14 +43,14 @@ struct SGActSchedule: View {
                         .font(.system(size: 10))
                         .foregroundColor(Color(uiColor: .secondaryLabel))
                     Text("\(formatTimeRange(startTime: act.startTime ?? Date(), endTime: act.endTime ?? Date(), timeZone: "America/New_York"))")
-                        .font(.footnote)
+                        .font(.subheadline)
                         .foregroundColor(Color(UIColor.secondaryLabel))
                 }
                 
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             SGAddButton(isActive: act.isFavorite, action: viewModel.toggleFavoriteStatus)
-                .isHidden(!hasAdd, remove: true)
+                .isHidden(true, remove: true)
         }
         .frame(maxWidth: .infinity)
         .padding(12)

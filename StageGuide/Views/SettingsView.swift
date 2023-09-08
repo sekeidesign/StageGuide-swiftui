@@ -57,48 +57,48 @@ struct SettingsView: View {
 //                        }
 //                    }
                     
-                    Section(header: Text("Live Activities")) {
-                        Button {
-                            if let bundle = Bundle.main.bundleIdentifier,
-                                let settings = URL(string: UIApplication.openNotificationSettingsURLString + bundle) {
-                                if UIApplication.shared.canOpenURL(settings) {
-                                    UIApplication.shared.open(settings)
-                                }
-                            }
-                        } label: {
-                            HStack{
-                                VStack(alignment: .leading) {
-                                    Text("Allow notifications")
-                                        .foregroundColor(.white)
-                                    Text("Notifications are required for the live activity")
-                                        .font(.subheadline)
-                                        .foregroundStyle(Color(uiColor: .secondaryLabel))
-                                }
-                                Spacer()
-                                Image(systemName: "chevron.right")
-                            }
-                        }
-                        Button {
-                            if let bundle = Bundle.main.bundleIdentifier,
-                                let settings = URL(string: UIApplication.openSettingsURLString + bundle) {
-                                if UIApplication.shared.canOpenURL(settings) {
-                                    UIApplication.shared.open(settings)
-                                }
-                            }
-                        } label: {
-                            HStack{
-                                VStack(alignment: .leading) {
-                                    Text("Show Live Activity")
-                                        .foregroundColor(.white)
-                                    Text("Live timeline on your lock screen")
-                                        .font(.subheadline)
-                                        .foregroundStyle(Color(uiColor: .secondaryLabel))
-                                }
-                                Spacer()
-                                Image(systemName: "chevron.right")
-                            }
-                        }
-                    }
+//                    Section(header: Text("Live Activities")) {
+//                        Button {
+//                            if let bundle = Bundle.main.bundleIdentifier,
+//                                let settings = URL(string: UIApplication.openNotificationSettingsURLString + bundle) {
+//                                if UIApplication.shared.canOpenURL(settings) {
+//                                    UIApplication.shared.open(settings)
+//                                }
+//                            }
+//                        } label: {
+//                            HStack{
+//                                VStack(alignment: .leading) {
+//                                    Text("Allow notifications")
+//                                        .foregroundColor(.white)
+//                                    Text("Notifications are required for the live activity")
+//                                        .font(.subheadline)
+//                                        .foregroundStyle(Color(uiColor: .secondaryLabel))
+//                                }
+//                                Spacer()
+//                                Image(systemName: "chevron.right")
+//                            }
+//                        }
+//                        Button {
+//                            if let bundle = Bundle.main.bundleIdentifier,
+//                                let settings = URL(string: UIApplication.openSettingsURLString + bundle) {
+//                                if UIApplication.shared.canOpenURL(settings) {
+//                                    UIApplication.shared.open(settings)
+//                                }
+//                            }
+//                        } label: {
+//                            HStack{
+//                                VStack(alignment: .leading) {
+//                                    Text("Show Live Activity")
+//                                        .foregroundColor(.white)
+//                                    Text("Live timeline on your lock screen")
+//                                        .font(.subheadline)
+//                                        .foregroundStyle(Color(uiColor: .secondaryLabel))
+//                                }
+//                                Spacer()
+//                                Image(systemName: "chevron.right")
+//                            }
+//                        }
+//                    }
                     Section(header: Text("App icon")) {
                         WrappingHStack(availableAppIcons, id: \.self, spacing: .constant(16), lineSpacing: 16) {
                             SGAppIconButton(image: Image("App Icons/\($0)"), iconName: $0, isActive: $0 == activeAppIcon)

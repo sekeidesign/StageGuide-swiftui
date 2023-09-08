@@ -42,7 +42,7 @@ func formatTime(date: Date, timeZone: String) -> String {
 }
 
 func formatTimeRange(startTime: Date, endTime: Date, timeZone: String) -> String {
-    return "\(formatTime(date: startTime, timeZone: timeZone))-\(formatTime(date: endTime, timeZone: timeZone))"
+    return "\(formatTime(date: startTime, timeZone: timeZone)) - \(formatTime(date: endTime, timeZone: timeZone))"
 }
 
 func formatToTimeSlot(inputTime: Date) -> String {
